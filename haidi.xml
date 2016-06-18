@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="SKOS-style3.xsl"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<skos:ConceptScheme rdf:about="#Haidis matschema">
+		<dc:title>Vokabulär för Österrikes matkultur.</dc:title>
+		<dc:description>Volkabulär för Österrikes matkultur som begränsats till Haidi Emanuelssons favoriter.</dc:description>
+		<dc:creator>Haidi Emanuelsson</dc:creator>
+		<skos:hasTopConcept rdf:resource="#Österrikes matkultur"/>
+	</skos:ConceptScheme>
+	<skos:Concept rdf:about="#Österrikes matkultur">
+		<skos:prefLabel>Österrikes matkultur</skos:prefLabel>
+		<skos:altLabel>Österrikisk mat</skos:altLabel>
+		<skos:altLabel>Österrikiska köket</skos:altLabel>
+		<skos:narrower rdf:resource="#Knödel"/>
+		<skos:narrower rdf:resource="#Kärntner nudel"/>
+		<skos:narrower rdf:resource="#Kötträtter"/>
+		<skos:narrower rdf:resource="#Mehlspeisen"/>
+		<skos:definition> Österrikes matkultur är mångfacetterad med många influenser från andra länder, bland annat Italien, Ungern och Tyskland. 
+		Den traditionella maten är oftast kraftig med mycket smak utan att vara stark.</skos:definition>
+		<skos:example> Wienerschnitzel och apfelstrudel är välkända Österrikiska rätter.</skos:example>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Knödel">
+		<skos:prefLabel>Knödel</skos:prefLabel>
+		<skos:altLabel>Klimp</skos:altLabel>
+		<skos:broader rdf:resource="#Österrikes matkultur"/>
+		<skos:narrower rdf:resource="#Knödel som varmrätt"/>
+		<skos:narrower rdf:resource="#Knödel som efterrätt"/>
+		<skos:definition>En slags klimp som det finns många olika slags grunddegar och fyllningar till, som kokas och beroende på innehåll äts som soppa, förrätt, 
+		huvudrätt, tillbehör eller efterrätt</skos:definition>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Knödel som varmrätt">
+		<skos:prefLabel>Knödel som varmrätt</skos:prefLabel>
+		<skos:altLabel>Klimp som varmrätt</skos:altLabel>
+		<skos:broader rdf:resource="#Knödel"/>
+		<skos:narrower rdf:resource="#Spinatknödel"/>
+		<skos:narrower rdf:resource="#Tirolerknödel"/>
+		<skos:definition>Knödel som det finns många olika slags grunddegar och fyllningar till och som sevaras varm som soppa, förrätt, huvudrätt eller tillbehör.</skos:definition>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Spinatknödel">
+		<skos:prefLabel>Spinatknödel</skos:prefLabel>
+		<skos:altLabel>Spenatknödel</skos:altLabel>
+		<skos:altLabel>Spenatklimp</skos:altLabel>
+		<skos:broader rdf:resource="#Knödel som varmrätt"/>
+		<skos:definition>Knödel som innehåller spenat och som serveras varm antingen som förrätt, huvudrätt eller tillbehör, oftast tillsammans med både
+		skirat smör och parmesanost.</skos:definition>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Tirolerknödel">
+		<skos:prefLabel>Tirolerknödel</skos:prefLabel>
+		<skos:altLabel>Knödel från Tyrolen</skos:altLabel>
+		<skos:broader rdf:resource="#Knödel som varmrätt"/>
+		<skos:definition>Knödel som innehåller rökt fläsk och som oftast serveras i en klar buljong.</skos:definition>
+		<skos:example rdf:resource="http://www.austria.info/se/mat-o-dryck-i-osterrike/recept-knoedel-tyrolen-1448002.html"/>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Knödel som efterrätt">
+		<skos:prefLabel>Knödel som efterrätt</skos:prefLabel>
+		<skos:altLabel>Klimp som efterrätt</skos:altLabel>
+		<skos:broader rdf:resource="#Knödel"/>
+		<skos:narrower rdf:resource="#Marillenknödel"/>
+		<skos:definition>Knödel som det finns många olika slags grunddegar och fyllningar till, som är mer eller mindre söta, och som oftast äts som 
+		efterrätt.</skos:definition>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Marillenknödel">
+		<skos:prefLabel>Marillenknödel</skos:prefLabel>
+		<skos:altLabel>Aprikosknödel</skos:altLabel>
+		<skos:altLabel>Aprikosklimp</skos:altLabel>
+		<skos:broader rdf:resource="#Knödel som efterrätt"/>
+		<skos:definition>Knödeldeg lindas runt en aprikos varefter knödeln kokas och sedan steks i smör, socker och ströbröd.</skos:definition>
+		<skos:example rdf:resource="http://www.matklubben.se/recept/aprikosknoedel_67677.html"/>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Kärntner nudel">
+		<skos:prefLabel>Kärntner nudel</skos:prefLabel>
+		<skos:altLabel>Pastaknyten</skos:altLabel>
+		<skos:broader rdf:resource="#Österrikes matkultur"/>
+		<skos:narrower rdf:resource="#Kletzenkrapfen"/>
+		<skos:narrower rdf:resource="#Kärntner kasnudel"/>
+		<skos:definition>Pastaknyten stora som en knuten barnnäve som kan ha olika fyllningar och som oftast serveras med skirat smör.</skos:definition>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Kletzenkrapfen">
+		<skos:prefLabel>Kletzenkrapfen</skos:prefLabel>
+		<skos:altLabel>Kletzennudeln</skos:altLabel>
+		<skos:altLabel>Päronfyllda pastaknyten</skos:altLabel>
+		<skos:broader rdf:resource="#Kärntner nudel"/>
+		<skos:definition>Pastaknyten fyllda med torkade päron vanligtvis kryddade med kanel och en aning socker.</skos:definition>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Kärntner kasnudel">
+		<skos:prefLabel>Kärntner kasnudel</skos:prefLabel>
+		<skos:broader rdf:resource="#Kärntner nudel"/>
+		<skos:definition>Pastaknyten fyllda med potatis och färskost kryddade med brun mynta.</skos:definition>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Kötträtter">
+		<skos:prefLabel>Kötträtter</skos:prefLabel>
+		<skos:broader rdf:resource="#Österrikes matkultur"/>
+		<skos:narrower rdf:resource="#Gulasch"/>
+		<skos:narrower rdf:resource="#Schweinsbraten"/>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Gulasch">
+		<skos:prefLabel>Gulasch</skos:prefLabel>
+		<skos:broader rdf:resource="#Kötträtter"/>
+		<skos:definition>En köttgryta företrädesvis på nötkött som innehåller mycket lök och är kryddad med paprikapulver.</skos:definition>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Schweinsbraten">
+		<skos:prefLabel>Schweinsbraten</skos:prefLabel>
+		<skos:altLabel>Skinkstek</skos:altLabel>
+		<skos:broader rdf:resource="#Kötträtter"/>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Mehlspeisen">
+		<skos:prefLabel>Mehlspeisen</skos:prefLabel>
+		<skos:broader rdf:resource="#Österrikes matkultur"/>
+		<skos:narrower rdf:resource="#Apfelstrudel"/>
+		<skos:narrower rdf:resource="#Kaiserschmarren"/>
+		<skos:definition>Samlingsbegrepp före en rad olika rätter som innehåller mjöl eller bröd som bas och som vanligtvis är mer eller mindre söta.</skos:definition>
+		<skos:example> Apfelstrudel, pannkakor</skos:example>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Apfelstrudel">
+		<skos:prefLabel>Apfelstrudel</skos:prefLabel>
+		<skos:broader rdf:resource="#Mehlspeisen"/>
+		<skos:definition>En strudeldeg som fylls med äpplen, rullas ihop som en rulltårta och ugnsbakas.</skos:definition>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+	<skos:Concept rdf:about="#Kaiserschmarren">
+		<skos:prefLabel>Kaiserschmarren</skos:prefLabel>
+		<skos:broader rdf:resource="#Mehlspeisen"/>
+		<skos:definition>En tjock söt pannkaka som gräddas på spisen. Serveras oftast med äppelkompott eller plommonkompott.</skos:definition>
+		<skos:inScheme rdf:resource="#Haidis matschema"/>
+	</skos:Concept>
+</rdf:RDF>

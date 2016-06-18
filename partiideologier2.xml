@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="SKOS_sv-en.xsl"?>
+<!DOCTYPE rdf:RDF SYSTEM "skos.dtd">
+
+<rdf:RDF 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+
+<skos:ConceptScheme rdf:about="#http://sv.wikipedia.org/wiki/Lista_%C3%B6ver_politiska_partier_i_Sverige#Partier_representerade_i_riksdagen_2002.E2.80.932010">
+ <dc:title>Politiska partier i Sveriges riksdag 2006-2010 och dess ideologier</dc:title> 
+ <dc:description>Sveriges riksdagspartier 2006-2010 och den ideologi respektive parti huvudsakligen är relaterad till</dc:description>
+ <dc:creator>Ulrika Wahlström</dc:creator>
+</skos:ConceptScheme>
+
+<skos:Concept rdf:about="#http://en.wikipedia.org/wiki/Ideology">
+  <skos:prefLabel xml:lang="sv">Ideologier
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Ideologies
+  </skos:prefLabel>
+    <skos:narrower rdf:resource="#http://sv.wikipedia.org/wiki/Socialism"/>
+            <skos:narrower rdf:resource="#http://sv.wikipedia.org/wiki/Ekologism"/>
+               <skos:narrower rdf:resource="#http://sv.wikipedia.org/wiki/Ekohumanism"/>
+        	  <skos:narrower rdf:resource="#http://sv.wikipedia.org/wiki/Liberalism"/>
+           	    <skos:narrower rdf:resource="#http://sv.wikipedia.org/wiki/Liberalkonservatism"/>
+                     <skos:narrower rdf:resource="#http://sv.wikipedia.org/wiki/Kristdemokrati"/>
+ </skos:Concept>
+ 
+ <skos:Concept rdf:about="#http://sv.wikipedia.org/wiki/Politiskt_parti">
+  <skos:prefLabel xml:lang="sv">Politiska partier
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Political parties
+  </skos:prefLabel>
+  <skos:altLabel xml:lang="sv">Partier
+  </skos:altLabel>
+    <skos:narrower rdf:resource="#http://www.vansterpartiet.se"/>
+            <skos:narrower rdf:resource="#http://www.socialdemokraterna.se"/>
+               <skos:narrower rdf:resource="#http://www.mp.se/templates/Mct_177.aspx?number=165788"/>
+        	  <skos:narrower rdf:resource="#http://www.centerpartiet.se"/>
+           	    <skos:narrower rdf:resource="#http://www.folkpartiet.se"/>
+                     <skos:narrower rdf:resource="#http://www.moderat.se/web/Hem.aspx"/>
+                     <skos:narrower rdf:resource="#http://www.kristdemokraterna.se/"/>
+ </skos:Concept>
+  
+  <skos:Concept rdf:about="#http://sv.wikipedia.org/wiki/Socialism">
+  <skos:prefLabel xml:lang="sv">Socialism
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Socialism
+  </skos:prefLabel>
+   <skos:broader rdf:resource="#http://en.wikipedia.org/wiki/Ideology"/>
+      <skos:related rdf:resource="#http://www.vansterpartiet.se"/>
+      <skos:narrower rdf:resource="#http://sv.wikipedia.org/wiki/Socialdemokrati"/>
+</skos:Concept>
+
+<skos:Concept rdf:about="#http://www.vansterpartiet.se">
+  <skos:prefLabel xml:lang="sv">Vänsterpartiet
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">The Left Party of Sweden
+  </skos:prefLabel>
+   <skos:broader rdf:resource="#http://sv.wikipedia.org/wiki/Politiskt_parti"/>
+  <skos:related rdf:resource="#http://sv.wikipedia.org/wiki/Socialism"/>
+  <skos:definition rdf:resource="http://www.ne.se/vansterpartiet"/>
+  </skos:Concept>
+
+<skos:Concept rdf:about="#http://sv.wikipedia.org/wiki/Socialdemokrati">
+  <skos:prefLabel xml:lang="sv">Socialdemokrati
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Social democracy
+  </skos:prefLabel>
+  <skos:broader rdf:resource="#http://sv.wikipedia.org/wiki/Socialism"/>
+  <skos:related rdf:resource="#http://www.socialdemokraterna.se"/>
+</skos:Concept>
+
+<skos:Concept rdf:about="#http://www.socialdemokraterna.se">
+  <skos:prefLabel xml:lang="sv">Socialdemokraterna
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">The Swedish Social Democratic Party
+  </skos:prefLabel>
+    <skos:altLabel xml:lang="sv">Sveriges socialdemokratiska arbetarparti
+  </skos:altLabel>
+   <skos:broader rdf:resource="#http://sv.wikipedia.org/wiki/Politiskt_parti"/>
+  <skos:related rdf:resource="#http://sv.wikipedia.org/wiki/Socialdemokrati"/>
+    <skos:definition rdf:resource="http://www.ne.se/sveriges-socialdemokratiska-arbetareparti"/>
+  </skos:Concept>
+  
+ <skos:Concept rdf:about="#http://sv.wikipedia.org/wiki/Ekologism">
+  <skos:prefLabel xml:lang="sv">Ekologism
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Environmentalism
+  </skos:prefLabel>
+  <skos:broader rdf:resource="#http://en.wikipedia.org/wiki/Ideology"/>
+  <skos:related rdf:resource="#http://www.mp.se/templates/Mct_177.aspx?number=165788"/>
+ </skos:Concept>
+ 
+ <skos:Concept rdf:about="#http://www.mp.se/templates/Mct_177.aspx?number=165788">
+  <skos:prefLabel xml:lang="sv">Miljöpartiet de gröna
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">The Swedish Green Party 
+  </skos:prefLabel>
+    <skos:altLabel xml:lang="sv">Miljöpartiet
+  </skos:altLabel>
+  <skos:broader rdf:resource="#http://sv.wikipedia.org/wiki/Politiskt_parti"/>
+  <skos:related rdf:resource="#http://sv.wikipedia.org/wiki/Ekologism"/>
+</skos:Concept> 
+
+
+<skos:Concept rdf:about="#http://sv.wikipedia.org/wiki/Ekohumanism">
+  <skos:prefLabel xml:lang="sv">Ekohumanism
+  </skos:prefLabel>
+   <skos:broader rdf:resource="#http://en.wikipedia.org/wiki/Ideology"/>
+       <skos:related rdf:resource="#http://www.centerpartiet.se"/>
+</skos:Concept>
+
+
+<skos:Concept rdf:about="#http://www.centerpartiet.se">
+  <skos:prefLabel xml:lang="sv">Centerpartiet
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">The Centre party
+  </skos:prefLabel>
+  <skos:broader rdf:resource="#http://sv.wikipedia.org/wiki/Politiskt_parti"/>
+     <skos:related rdf:resource="#http://sv.wikipedia.org/wiki/Ekohumanism"/>
+       <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Centerpartiet"/>
+     </skos:Concept>
+
+<skos:Concept rdf:about="#http://sv.wikipedia.org/wiki/Liberalism">
+ <skos:prefLabel xml:lang="sv">Liberalism
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Liberalism
+  </skos:prefLabel>
+  <skos:broader rdf:resource="#http://en.wikipedia.org/wiki/Ideology"/>
+  <skos:related rdf:resource="#http://www.folkpartiet.se"/>
+  <skos:related rdf:resource="#http://sv.wikipedia.org/wiki/Liberalkonservatism"/>
+</skos:Concept>
+
+<skos:Concept rdf:about="#http://www.folkpartiet.se">
+ <skos:prefLabel xml:lang="sv">Folkpartiet Liberalerna
+  </skos:prefLabel>
+       <skos:prefLabel xml:lang="en">The Liberal Party of Sweden
+  </skos:prefLabel>
+  <skos:altLabel xml:lang="sv">Folkpartiet
+  </skos:altLabel>
+  <skos:broader rdf:resource="#http://sv.wikipedia.org/wiki/Politiskt_parti"/>
+  <skos:related rdf:resource="#http://sv.wikipedia.org/wiki/Liberalism"/>
+  <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Folkpartiet"/>
+ </skos:Concept> 
+
+
+<skos:Concept rdf:about="#http://sv.wikipedia.org/wiki/Liberalkonservatism">
+<skos:prefLabel xml:lang="sv">Liberalkonservatism
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Liberal conservatism
+  </skos:prefLabel>
+  <skos:broader rdf:resource="#http://en.wikipedia.org/wiki/Ideology"/>
+ 
+    <skos:related rdf:resource="#http://sv.wikipedia.org/wiki/Liberalism"/>
+    <skos:related rdf:resource="#http://www.moderat.se/web/Hem.aspx"/>
+</skos:Concept>
+
+<skos:Concept rdf:about="#http://www.moderat.se/web/Hem.aspx">
+<skos:prefLabel xml:lang="sv">Moderaterna
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Moderaterna
+  </skos:prefLabel>
+      <skos:altLabel xml:lang="en">The Moderate Party
+  </skos:altLabel>
+  <skos:broader rdf:resource="#http://sv.wikipedia.org/wiki/Politiskt_parti"/>
+  <skos:related rdf:resource="#http://sv.wikipedia.org/wiki/Liberalkonservatism"/>
+  <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Moderaterna"/>
+  </skos:Concept>
+
+<skos:Concept rdf:about="#http://sv.wikipedia.org/wiki/Kristdemokrati">
+<skos:prefLabel xml:lang="sv">Kristdemokrati
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Christian democracy
+  </skos:prefLabel>
+  <skos:broader rdf:resource="#http://en.wikipedia.org/wiki/Ideology"/>
+     <skos:related rdf:resource="#http://www.kristdemokraterna.se/"/>
+</skos:Concept>
+
+<skos:Concept rdf:about="#http://www.kristdemokraterna.se/">
+<skos:prefLabel xml:lang="sv">Kristdemokraterna
+  </skos:prefLabel>
+    <skos:prefLabel xml:lang="en">The Christian Democrats
+  </skos:prefLabel>
+  <skos:broader rdf:resource="#http://sv.wikipedia.org/wiki/Politiskt_parti"/>
+  <skos:related rdf:resource="#http://sv.wikipedia.org/wiki/Kristdemokrati"/>
+  <skos:definition rdf:resource="http://www.ne.se/kristdemokraterna"/>
+</skos:Concept>
+
+  
+</rdf:RDF>
+

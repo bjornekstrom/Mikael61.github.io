@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?xml-stylesheet type="text/xsl" href="SKOS-style3.xsl"?>
+<!DOCTYPE rdf:RDF SYSTEM "skos.dtd">
+
+<rdf:RDF 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<skos:ConceptScheme rdf:about="MyScheme">
+<dc:title>Släkt- och hembygdsforska i Sverige</dc:title> 
+<dc:description>
+Geografiska indelningar för släkt- och hembygdsforskning
+</dc:description>
+<dc:creator> Malin Almstedt Jansson
+</dc:creator>
+</skos:ConceptScheme>
+
+
+ <!-- Har haft funderingar kring användningen av hiddenLabel och altLabel. Valt att använda hiddenLabel i sammanhang när stavning
+
+ ej längre förekommer och altLabel då stavningen är relevant som till exempel för en gammal benämning av en socken -->
+
+ 
+ <!--Enligt Harping så kan ibland historiska benämningar betecknas med (H). För att skilja ut historiska benämningar har jag därför valt
+
+ 
+ att göra på så sätt. -->
+
+<skos:Concept rdf:about="#gävleborgs län">
+  <skos:prefLabel xml:lang="sv">Gävleborgs län
+  </skos:prefLabel>
+      <skos:narrower rdf:resource="#hälsingland"/>
+         <skos:definition>
+         Gävleborgs län omfattar Gästrikland utom en del av Söderfors församling samt landskapet Hälsingland 
+         med undantag av den nordvästligaste delen, Ytterhogdals och Ängersjö församlingar, som hör till Jämtlands län. 
+         Till Gävleborgs län hör också en del av Dalarna, nämligen Hamra församling i Ljusdals kommun. 
+         Från 1762 (då länet inrättades) till 1810 omfattade länet även Härjedalen. Gävleborgs län är administrativt indelat i tio kommuner. 
+         Residensstad är Gävle. 
+         </skos:definition>
+            <skos:definition rdf:resource="http://www.ne.se/g%C3%A4vleborgs-l%C3%A4n#"/>
+</skos:Concept>
+    
+<skos:Concept rdf:about="#hälsingland">
+  <skos:prefLabel xml:lang="sv">Hälsingland
+  </skos:prefLabel>
+          <skos:hiddenLabel xml:lang="sv">Helsingland
+    </skos:hiddenLabel>
+    <skos:scopeNote>
+ Hälsingland avser här det svenska landskapet Hälsingland. 
+    </skos:scopeNote>
+    <skos:broader rdf:resource="#gävleborgs län"/>
+    
+      <skos:narrower rdf:resource="#ljusdals kommun"/>
+      <skos:narrower rdf:resource="#ljusdals landskommun"/>
+      <skos:narrower rdf:resource="#ljusdals köping"/>
+      <skos:narrower rdf:resource="#järvsö landskommun"/>
+      <skos:narrower rdf:resource="#järvsö socken"/>
+      <skos:narrower rdf:resource="#ljusdal socken"/>
+      <skos:narrower rdf:resource="#norra hälsinglands tingslag"/>
+      <skos:narrower rdf:resource="#södra hälsinglands tingslag"/>
+      <skos:narrower rdf:resource="#västra hälsinglands tingslag"/>
+         <skos:definition>
+         Hälsingland, landskap i Norrland. Det gränsar i söder till Gästrikland, i väster till Dalarna och Härjedalen och 
+         i norr till Medelpad. Största delen av landskapet tillhör Gävleborgs län, men till Hälsingland räknas också Ytterhogdals och 
+         Ängersjö församlingar i Jämtlands län samt en mindre del av Attmars församling, som i övrigt tillhör Medelpad och Västernorrlands län.
+         </skos:definition>
+            <skos:definition rdf:resource="http://www.ne.se/h%C3%A4lsingland#"/>
+</skos:Concept>
+
+
+ <!-- Kommuner -->
+<skos:Concept rdf:about="#ljusdals kommun">
+    <skos:prefLabel xml:lang="sv">Ljusdals kommun
+    </skos:prefLabel>
+      <skos:broader rdf:resource="#hälsingland"/>
+        <skos:narrower rdf:resource="#ljusdals församling"/>
+        <skos:narrower rdf:resource="#järvsö församling"/>
+          <skos:related rdf:resource="#ljusdals landskommun"/>
+          <skos:related rdf:resource="#ljusdals köping"/>
+          <skos:related rdf:resource="#järvsö landskommun"/>
+      <skos:definition>
+      Ljusdals kommun är en inlandskommun i nordvästra delen av Gävleborgs län.
+ 
+      Ljusdals municipalsamhälle inrättades i Ljusdals landskommun år 1889.
+      År 1914 bröts en del av kommunen ut och blev Ljusdals köping, medan resten förblev en landskommun. Inga sammanläggningar skedde under kommunreformen 1952,
+      men 1963 återförendes Ljusdals landskommun och Ljusdals köping. 
+      Den 1 januari 1971 bildades Ljusdals kommun då köpingen lades samman med landskommunerna Färila, Los, Järvsö och Ramsjö.
+      </skos:definition>
+         <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Ljusdals_kommun#"/>
+	<skos:example rdf:resource="http://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Ljusdal_vapen.svg/200px-Ljusdal_vapen.svg.png "/>
+</skos:Concept>
+
+
+<skos:Concept rdf:about="#ljusdals landskommun">
+    <skos:prefLabel xml:lang="sv">Ljusdals landskommun
+ (H)
+    </skos:prefLabel>
+      <skos:broader rdf:resource="#hälsingland"/>
+          <skos:related rdf:resource="#ljusdals kommun"/>
+          <skos:related rdf:resource="#ljusdals köping"/>
+          <skos:related rdf:resource="#järvsö socken"/>
+          <skos:related rdf:resource="#ljusdal socken"/>
+      <skos:definition>
+      Ljusdals landskommun var en tidigare kommun i Gävleborgs län. Ljusdals landskommun inrättades den 1 januari 1863 
+      i Ljusdals socken i Ljusdals tingslag i Hälsingland när 1862 års kommunalförordningar trädde i kraft.Den 28 juni 1889 inrättades Ljusdals municipalsamhälle inom kommunen. 
+      Den 1 januari 1914 bröts sedan municipalsamhället ut ur kommunen för att bilda Ljusdals köping[1]. Kommunen påverkades inte av kommunreformen 1952 men uppgick 
+      dock 1963 i köpingen. Sedan 1971 tillhör området den nya Ljusdals kommun.
+      </skos:definition>
+        <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Ljusdals_landskommun#"/>
+</skos:Concept>
+
+
+<skos:Concept rdf:about="#ljusdals köping">
+    <skos:prefLabel xml:lang="sv">Ljusdals köping
+ (H)
+    </skos:prefLabel>
+      <skos:broader rdf:resource="#hälsingland"/>
+          <skos:related rdf:resource="#ljusdals kommun"/>
+          <skos:related rdf:resource="#ljusdals landskommun"/>
+      <skos:definition>
+      Ljusdals köping var en tidigare kommun i Gävleborgs län.  Den 28 juni 1889 inrättades Ljusdal municipalsamhälle inom Ljusdals landskommun. 
+      Detta bröts sedan ut ur kommunen för att bilda Ljusdal köping den 1 januari 1914. Köpingen förblev opåverkad av Kommunreformen 1952.
+      Den 1 januari 1963 återförenades Ljusdal köping och Ljusdal landskommun, då landskommunen inkorporerades i köpingen. 
+      År 1971 blev köpingen, tillsammans med landskommmunerna Färila, Järvsö, Los och Ramsjö, en del av den nya Ljusdals kommun.
+      </skos:definition>
+         <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Ljusdals_k%C3%B6ping#"/>
+	<skos:example rdf:resource="http://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Ljusdal_k%C3%B6ping_vapen.svg/200px-Ljusdal_k%C3%B6ping_vapen.svg.png "/>
+</skos:Concept>
+
+
+<skos:Concept rdf:about="#järvsö landskommun">
+    <skos:prefLabel xml:lang="sv">Järvsö landskommun
+ (H)
+    </skos:prefLabel>
+        <skos:hiddenLabel xml:lang="sv">Jerfsö landskommun
+    </skos:hiddenLabel>
+      <skos:broader rdf:resource="#hälsingland"/>
+           <skos:related rdf:resource="#ljusdals kommun"/>
+      <skos:definition>
+      Järvsö landskommun var en tidigare kommun i Gävleborgs län. Järvsö landskommun (från början Jerfsö landskommun) inrättades den 1 januari 1863
+       i Järvsö socken i Arbrå och Järvsö tingslag i Hälsingland när 1862 års kommunalförordningar trädde i kraft. 
+       Kommunen påverkades inte av kommunreformen 1952 och förblev oförändrad fram till år 1971 då den kom att bli en del av den nya Ljusdals kommun.
+       </skos:definition>
+          <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/J%C3%A4rvs%C3%B6_landskommun#"/>
+</skos:Concept>
+
+
+ <!-- Socknar -->
+
+ <skos:Concept rdf:about="#järvsö socken">
+    <skos:prefLabel xml:lang="sv">Järvsö socken
+ (H)
+  </skos:prefLabel>
+      <skos:altLabel xml:lang="sv">Jerfsö socken
+  </skos:altLabel>
+      <skos:broader rdf:resource="#hälsingland"/>
+      <skos:broader rdf:resource="#västra hälsinglands tingslag"/>
+        <skos:narrower rdf:resource="#hästberg"/>
+        <skos:narrower rdf:resource="#skästra"/>
+          <skos:related rdf:resource="#ljusdals landskommun"/>
+          <skos:related rdf:resource="#järvsö församling"/>
+      <skos:definition>
+      Järvsö socken ingick i Arbrå och Järvsö tingslag och ligger nu i Ljusdals kommun i Hälsingland i Gävleborgs län. 
+      Vid kommunreformen 1862 övergick socknens ansvar för de kyrkliga frågorna till Järvsö församling och för de borgerliga frågorna bildades Järvsö landskommun.
+      </skos:definition>
+         <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/J%C3%A4rvs%C3%B6_socken#"/>
+	<skos:example rdf:resource="http://upload.wikimedia.org/wikipedia/commons/2/2d/Jarvso-sockenfana.jpg "/>
+ 
+</skos:Concept>
+
+
+ <skos:Concept rdf:about="#ljusdal socken">
+    <skos:prefLabel xml:lang="sv">Ljusdal socken
+ (H)
+  </skos:prefLabel>
+      <skos:broader rdf:resource="#hälsingland"/>
+      <skos:broader rdf:resource="#västra hälsinglands tingslag"/>
+        <skos:narrower rdf:resource="#hybo"/>
+          <skos:related rdf:resource="#ljusdals landskommun"/>
+          <skos:related rdf:resource="#ljusdals församling"/>
+      <skos:definition>
+      Ljusdals socken ingick i Ljusdals tingslag och ligger nu i Ljusdals kommun i Hälsingland i Gävleborgs län. 
+      Vid kommunreformen 1862 övergick socknens ansvar för de kyrkliga frågorna till Ljusdals församling och för de borgerliga frågorna bildades Ljusdals landskommun.
+      </skos:definition>
+         <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/J%C3%A4rvs%C3%B6_socken#"/>
+	<skos:example rdf:resource="http://upload.wikimedia.org/wikipedia/commons/2/2d/Jarvso-sockenfana.jpg "/>
+ 
+	<skos:example rdf:resource="http://svenskuppslagsbok.se/40756/jarvso-socken/#"/>
+   
+</skos:Concept>
+
+ 
+ <!-- Tingslag  -->
+ 
+ <skos:Concept rdf:about="#norra hälsinglands tingslag">
+    <skos:prefLabel xml:lang="sv">Norra Hälsinglands tingslag
+ (H)
+  </skos:prefLabel>
+      <skos:broader rdf:resource="#hälsingland"/>
+      <skos:definition>
+      Norra Hälsinglands tingslag var ett tingslag i nordöstra Hälsingland, Gävleborgs län. Det bildades i början på 1930-talet genom 
+      sammanslagning av Bergsjö och Forsa tingslag och Delsbo tingslag. 
+      Tingslaget omfattade de till Gävleborgs län hörande nordöstra delen av landskapet Hälsingland intill gränsen mot Medelpad.
+      Tingslaget upphörde vid tingsrättsreformen i Sverige år 1971. Området ingår i dag i Hudiksvalls tingsrätts domsaga.
+      </skos:definition>
+        <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Norra_H%C3%A4lsinglands_tingslag#"/>
+	<skos:example rdf:resource="http://upload.wikimedia.org/wikipedia/commons/e/ed/Norra_H%C3%A4lsinglands_tingslag.jpg "/>
+ 
+</skos:Concept>
+
+ 
+ <skos:Concept rdf:about="#södra hälsinglands tingslag">
+   <skos:prefLabel xml:lang="sv">Södra Hälsinglands tingslag
+   </skos:prefLabel>
+      <skos:broader rdf:resource="#hälsingland"/>
+      <skos:definition>
+      Södra Hälsinglands tingslag var ett tingslag i sydöstra Hälsingland, Gävleborgs län.
+      Det bildades i början på 1930-talet genom sammanslagning av Ala tingslag och Enångers tingslag. 
+      Tingslaget omfattade de till Gävleborgs län hörande sydöstra delen av landskapet Hälsingland och intill gränsen mot Gästrikland.
+      Tingslaget upphörde vid tingsrättsreformen i Sverige år 1971. Området ingår i dag i Hudiksvalls tingsrätts domsaga.
+      </skos:definition>
+        <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/S%C3%B6dra_H%C3%A4lsinglands_tingslag#"/>
+	<skos:example rdf:resource="http://upload.wikimedia.org/wikipedia/commons/7/7d/S%C3%B6dra_H%C3%A4lsinglands_tingslag.jpg "/>
+ 
+</skos:Concept>
+
+
+ <skos:Concept rdf:about="#västra hälsinglands tingslag">
+  <skos:prefLabel xml:lang="sv">Västra Hälsinglands tingslag
+ (H)
+  </skos:prefLabel>
+      <skos:broader rdf:resource="#hälsingland"/>
+        <skos:narrower rdf:resource="#järvsö socken"/>
+        <skos:narrower rdf:resource="#ljusdal socken"/>
+      <skos:definition>
+      Västra Hälsinglands tingslag var ett tingslag i nordvästra Hälsingland, Gävleborgs län. 
+      Det bildades i början på 1930-talet genom sammanslagning av Arbrå och Järvsö tingslag och Ljusdals tingslag. 
+      Tingslaget omfattade de till Gävleborgs län hörande nordvästra delen av landskapet Hälsingland och Dalarna intill gränsen mot Härjedalen och Medelpad.
+      Tingslaget upphörde vid tingsrättsreformen i Sverige år 1971. Området ingår i dag i Hudiksvalls tingsrätts domsaga.
+      </skos:definition>
+         <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/V%C3%A4stra_H%C3%A4lsinglands_tingslag#"/>
+	<skos:example rdf:resource="http://upload.wikimedia.org/wikipedia/commons/4/48/V%C3%A4stra_H%C3%A4lsinglands_tingslag.jpg "/>
+ 
+</skos:Concept>
+
+
+ <!-- Församlingar -->
+<skos:Concept rdf:about="#ljusdals församling">
+   <skos:prefLabel xml:lang="sv">Ljusdal
+-Ramsjö församling
+   </skos:prefLabel>
+      <skos:broader rdf:resource="#ljusdals kommun"/>
+        <skos:narrower rdf:resource="#hybo"/>
+          <skos:related rdf:resource="#ljusdal socken"/>
+      <skos:definition>
+      Ljusdal-Ramsjö församling är en församling i Uppsala stift inom Svenska kyrkan. Församlingen utgör ett eget pastorat, Ljusdal-Ramsjö pastorat. 
+      Församlingen bildades 2002 genom sammanslagning av Ljusdals och Ramsjö församlingar. 
+      Församlingen ligger i Ljusdals kommun i Gävleborgs län.
+      </skos:definition>
+        <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Ljusdal-Ramsj%C3%B6_f%C3%B6rsamling#"/>
+	<skos:example rdf:resource="http://upload.wikimedia.org/wikipedia/commons/8/82/Ljusdalskyrka.JPG"/>
+</skos:Concept>
+
+<skos:Concept rdf:about="#järvsö församling">
+    <skos:prefLabel xml:lang="sv">Järvsö församling
+    </skos:prefLabel>
+      <skos:broader rdf:resource="#ljusdals kommun"/>
+        <skos:narrower rdf:resource="#hästberg"/>
+        <skos:narrower rdf:resource="#skästra"/>
+          <skos:related rdf:resource="#järvsö socken"/>
+      <skos:definition>
+      Järvsö församling är en församling i Uppsala stift inom Svenska kyrkan. Församlingen utgör ett eget pastorat, Järvsö pastorat. 
+      Församlingen ligger i Ljusdals kommun i Gävleborgs län.
+      </skos:definition>
+        <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/J%C3%A4rvs%C3%B6_f%C3%B6rsamling#"/>
+	<skos:example rdf:resource=" "/>
+</skos:Concept>
+
+
+<!-- Byar Järvsö -->
+
+<skos:Concept rdf:about="#hästberg">
+    <skos:prefLabel xml:lang="sv">Hästberg
+    </skos:prefLabel>
+    <skos:scopeNote>
+ Hästberg avser här Hästberg, Ljusdals kommun. 
+    </skos:scopeNote>
+      <skos:broader rdf:resource="#järvsö socken"/>
+      <skos:broader rdf:resource="#järvsö församling"/>
+      <skos:broader rdf:resource="#järvsö finnmark"/>
+      <skos:definition>
+      Hästberg är en by i sydvästra delen av Järvsö församling i Ljusdals kommun, Hälsingland. 
+      Hästberg ligger i närheten av enskilda vägen Simeå - Sidskogen. Området är en del av Järvsö finnmark.
+      </skos:definition>
+        <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/H%C3%A4stberg,_Ljusdals_kommun#"/>
+	<skos:example rdf:resource="http://libris.kb.se/bib/3183714 "/>
+	<skos:example rdf:resource="http://libris.kb.se/bib/3101979 "/>
+	<skos:example rdf:resource="http://www.hastberg.se/ "/>
+</skos:Concept>
+
+<skos:Concept rdf:about="#skästra">
+    <skos:prefLabel xml:lang="sv">Skästra
+    </skos:prefLabel>
+    <skos:hiddenLabel xml:lang="sv">Västra skästra
+    </skos:hiddenLabel>
+    <skos:hiddenLabel xml:lang="sv">Östra skästra
+    </skos:hiddenLabel>
+      <skos:broader rdf:resource="#järvsö socken"/>
+      <skos:broader rdf:resource="#järvsö församling"/>
+      <skos:definition>
+      Skästra är en småort i Ljusdals kommun, Gävleborgs län. Orten är belägen någon kilometer norr om Järvsö.
+      </skos:definition>
+        <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Sk%C3%A4stra#"/>
+	<skos:example rdf:resource="http://libris.kb.se/bib/2172996"/>
+	<skos:example rdf:resource="http://www.skastra.nu/"/>
+</skos:Concept>
+
+
+<!-- Byar Ljusdal -->
+
+<skos:Concept rdf:about="#hybo">
+    <skos:prefLabel xml:lang="sv">Hybo
+    </skos:prefLabel>
+      <skos:broader rdf:resource="#ljusdal socken"/>
+      <skos:broader rdf:resource="#ljusdals församling"/>
+      <skos:definition>
+      Hybo är en tätort i Ljusdals kommun. Byn omges av Hybosjön, Hyboberget och berget Hyboklacken.
+      </skos:definition>
+        <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Hybo#"/>
+	<skos:example rdf:resource="http://libris.kb.se/bib/725450"/>
+	<skos:example rdf:resource="http://libris.kb.se/bib/725451"/>
+	<skos:example rdf:resource="http://www.motlutsflottning.se/Bilder/Tumbnails/Hybo%20nya.html"/>
+</skos:Concept>
+
+<!-- Övriga indelningar -->
+<!-- Osäker om detta område verkligen skall kallas Järvsö finnmark eller om det ingår i orsa finnmark-->
+
+<skos:Concept rdf:about="#järvsö finnmark">
+    <skos:prefLabel xml:lang="sv">Järvsö finnmark
+ (H)
+    </skos:prefLabel>
+      <skos:altLabel>Järvsö finnskog
+      </skos:altLabel>
+      <skos:altLabel>Järvsö finnbygd
+      </skos:altLabel>
+    
+      <skos:narrower rdf:resource="#hästberg"/>
+
+      <skos:definition>
+      Finnskog eller Finnmarker används som begrepp för de ofta ganska otillgängliga skogbevuxna områden i mellersta Sverige och sydöstra Norge 
+      som skogsfinnar (svedjefinnar) befolkade på 1600-talets början. 
+      </skos:definition>
+        <skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Finnskog#"/>
+	<skos:example rdf:resource="http://home.swipnet.se/finnskogsmuseet/"/>
+</skos:Concept>
+
+</rdf:RDF>
+
+
+

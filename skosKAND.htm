@@ -12,9 +12,7 @@
 
 	</head>
 	<body>
-		<h2 style="font-family : Garamond; font-variant : small-caps; margin-left: 80px; margin-right: 30px; color : red; background-color : FFFFCC;">
 
-Bibliotekarieprogrammet HT14 </h2>
 		<h1>
 
 SKOS &mdash;  Introduktionsövningar
@@ -65,7 +63,7 @@ vi har att göra med, och vilken teckenkodning som valts. (Se tillbaka på de f�
 	
 	<p class="bodyText">Vi skall också ha en länk till en XSL som ger vokabulären en presentation - dvs transformerar SKOS-filen till XHTML. Den här stilmallen skall 
 	du hämta i PingPong från dokument-mappen och placera lokalt på samma ställe som du sparar SKOS-filen. SKOS-filen skall ha extensionen
-	<code>xml</code> och dess namn <strong>inte innehålla mellanslag</strong> samt endast tecken ur sekvenserna 0-9, a-z och A-Z. XSL-filen skall ha namnet <code>SKOS-style3.1.xsl</code> 
+	<code>xml</code> och dess namn <strong>inte innehålla mellanslag</strong> samt endast tecken ur sekvenserna 0-9, a-z och A-Z. XSL-filen skall ha namnet <code>skos-styleList.xsl</code> 
 	men 
 	du kan givetvis byta namn på den om du samtidigt korrigerar <code>href</code>-värdet i XML-filen.
  Slutligen infogar du också en länk till DTDn, som du givetvis också
@@ -74,7 +72,7 @@ vi har att göra med, och vilken teckenkodning som valts. (Se tillbaka på de f�
 
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;?xml-stylesheet type="text/xsl" href="SKOS-style3.1.xsl"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
 &lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;
 &lt;rdf:RDF 
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -92,7 +90,7 @@ tre koncept som är generiskt relaterade.
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;
-&lt;?xml-stylesheet type="text/xsl" href="SKOS-style3.1.xsl"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
 &lt;rdf:RDF 
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"&gt;
@@ -132,7 +130,7 @@ Det är endast för enkelhets skull vi här använder benämningar på olika spr
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;
-&lt;?xml-stylesheet type="text/xsl" href="SKOS-style3.1.xsl"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
 &lt;rdf:RDF 
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"&gt;
@@ -182,7 +180,7 @@ Det är endast för enkelhets skull vi här använder benämningar på olika spr
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;
-&lt;?xml-stylesheet type="text/xsl" href="SKOS-style3.1.xsl"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
 &lt;rdf:RDF 
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"&gt;
@@ -236,7 +234,7 @@ I exemplet nedan har en definition lagts till.</p>
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;
-&lt;?xml-stylesheet type="text/xsl" href="SKOS-style3.1.xsl"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
 &lt;rdf:RDF 
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"&gt;
@@ -272,12 +270,12 @@ I exemplet nedan har en definition lagts till.</p>
 	</pre>
 
 <p class="bodyText">Vad beträffar dessa element gäller att de också kan vara tomma och i stället referera till resurser som definierar, preciserar eller 
-exemplifierar koncepten, exempelvis med en URL. <code>SKOS-style3.1.xsl</code> implementerar <em>example</em> som en hyperlänk i HTML.</p>
+exemplifierar koncepten, exempelvis med en URL. <code>skos-styleList.xsl</code> implementerar <em>example</em> som en hyperlänk i HTML.</p>
 
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;
-&lt;?xml-stylesheet type="text/xsl" href="SKOS-style3.1.xsl"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
 &lt;rdf:RDF 
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"&gt;
@@ -324,7 +322,7 @@ exemplifierar koncepten, exempelvis med en URL. <code>SKOS-style3.1.xsl</code> i
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;
-&lt;?xml-stylesheet type="text/xsl" href="SKOS-style3.1.xsl"?&gt;
+&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
 &lt;rdf:RDF 
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
@@ -361,10 +359,10 @@ exemplifierar koncepten, exempelvis med en URL. <code>SKOS-style3.1.xsl</code> i
 
 <p class="bodyText">
 När du anser dig klar med ditt egna experimenterande kan du också ta en titt på 
-<a href="http://www.adm.hb.se/~mg/ko/canids.xml">http://www.adm.hb.se/~mg/ko/canids.xml</a>
+<a href="https://mikael61.github.io/canids.xml">http://www.adm.hb.se/~mg/ko/canids.xml</a>
 där ovanstående exempel är lite utvidgat. Några mindre vokabulärer sammanställda i övningssammang finns också att studera:</p>
-<ul class="bodyText"><li><a href="http://www.adm.hb.se/~mg/ko/malinalmstedtjansson.xml">Geografiska indelningar för släkt- och hembygdsforskning</a> 
-</li><li><a href="http://www.adm.hb.se/~mg/ko/haidi.xml">Vokabulär för Österrikes matkultur</a></li><li><a href="http://www.adm.hb.se/~mg/ko/partiideologier2.xml">Politiska partier i Sveriges riksdag 2006-2010 och dess ideologier</a></li></ul>
+<ul class="bodyText"><li><a href="malinalmstedtjansson.xml">Geografiska indelningar för släkt- och hembygdsforskning</a> 
+</li><li><a href="haidi.xml">Vokabulär för Österrikes matkultur</a></li><li><a href="partiideologier2.xml">Politiska partier i Sveriges riksdag 2006-2010 och dess ideologier</a></li></ul>
 
 <p class="bodyText">Samt från den s k verkligheten, något lite mer komplext: <a href="http://id.loc.gov/authorities/subjects/sh2002000569.html">http://id.loc.gov/authorities/subjects/sh2002000569.html</a> och välj 'Visualization' så ser du en alternativ möjlighet att presentera en SKOS-struktur.<em> Notera att dessa exempel bara belyser vad som gjorts och <strong>inte</strong> på något vis skall ses som normerande.</em></p>
 <p class="bodyText">Den XSL som ges till dessa övningar ger bara ett exempel på hur en SKOS
@@ -375,20 +373,20 @@ där ovanstående exempel är lite utvidgat. Några mindre vokabulärer sammanst
   trädform. 
 </p>
 
-<p class="bodyText">Om du laddar ner den filen från PingPong och placerar den i samma lokala mapp som övriga filer under namnet <code>skos-style2.xsl</code>, kan du byta ut  <br/>
-<span style="background-color : yellow ; font-family : Courier, sans-serif">&lt;?xml-stylesheet type="text/xsl" href="SKOS-style3.1.xsl"?&gt;
+<p class="bodyText">Om du laddar ner den filen från PingPong och placerar den i samma lokala mapp som övriga filer under namnet <code>skos-styleHie.xsl</code>, kan du byta ut  <br/>
+<span style="background-color : yellow ; font-family : Courier, sans-serif">&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
 </span> mot <br/>
-<span  style="background-color : yellow ; font-family : Courier, sans-serif">&lt;?xml-stylesheet type="text/xsl" href="skos-style2.xsl"?&gt;
+<span  style="background-color : yellow ; font-family : Courier, sans-serif">&lt;?xml-stylesheet type="text/xsl" href="skos-styleHie.xsl"?&gt;
 </span> för att få en trädform.</p>
 
-<p class="bodyText">Du använder med fördel stilmallarna för att kontrollera så att du får det resultat du förväntar dig. Det måste dock sägas att för <code>skos-style2.xsl</code> 
-gäller att den förutsätter att din SKOS inte är polyhierarkisk, dvs att något koncept inte har fler än ett <code>broader</code>-element.  I övrigt är <code>skos-style2.xsl</code>  
+<p class="bodyText">Du använder med fördel stilmallarna för att kontrollera så att du får det resultat du förväntar dig. Det måste dock sägas att för <code>skos-styleHie.xsl</code> 
+gäller att den förutsätter att din SKOS inte är polyhierarkisk, dvs att något koncept inte har fler än ett <code>broader</code>-element.  I övrigt är <code>skos-styleHie.xsl</code>  
 ett bra verktyg för att upptäcka felaktigheter i hierarkin.</p>
 
 <hr style="width : '80%'"/>
 		<p class="footer">
 
-Uppdaterad: 2014-11-25<br/>
+Uppdaterad: 2016-06-18<br/>
 
 Mikael.Gunnarsson at hb.se</p>
 	</body>

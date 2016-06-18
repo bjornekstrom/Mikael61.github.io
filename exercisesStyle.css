@@ -1,0 +1,50 @@
+/* Generated with EditiX at Fri Jan 15 19:15:12 CET 2010 */
+
+.note { clear : left ;
+		margin : 1em 15em 1em 15em ;
+		border : solid black 1px ;
+		font-size : 0.9em ;
+		font-style : italic
+		}
+		.bodyText {
+		font-family : verdana; 
+		font-size : 10pt; 
+		text-indent : '-1em'; 
+		margin-left: 130px; 
+		margin-right : 100px;
+		}
+		.bodyTextPostXML {
+		font-family : verdana; 
+		font-size : 10pt; 
+		text-indent : '-1em'; 
+		margin-left: 130px; 
+		margin-right : 100px;
+		}
+		.marginHeader {
+		font-family : Garamond; 
+		font-size : 14pt; 
+		font-weight : bold;
+		color : gray; 
+		float : left;
+		}
+		.exempel {
+		font-family : arial; 
+		font-size : 10pt; 
+		background-color : yellow; 
+		margin-left: 130px; 
+		margin-right : 100px;
+		}
+		.footer {
+		font-family : 'Times New Roman'; 
+		font-size : 10pt ;
+		font-style : italic ;
+		line-height : 1.5em
+		}
+		code {
+		color : maroon
+		}
+		.marker {
+		font-weight : bold ;
+		color : blue
+		}
+em { font-family : "Courier new", sans-serif ; color : maroon }

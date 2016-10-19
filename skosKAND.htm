@@ -33,8 +33,10 @@ SKOS &mdash;  Introduktionsövningar
 <p class="bodyText">Till skillnad från de flesta andra XML-tillämpningar finns inte SKOS definierat som en DTD eller ett XML schema, vilket dock inte betyder att SKOS
 inte är väldefinierat. W3Cs rekommendationer och övrig dokumentation skall ses som normativ och det är vanligen dit man vänder sig för att fastställa vad som är korrekt 
 och inkorrekt. Det är dock viktigt att komma ihåg att även om det är lite osäkert om man kan tala om giltig och ogiltig SKOS, så kan man i alla fall tala om välformad 
-och icke välformad SKOS. Avsaknaden av en DTD har visat sig vara problematisk i undervisningssammanhang, därför har en sådan konstruerats för den här kursen. 
-Tillägget av en DTD möjliggör att du får utvidgat stöd av EditiX när du jobbar med att utveckla din SKOS, så att du får felmeddelanden när du t ex placerar ett 
+och icke välformad SKOS. Avsaknaden av en DTD har visat sig vara problematisk i undervisningssammanhang, därför har en 
+	sådan konstruerats för den här kursen. 
+Tillägget av en DTD möjliggör att du får utvidgat stöd av EditiX när du jobbar med att utveckla din SKOS, 
+	så att du får felmeddelanden när du t ex placerar ett 
 <code>skos:broader</code>-element direkt under rotelementet <code>rdf:RDF</code>.
 </p>
 
@@ -62,13 +64,17 @@ vi har att göra med, och vilken teckenkodning som valts. (Se tillbaka på de f�
 	</pre>
 	
 	<p class="bodyText">Vi skall också ha en länk till en XSL som ger vokabulären en presentation - dvs transformerar SKOS-filen till XHTML. Den här stilmallen skall 
-	du hämta i PingPong från dokument-mappen och placera lokalt på samma ställe som du sparar SKOS-filen. SKOS-filen skall ha extensionen
+		du hämta från <a href="https://github.com/Mikael61/Skos">https://github.com/Mikael61/Skos</a> och placera lokalt på samma ställe som du sparar SKOS-filen. SKOS-filen skall ha extensionen
 	<code>xml</code> och dess namn <strong>inte innehålla mellanslag</strong> samt endast tecken ur sekvenserna 0-9, a-z och A-Z. XSL-filen skall ha namnet <code>skos-styleList.xsl</code> 
+		(som den är benämnd i Github-arkivet)
 	men 
 	du kan givetvis byta namn på den om du samtidigt korrigerar <code>href</code>-värdet i XML-filen.
  Slutligen infogar du också en länk till DTDn, som du givetvis också
-	måste hämta från PingPong och placera i samma lokala mapp som övriga filer.
+	måste hämta från samma Github-arkiv (med namnet skos.dtd) och placera i samma lokala mapp som övriga filer.
 </p>
+		<p class="note">För att hämta hem respektive fil så pekar du på den och högerklickar för att därefter spara
+		på lämplig plats. På en Mac får du hålla nere Ctrl när du klickar på filens namn.</p>
+
 
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;

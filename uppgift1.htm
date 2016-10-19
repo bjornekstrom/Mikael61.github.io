@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+		.note { clear : left ;
+		margin : 1em 15em 1em 15em ;
+		border : solid black 1px ;
+		font-size : 0.9em ;
+		font-style : italic
+		}
+		</style>
+<meta name="generator" content="HTML Tidy, see www.w3.org" />
+<title>XML-&ouml;vning</title>
+</head>
+<body>
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; margin-right: 30px; color : red; background-color : FFFFCC;">
+Reviderad HT09</h2>
+
+<h1 style=
+"font-family : Garamond; font-variant : small-caps; color : navy; background-color : silver; margin-left : 80px; margin-right : 80px;">
+XML - uppgift 1</h1>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+Ett v&auml;lbyggt XML-dokument</h2>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Den h&auml;r uppgiften g&aring;r ut p&aring; att du skall skapa
+en fil som &auml;r ett v&auml;lbyggt (<em>well-formed</em>) XML-dokument (Ray, 2003, s. 6).
+Inneh&aring;llet i dokumentet skall vara n&aring;gon typ av
+f&ouml;rteckning, vad det &auml;r du vill f&ouml;rteckna
+v&auml;ljer du sj&auml;lv. Det kan vara t ex en bibliografi, en
+lista &ouml;ver dina CD-skivor, de filmer som din
+favoritregiss&ouml;r ligger bakom, eller en adresslista &ouml;ver
+dina v&auml;nner. Finessen med XML &auml;r ju just att du
+sj&auml;lv kan best&auml;mma vilka element du skall anv&auml;nda
+dig av och vad de skall heta, så länge slutresultatet är ett välformat 
+dokument</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Syftet med denna första övning är att du skall bli bekant med vad
+som är karaktäristiskt för ett välbyggt (eller välformat) dokument. 
+Begreppet välformade dokument konstituerar tillsammans med begreppet <em>giltiga</em> 
+dokument kärnan i XML-uppmärkningen.  
+</p>
+
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+I övningarna görs då och då referenser till HTML, endast för jämförelser, eftersom 
+någon kanske är bekant med HTML eller XHTML. Om du inte är det, så strunta i dem. 
+</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+I &ouml;vning <a style=
+"font-family : verdana; font-size : 10pt; color : red;" href=
+"uppgift2.htm">2</a> (och kanske <a style=
+"font-family : verdana; font-size : 10pt; color : red;" href=
+"uppgift3.htm">3</a>) kommer du sedan att skapa en DTD som
+<em>definierar</em> ditt xml-dokument (Ray, 2003, s. 7). 
+Det du &aring;stadkommer i den
+h&auml;r f&ouml;rsta &ouml;vningen är endast en
+inneh&aring;llslig struktur och kommer bara att 
+presenteras som en tr&auml;dstruktur i
+webbl&auml;saren. Kom ih&aring;g att du m&aring;ste arbeta i senare 
+versioner av Internet Explorer eller Firefox, annars kommer övningarna
+inte att fungera som avsett.</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Ett XML-dokument (en
+<i>dokumentinstans</i> i XML-termer) kan skapas i vilken enkel textredigerare som
+helst, förutsatt att den kan spara vad du gör med standardiserad teckenkodning. 
+</p>
+<p class="note">
+Företrädesvis ISO-8859-1 (Latin 1) eller UTF-8 (Se Ray, 2003, kap. 9). Vi rekommenderar EditiX,
+men till denna första övning uppmanas du, av pedagogiska skäl, att använda Notepad/Anteckningar, 
+som följer med alla Windows-installationer. Notepad sparar som default i ANSI (vilket är liktydigt
+med windows-1252) som är nästan detsamma som ISO-8859-1. Editix sparar dock som default i utf-8.
+</p>
+
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+B&ouml;rja d&auml;rf&ouml;r med att &ouml;ppna ett nytt
+f&ouml;nster i Notepad och spara det i en ny mapp som t ex
+xmltest.xml. Du kan naturligtvis d&ouml;pa filen till vad du
+vill, men den skall ha extensionen <code>.xml</code> (Använd inte mellanslag. 
+Använd något av tecknen a--z,A--Z,0-9 eller understreck).
+ Det
+f&ouml;rsta du nu skall g&ouml;ra &auml;r att ange f&ouml;r
+webbl&auml;saren att den l&auml;ser ett xml-dokument. Det
+g&ouml;r du genom att &ouml;verst p&aring; sidan skriva:</p>
+
+<p style=
+"font-family : 'Times New Roman'; font-size : 10pt; font-weight : bold; color : silver; float : left;">
+deklarera xml</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</p>
+
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+eller
+</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;</p>
+
+
+<p style=
+"font-family : verdana; font-size : 10pt; color : red; margin-left: 130px; margin-right : 100px;">
+T&auml;nk p&aring; att XML g&ouml;r skillnad mellan gemener och
+versaler, s&aring; anv&auml;nd alltid samma i m&auml;rkena och
+var noggrann n&auml;r du skriver av instruktioner. Värdet för encoding är dock inte kastkänsligt (case sensitive).</p>
+
+<p class="note">Inga tecken får förekomma före xml-deklarationen, inte ens mellanslag eller tomma rader.</p>
+
+<p style=
+"font-family : 'Times New Roman'; font-size : 10pt; font-weight : bold; color : silver; float : left;">
+felmeddelanden<br />
+i IE 5.x</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Ett XML-dokument m&aring;ste per definition vara v&auml;lbyggt,
+vilket i praktiken inneb&auml;r att webbläsarna inte
+accepterar n&aring;gra felaktigheter i koden. De 
+kontrollerar allts&aring; syntaxen i ditt
+XML-dokument och om dokumentet inte &auml;r v&auml;lbyggt ger
+webbl&auml;saren dig dessutom tips om vad som &auml;r fel. Titta
+d&auml;rf&ouml;r lite extra noga p&aring; de eventuella
+felmeddelanden du f&aring;r.
+</p>
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Du har nu angett att dokumentet f&ouml;ljer W3Cs regler f&ouml;r
+XML 1.0 och att teckenkodningen antingen f&ouml;ljer den ISO-standard som kallas
+Latin-1 eller utf-8. 
+Båda teckenuppsättningarna inkluderar st&ouml;d f&ouml;r &aring;,
+&auml; och &ouml;. 
+Av praktiska skäl skall du emellertid undvika
+anv&auml;ndningen av &aring;, &auml; och &ouml; i
+XML-m&auml;rkena.</p>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+Inneh&aring;ll</h2>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Nu skall du fylla p&aring; med inneh&aring;llet i dokumentet. Som
+&ouml;vningsexempel v&auml;ljer vi att skapa en bibliografi, men
+som n&auml;mndes ovan kan du naturligtvis kalla elementen
+f&ouml;r vad du vill, s&aring; l&auml;nge det inte
+inneh&aring;ller n&aring;gra mellanslag. Undvik &auml;ven punkt
+(.), understreck (_) och siffror f&ouml;rst i
+element-namnet, samt språkspecifika tecken ö h t (t ex å, ä och ö).<br />
+Det f&ouml;rsta vi g&ouml;r &auml;r att skapa ett sk
+<i>rotelement</i>. Det &auml;r motsvarigheten till det
+&lt;html&gt;-element som omger ett HTML-dokuments innehåll, och &auml;ven
+h&auml;r skall startm&auml;rket ligga f&ouml;rst i dokumentet
+(men efter xml-deklarationen) och slutm&auml;rket ligga sist.</p>
+
+<p style=
+"font-family : 'Times New Roman'; font-size : 10pt; font-weight : bold; color : silver; float : left;">
+skapa ett rotelement</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;<br />
+&lt;bibliography&gt;<br />
+&lt;/bibliography&gt;</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Om du använder EditiX skall du i stället ange utf-8 som teckenkodning. Sedan skall du best&auml;mma dig f&ouml;r vilka uppgifter som
+skall finnas med. Till bibliografiexemplet v&auml;ljer vi
+f&ouml;rfattare, titel, utgivningsort, f&ouml;rlag,
+utgivnings&aring;r, sidantal, upplaga och ISBN-nummer. Varje post
+kallar vi f&ouml;r &lt;book&gt;. Den f&ouml;rsta uppgiften vi
+l&auml;gger in kommer d&aring; att se ut p&aring; f&ouml;ljande
+s&auml;tt:</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;<br />
+&lt;bibliography&gt;<br />
+&lt;book&gt;<br />
+&lt;author&gt;Petter &Aring;str&ouml;m&lt;/author&gt;<br />
+&lt;/book&gt;<br />
+&lt;/bibliography&gt;</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Om vi nu forts&auml;tter att fylla p&aring; med uppgifter kommer
+posten till slut att se ut s&aring; h&auml;r:</p>
+
+<p style=
+"font-family : 'Times New Roman'; font-size : 10pt; font-weight : bold; color : silver; float : left;">
+skapa ett antal poster<br />
+innuti dokumentet<br />
+&lt;bibliography&gt;</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;<br />
+&lt;bibliography&gt;<br />
+&lt;book&gt;<br />
+&lt;author&gt;Petter &Aring;str&ouml;m&lt;/author&gt;<br />
+&lt;title&gt;XML : Extensible Markup Language&lt;/title&gt;<br />
+&lt;place&gt;Stockholm&lt;/place&gt;<br />
+&lt;publisher&gt;Docendo&lt;/publisher&gt;<br />
+&lt;year&gt;1999&lt;/year&gt;<br />
+&lt;pages&gt;269 s.&lt;/pages&gt;<br />
+&lt;edition&gt;1:a uppl.&lt;/edition&gt;<br />
+&lt;ISBN&gt;91-7882-497-4&lt;/ISBN&gt;<br />
+&lt;/book&gt;<br />
+&lt;/bibliography&gt;</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Som du m&auml;rker s&aring; omges de flesta element i XML med ett
+start- och ett slutmärke. Startmärket <em>öppnar</em> ett element och slutmärket 
+<em>stänger det</em>. (Somliga kallar märken för "taggar")</p>
+<p class="note">&apos;Märke&apos; och &apos;tagg&apos; är alltså synonymer, men &apos;märke&apos; (eller tagg) och 
+&apos;element&apos; är <strong>inte</strong> synonymer</p>
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Forts&auml;tt sedan att skapa n&aring;gra poster till. Du har nu
+&aring;stadkommit ett dokument med en hierarkisk
+tr&auml;dstruktur, som f&ouml;rmodligen n&aring;got liknar den
+som illustreras nedan.</p>
+
+<div style="text-align : center"><img alt="trädstruktur" src=
+"trad1.gif" /></div> 
+
+<p style=
+"font-family : verdana; font-size : 10pt; color : red; margin-left: 130px; margin-right : 100px;">
+Var noga med att "n&auml;stla" (nest) start- och slutm&auml;rken
+p&aring; ett korrekt s&auml;tt n&auml;r du skriver dina
+XML-dokument, eftersom de annars inte kommer att accepteras av
+webbl&auml;saren eftersom dokumentet då inte längre är välbyggt.</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+V&auml;lj nu ut ett eller ett par element som kan delas upp och
+specificeras ytterligare, t ex f&ouml;rfattarnamnet. Fundera
+ocks&aring; lite kring vad man kan vinna p&aring; att s&aring;
+detaljerat som m&ouml;jligt beskriva varje uppgift i posten
+(dokumentet).</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Vi t&auml;nker oss nu att vi vill kunna ange vilket spr&aring;k
+som titeln &auml;r skriven p&aring;. Det &auml;r ju en uppgift
+som l&auml;mpligen kan ligga tillsammans med sj&auml;lva titeln,
+ett slags best&auml;mning till denna. (Observera
+att det är titelns språk som anges, inte det språk på vilket boken
+är skriven, det är en annan sak) 
+Vi introducerar d&auml;rf&ouml;r ett attribut som
+vi kallar "language" och l&aring;ter det ing&aring; i &lt;title&gt;
+p&aring; samma s&auml;tt som ett attribut i HTML.</p>
+
+<p style=
+"font-family : 'Times New Roman'; font-size : 10pt; font-weight : bold; color : silver; float : left;">
+infoga ett attribut</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+&lt;title language="engelska"&gt;XML : Extensible Markup
+Language&lt;/title&gt;</p>
+
+<p class="note">Notera att <code>language</code> är attributets namn och <code>engelska</code> dess värde. 
+Notera också att vi inte introducerat ett nytt element, vi har utvidgat ett redan befintligt element
+ med ett attribut.</p>
+
+<p style=
+"font-family : 'Times New Roman'; font-size : 10pt; font-weight : bold; color : silver; float : left;">
+tomma element</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+<i>Tomma element</i> konstrueras utan slutm&auml;rke.
+Tomma element blir aktuella då du vill ha element som snarare skall infogas 
+av webbläsaren från en extern fil, eller om du vill ha ett element som betecknar
+en viss bestämd punkt i ett dokument, t ex en radbrytning eller sidbrytning.
+I XML m&aring;ste man markera att ett
+element &auml;r tomt, annars kommer det program som skall tolka
+filen att forts&auml;tta leta efter ett slutm&auml;rke som inte
+finns, vilket resulterar i att filen inte bed&ouml;ms som
+v&auml;lbyggd. Att elementet &auml;r tomt markerar man i XML
+genom att s&auml;tta ett snedstreck (/) sist i m&auml;rket, t ex
+<code>&lt;nyrad/&gt;</code>. 
+
+</p>
+
+<p class="note">Observera att just 'nyrad' tycks presentationsorienterat
+och därför borde anses bryta mot grundtanken bakom XML. Radbrytningar 
+och sidbrytningar är meningslösa i XML-koden (de skall åstadkommas med stilmallar), 
+om de inte används i syfte att beskriva fysiska objekt, som gamla manuskript,
+vilket är fallet i t ex TEI.</p>
+
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+
+Fundera p&aring; om du kan komma p&aring; ett l&auml;mpligt tomt
+element att infoga i ditt dokument!</p>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+Kontrollera dokumentets syntax</h2>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Till slut skall du kontrollera att ditt xml-dokument &auml;r
+v&auml;lbyggt. Egentligen &auml;r detta ju redan gjort i och med
+att webbläsaren kontrollerar syntaxen i dokumentet. 
+</p>
+
+<p class="note">Webbläsarnas inbyggda xml-processorer är bra
+att förlita sig på, men att de inte ger några felmeddelanden är inte
+någon garanti för att ditt dokument är välformat. Exempelvis kan Firefox 
+protestera för ett dokument som Internet Explorer accepterar.</p>
+
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Men du kan
+&auml;ven, om du har ditt dokument sparat p&aring; en webbserver
+och allts&aring; har en URL till den, anv&auml;nda XML.coms <a
+style="font-family : verdana; font-size : 10pt; color : red;"
+href="http://www.xml.com/pub/a/tools/ruwf/check.html">syntax
+checker</a>. M&ouml;jligheten att kopiera in sin
+XML-uppm&auml;rkta text finns ocks&aring;. (Du kan testa detta
+idag, om du vill. Men tjänsten är ofta ur funktion, fortsätt då enligt
+nedan)</p>
+
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+En annan metod är att du använder en validerande xml-editor, som EditiX. Dessa
+verktyg ger dig stöd för att infoga uppmärkning, realtidskontroll av välbyggdhet
+(och giltighet) och visualiseringsmetoder som t ex med olika färgmarkeringar
+förtydligar vad som är märken, attribut och värden.
+</p>
+
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Försäkra dig om var du har sparat ditt xml-dokument, starta EditiX och öppna din
+XML-fil. Med tangentkombinationen [Ctrl - k] kan du nu kontrollera syntaxen. Om
+EditiX säger att ditt dokument är korrekt, så är det nog det också. Om inte,
+försök tyda felmeddelandena.
+</p>
+
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Nedan återges en skärmdump från EditiX, där ett P i st f ett p av misstag
+infogats. Du kan se hur en röd markering visar var felet befinner sig och hur
+ett felmeddelande säger:<br/>
+<code>The element type "place" must be terminated by the matching end-tag "&lt;/place&gt;"</code>
+</p>
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+<img style="width : 850px" src="ScreenShotEditix1.jpg" alt="Screen shot of Editix, showing error message"/>
+Observera att om antalet fel är många är det svårt att för validatorn att
+identifiera felen. Härifrån bör du alltid använda en validerande xml-editor
+ och/eller frekvent kontrollera syntaxen med hjälp av de webbtjänster som finns.
+</p>
+
+<p style=
+"font-family : 'Times New Roman'; font-size : 10pt; font-weight : bold; color : silver; float : left;">
+fler uppgifter</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Bygg nu p&aring; din f&ouml;rteckning med fler poster, skapa en
+ny f&ouml;rteckning, eller v&auml;lj en texttyp (t ex
+s&aring;nger, dikter, e-brev, protokoll eller liknande) och skapa
+l&auml;mpliga element f&ouml;r att m&auml;rka upp texter av denna
+typ. Kontrollera regelbundet syntaxen.</p>
+
+<div style="margin-left : 120px"><a style=
+"font-family : verdana; color : red; font-size : 10pt; font-weight : bold; text-decoration : none;"
+ href="uppgift2.htm">Uppgift 2</a></div>
+
+<hr style="width : '80%'" />
+<p style=
+"font-family : verdana; color : red; font-size : 8pt; font-style : italic; text-align : center">
+Uppdaterad: 2007-03-01<br />
+Helena Francke<br />
+Reviderad: 2008-04-07, sep 2009<br />
+Mikael Gunnarsson</p>
+
+<div style="text-align : center"><a style=
+"font-family : verdana; color : red; font-size : 8pt; font-style : italic;"
+ href="mailto:helena.francke@hb.se">Helena Francke</a></div>
+</body>
+</html>
+
+

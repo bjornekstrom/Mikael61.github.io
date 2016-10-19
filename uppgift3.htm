@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+		.note { clear : left ;
+		margin : 1em 15em 1em 15em ;
+		border : solid black 1px ;
+		font-size : 0.9em ;
+		font-style : italic
+		}
+		</style>
+<meta name="generator" content="HTML Tidy, see www.w3.org" />
+<title>XML-&ouml;vning</title>
+</head>
+<body>
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; margin-right: 30px; color : red; background-color : FFFFCC;">
+Reviderad HT09</h2>
+
+<h1 style=
+"font-family : Garamond; font-variant : small-caps; color : navy; background-color : silver; margin-left : 80px; margin-right : 80px;">
+XML - uppgift 3</h1>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+F&ouml;rdjupning av DTD-skapandet</h2>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Denna uppgift inneh&aring;ller lite osorterade tips om hur du kan
+g&aring; vidare och g&ouml;ra din DTD mer detaljerad. Testa dig
+fram i m&aring;n av behov och tid.</p>
+
+<p style=
+"font-family : 'Times New Roman'; font-size : 10pt; font-weight : bold; color : silver; float : left;">
+text + element</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+N&auml;r du har provat dig fram lite med olika xml-filer och
+DTDer, s&aring; hamnar du f&ouml;rmodligen f&ouml;rr eller senare
+i en situation d&auml;r du vill kunna ange i DTDn att ett element
+skall kunna inneh&aring;lla <i>b&aring;de</i> text och andra
+element (<em>mixed content</em>). Kom ihåg att <code>&lt;!ELEMENT book (author,title)&gt;</code>
+inte tillåter några som helst tecken (utom blanksteg, tabb och radbrytning)
+direkt i elementet <code>book</code>, endast elementen <code>author</code> och <code>title</code>
+Ett element med blandat innehåll kan inneh&aring;lla b&aring;de alfanumeriska
+teckenstr&auml;ngar och andra element - barn till
+det element de ing&aring;r i. Detta skrivs i DTDn p&aring;
+f&ouml;ljande s&auml;tt:</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+&lt;!ELEMENT letter (#PCDATA | sender)*&gt;</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+#PCDATA m&aring;ste alltid st&aring; f&ouml;rst i listan, och
+instruktionen m&aring;ste avslutas med en asterisk (*) som anger
+att inneh&aring;llet inte &auml;r obligatoriskt och att det
+f&aring;r f&ouml;rekomma hur många g&aring;nger som helst. </p>
+
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Det &auml;r för element med blandat innehåll inte m&ouml;jligt att ange exakt hur
+m&aring;nga g&aring;nger ett element f&aring;r f&ouml;rekomma,
+eller i exakt vilken ordning. H&auml;rav
+f&ouml;ljer att exempel 1 nedan &auml;r giltigt, men inte exempel
+2 eller 3. N&auml;r det &auml;r fr&aring;gan om enbart 'element
+content' och man inte vill ange elementens inb&ouml;rdes ordning,
+s&aring; kan man inte ange att ett element f&aring;r
+f&ouml;rekomma en eller ingen g&aring;ng (?). Anv&auml;nd
+ist&auml;llet asterisker (*). Exempel 4-7 nedan &auml;r giltiga,
+8 &auml;r det inte:</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+(1) &lt;!ELEMENT letter (#PCDATA | sender | receiver | message |
+date)*&gt;<br />
+(2) &lt;!ELEMENT letter (#PCDATA | sender+ | receiver+ | message+
+| date?)&gt;<br />
+(3) &lt;!ELEMENT letter (#PCDATA | (receiver, message,
+date)*)&gt;<br />
+(4) &lt;!ELEMENT letter ((sender | receiver)*, message+,
+date?)&gt;<br />
+(5) &lt;!ELEMENT letter (sender+ | (receiver+, message+,
+date?))&gt;<br />
+(6) &lt;!ELEMENT letter (sender | receiver | message |
+date)*&gt;<br />
+(7) &lt;!ELEMENT letter (sender* | receiver* | message* |
+date*)&gt;<br />
+(8) &lt;!ELEMENT letter (sender | receiver | message? |
+date)&gt;</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Exempel 8 illustrerar ett vanligt problem man stöter på och som gör arbetet med 
+DTD-notation särskilt knepig. Orsaken är av teknisk art. XML-specifikationen ger en förklaring.</p>
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+<code>((b, c) | (b, d))</code> är en icke-deterministisk modelldärför att när XML-processorn sett <code>b</code> 
+kan den inte vagöra vilken av de två undermodellerna som initierats. Om det är den första så är ett kommande 
+<code>d</code> inte giltigt, men om det är den andra så är det giltigt. XML-processorn kan inte se framåt.
+Just det här fallet kan göras deterministiskt genom att formuler om till <code>(b, (c | d))</code>.
+</p>
+
+
+<p style=
+"font-family : 'Times New Roman'; font-size : 10pt; font-weight : bold; color : silver; float : left;">
+tomma element</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Tomma element introducerades i första övningen. De är ganska triviala 
+att deklarera men lite knepiga att förstå sig på
+Grunden f&ouml;r att deklarera ett
+tomt element i DTDn &auml;r att anv&auml;nda nyckelordet
+EMPTY:</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+&lt;!ELEMENT nyrad EMPTY&gt;</p>
+
+<p style="font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Element som deklarerats som tomma, enligt ovan, måste skiljas från element som
+av en händelse råkar sakna innehåll i ett XML-dokument. Det mest välbekanta
+tomma elementet är antagligen <code>img</code>-elementet i en HTML-fil som vid
+rendering åstadkommer att en externt lagrad bild bäddas i i HTML-filens text.
+</p>
+
+
+<p style=
+"font-family : 'Times New Roman'; font-size : 10pt; font-weight : bold; color : silver; float : left;">
+styra v&auml;rdet till<br />
+attributen</p>
+
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+I xml-&ouml;vning 2 finns n&aring;gra exempel p&aring; hur man
+kan sl&aring; fast n&aring;gra alternativa v&auml;rden till ett
+attribut (n&aring;got av dessa v&auml;rden m&aring;ste d&aring;
+v&auml;ljas f&ouml;r att dokumentet skall vara v&auml;lbyggt) och
+g&ouml;ra det valfritt vilket av dem som skall anv&auml;ndas
+genom att anv&auml;nda nyckelordet IMPLIED [1], hur man kan
+v&auml;lja ett "default-v&auml;rde" som kommer att g&auml;lla om
+man inte anger n&aring;got v&auml;rde till attributet [2], samt
+hur man kan ange att ett v&auml;rde <i>m&aring;ste</i>
+f&ouml;rekomma [3].</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+(1) &lt;!ATTLIST title language (svenska | engelska | tyska)
+#IMPLIED&gt;<br />
+(2) &lt;!ATTLIST title language (svenska | engelska | tyska)
+"svenska"&gt;<br />
+(3) &lt;!ATTLIST title language CDATA #REQUIRED&gt;</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Om det skulle bli aktuellt i n&aring;got undantagsfall finns
+ocks&aring; m&ouml;jlighet att ange att attributets v&auml;rde
+skall vara fixerat med nyckelordet FIXED [4].</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+(4) &lt;!ATTLIST title language CDATA
+#FIXED "svenska"&gt;</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+Har man tv&aring; eller flera attribut till ett element kan dessa
+anges i samma attribut-deklaration. Detta brukar f&ouml;r
+tydlighets skull g&ouml;ras p&aring; tv&aring; olika rader:</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 130px; margin-right : 100px;">
+&lt;!ATTLIST title language (svenska | engelska) #IMPLIED</p>
+
+<p style=
+"font-family : arial; font-size : 10pt; background-color : yellow; margin-left: 223px; margin-right : 100px;">
+doctype (monografi | artikel | rapport) #REQUIRED&gt;</p>
+
+<p style=
+"font-family : verdana; font-size : 10pt; text-indent : '-1em'; margin-left: 130px; margin-right : 100px;">
+<a style="font-family : verdana; font-size : 10pt; color : red;"
+href="uppgift1.htm">uppgift 1</a> - <a style=
+"font-family : verdana; font-size : 10pt; color : red;" href=
+"uppgift2.htm">uppgift 2</a></p>
+
+<hr style="width : '80%'" />
+<p style=
+"font-family : verdana; color : red; font-size : 8pt; font-style : italic; text-align : center">
+Uppdaterad: 2007-03-01<br />
+Helena Francke<br />
+Reviderad: 2008-04-07, sep 2009<br />
+Mikael Gunnarsson</p>
+
+<div style="text-align : center"><a style=
+"font-family : verdana; color : red; font-size : 8pt; font-style : italic;"
+ href="mailto:helena.francke@hb.se">Helena Francke</a></div>
+</body>
+</html>
+
+

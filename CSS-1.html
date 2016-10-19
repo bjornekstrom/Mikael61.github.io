@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="exercisesStyle.css" type="text/css"  />
+<title>CSS-&ouml;vning 1</title>
+</head>
+<body>
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; margin-right: 30px; color : red; background-color : FFFFCC;">
+Webbredaktörprogrammet VT10</h2>
+
+<h1 style=
+"font-family : Garamond; font-variant : small-caps; color : navy; background-color : silver; margin-left : 80px; margin-right : 80px;">
+CSS-&ouml;vning 1
+</h1>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+CSS från början</h2>
+
+<p class="bodyText">
+I dessa introducerande övningar till CSS skall du bekanta dig med de mest grundläggande principerna i CSS. 
+Du skall skriva CSS-regler för befintliga HTML-element, där deras form modifieras, och du skall skaffa dig en överblick 
+av vilka visuella egenskaper som varje HTML-element har och hur de kan modifieras.
+</p>
+
+<p class="bodyText">
+Låt oss nu anta att du har följande version av Valans spådom från dina första html-övningar. 
+Om du har en annorlunda version spelar inte så stor roll, men instruktionerna får du då anpassa efter bästa förmåga.
+</p>
+
+
+<pre class="exempel">
+    
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv"&gt;
+&lt;head&gt;
+  &lt;title&gt;Valans sång&lt;/title&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Valans spådom&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&quot;bild.gif&quot; alt=&quot;logotyp för HB&quot; /&gt; &lt;/p&gt;
+
+          &lt;h2&gt; Vers 1&lt;/h2&gt;
+      
+     &lt;p&gt; Hören mig alla&lt;br /&gt;
+      heliga släkten,&lt;br /&gt;
+      större och smärre&lt;br /&gt;
+      söner av Heimdall;&lt;br /&gt;
+      du vill ju, Valfader,&lt;br /&gt;
+      att väl jag täljer&lt;br /&gt;
+      forntida sägner,&lt;br /&gt;
+      de första,&lt;br /&gt;
+      jag minnes.&lt;/p&gt;
+
+
+         &lt;h2&gt; Vers 2&lt;/h2&gt;
+
+      &lt;p&gt;Jättar, i urtid&lt;br /&gt;
+      alstrade, minns jag,&lt;br /&gt;
+      som mig fordom&lt;br /&gt;
+      fostrat hava;&lt;br /&gt;
+      nio världar jag minns,&lt;br /&gt;
+      och vad som var i de nio,&lt;br /&gt;
+      måttgivande trädet&lt;br /&gt;
+      under mullen djupt.&lt;/p&gt;
+
+          &lt;h2&gt;Vers 3&lt;/h2&gt;
+
+     &lt;p&gt; I åldrarnas morgon,&lt;br /&gt;
+      då Ymer levde,&lt;br /&gt;
+      var ej sand, ej sjö,&lt;br /&gt;
+      ej svala vågor;&lt;br /&gt;
+      jorden fanns icke,&lt;br /&gt;
+      ej upptill himlen;&lt;br /&gt;
+      ett gapande svalg fanns&lt;br /&gt;
+      men gräs fanns ingenstädes.&lt;/p&gt;
+
+    &lt;ul&gt;
+   &lt;li&gt;&lt;a href=&quot;http://www.hb.se&quot; title=&quot;Högskolan i Borås&quot;&gt;HBs webbplats&lt;/a&gt;&lt;/li&gt;
+   &lt;/ul&gt;
+      
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p class="bodyText">Se till så att du har en version öppen i din
+editor, men observera att du inte skall redigera HTML-uppmärkningen (mer än i ett fall).
+Utgångspunkten är att uppmärkningen alltid skall vara färdig när man börjar
+arbeta med CSS.
+Förbered gärna och öppna samma fil i Internet Explorer eller Firefox (gärna båda), så
+kan du enkelt växla mellan editorn och webbläsaren i takt med att du gör
+förändringar. 
+</p>
+
+<p class="bodyText">
+De element du använt dig av är inte särskilt många, men vi skall nu se hur du
+kan göra för att redigera deras form med hjälp av CSS-regler. Låt oss starta med
+att styra typsnittet på texten. CSS-egenskapen för detta är
+<code>font-family</code>, och det är alltså den som skall sättas. Det följande
+är en s k <em>deklaration</em> som säger att typsnittet skall vara Verdana, och
+om det inte finns installerat så skall webbläsaren välja ett annat typsnitt utan
+serif (sans-serif). Det sista är alltså en s k "fallback"-åtgärd.
+</p>
+
+<pre class="exempel">
+font-family : Verdana, sans-serif
+</pre>
+
+<p class="bodyText">Emellertid räcker inte detta, utan vi måste också tala om
+för vad den här deklarationen skall gälla. Om
+det är grundtypsnittet vi vill komma åt, så är det för elementet <code>body </code>
+som den
+här regeln skall sättas. Alla s k <em>barn</em> (element inuti), barnbarn, barnbarnsbarn osv, till <code>body
+</code> ärver nämligen somliga av sina föräldrars egenskaper. 
+</p>
+
+<p class="note">CSS-specifikationen anger exempelvis för vilka egenskaper arvregeln gäller, 
+det gäller nämligen inte alla egenskaper, marginalbredd t ex. Kontrollera alltid gentemot 
+<a href="http://www.w3.org/TR/CSS21/propidx.html" title="property index">denna</a> (kolumn 5). Olika
+webbläsare har också tyvärr olika väl utvecklat stöd för CSS, vilket gör att man
+bör kontrollera om det fungerar i flera webbläsare. 
+</p>
+
+<pre class="exempel">
+body {
+font-family : Verdana, sans-serif
+}
+</pre>
+
+
+
+<p class="bodyText">är nu en fullständig CSS-regel som reviderar det typsnitt som webbläsaren har
+konfigurerats att rendera all text i. <code>body</code> <em>refererar</em> till
+elementet 'body' men kallas i kontexten av CSS för en <em>selektor</em>.
+Emellertid återstår att knyta CSS-regeln till HTML-dokumentet. 
+Det finns tre sätt att göra det på: 1) inline-stil, 2) inbäddad stilmall, och 3) extern stilmall. 
+En extern stilmall är i allmänhet alltid att föredra och också det sätt på vilket vi huvudsakligen skall förfara 
+i övningarna. En inbäddad stilmall är tillämpligt om vi vet att vi endast skall åstadkomma en enda HTML-fil med samma
+stil, eller om vi vill modifiera något i specifikation från en extern stilmall. Inline-stilen är
+nästan aldrig värt att öda kraft på och är ganska irrationell.</p>
+
+<p class="marginHeader">Inline</p>
+
+<p class="bodyText">
+Det mindre lämpliga sättet, inline, görs genom att lägga till ett attribut <code>style</code>
+för det element i dokumentet som man vill ge en särskild stil
+</p>
+
+<pre class="exempel">
+&lt;body style="font-family : Verdana, sans-serif"&gt;
+  ...
+&lt;/body&gt;
+</pre>
+
+<p class="bodyText">Notera också att
+selektorn då inte skall vara med. Prova att göra detta en gång, för att se effekten, men ta
+sen genast bort det igen. Det är inget bra förfarande. 
+</p>
+
+<p class="marginHeader">Inbäddad</p>
+
+<p class="bodyText">För att bädda in en stilmall måste du skapa (i <code>head</code>)
+ett element <code>style</code>, där du sen kan bädda in fler regler.
+</p>
+
+<pre class="exempel">
+&lt;head&gt;
+  ...
+  &lt;style type="text/css"&gt;
+  body {
+  font-family : Verdana, sans-serif
+  }
+   ...
+  &lt;/style&gt;
+&lt;/head&gt;
+</pre>
+
+<p class="note">Attributet <code>type</code> är nödvändigt och deklarerar
+vilken typ av stilmallsteknik det är frågan om, med hjälp av en standardiserad 
+MIME-kod, text/css.
+</p>
+
+<p class="bodyText">Prova nu med att göra detta i editorn och se vad som händer i
+webbläsaren (du måste förstås uppdatera med den nya versionen av filen). 
+Låt det sedan ligga kvar.
+</p>
+
+<p class="marginHeader">Extern</p>
+
+<p class="bodyText">Det tredje sättet är att tillämpa CSS-regler som ligger
+lagrade i en (eller flera) separat(a) fil(er). Det är att föredra och det sätt
+som du skall tillämpa CSS på i samband med det avslutande projektarbetet. 
+</p>
+
+<p class="bodyText">I det här fallet skapar du en helt ny fil som du döper till,
+exempelvis <kbd>stil.css</kbd>. Gör så, samtidigt som du sparar den i
+<strong>samma mapp</strong> som dina html-filer. Skriv in i denna (och spara) 
+</p>
+
+<pre class="exempel">
+  body {
+  font-family : "Times New Roman", serif
+  }
+</pre>
+
+<p class="bodyText">Nu skall du länka till denna fil med ett element
+<code>link</code>, som är definierat som ett tomt element.
+</p>
+
+<pre class="exempel">
+&lt;head&gt;
+  ...
+  &lt;link rel="stylesheet" type="text/css" href="stil.css" /&gt;
+  &lt;style type="text/css"&gt;
+  body {
+  font-family : Verdana, sans-serif
+  }
+   ...
+  &lt;/style&gt;
+&lt;/head&gt;
+</pre>
+
+<p class="bodyText">Med attributet <code>href</code> ges filnamnet (eller en URI) till stilmallen. 
+Med attributet <html>rel</html> (relation) deklareras att det är en stilmall.
+Granska nu resultatet. Ser du någon skillnad?
+</p>
+
+<p class="marginHeader">Cascading</p>
+
+<p class="bodyText">Fenomenet att en stilinstruktion ignoreras (även om allting
+är korrekt) har att göra med vad som givit namnet åt CSS, cascading, och handlar
+om i vilken ordning webbläsaren behandlar stilinstruktioner. Allra först gäller
+de stilar som preciserats "per default" av webbläsarproducenten, därefter vad
+som sägs i externa stilregler, följt av vad som sägs i inbäddade stilregler och
+sist vad som sägs på elementnivå. Om stilinstruktioner sent i denna ordning
+står i strid med vad som sagts tidigare, så "vinner" vad som sagts "sist".
+Därför blir grundtypsnittet i exemplet ovan ändå Verdana. Samma sak gäller i
+fråga om ordningen inom en inbäddad eller extern stilmall.
+</p>
+
+<p class="bodyText">Låt oss nu utvidga stilmallen genom att ge fler
+deklarationer för <code>body</code> och fler regler med andra selektorer. Låt
+oss först precisera vänstermarginalen. Gör alla redigeringar i den externa
+stilmallen. Den inbäddade kan du ta bort. Glöm inte att spara filen med stilmallen innan 
+du testar.
+</p>
+
+<pre class="exempel">
+  body {
+  font-family : "Times New Roman", serif ;
+  margin-left : 4em ;
+  }
+</pre>
+
+<p class="note">Observera bruket av semikolon mellan de två deklarationerna. Det
+är absolut nödvändigt, annars kommer det inte att fungera. För att inte glömma
+det när man lägger till fler deklarationer kan man lägga till ett extra
+semikolon allra sist också, men det är inte formellt nödvändigt.
+</p>
+
+<p class="bodyText">Egenskapen hos elementet <code>body</code> som här revideras
+är alltså vänstermarginalen, som har selektorn <code>margin-left</code>. Värdet
+som givits här är ett relativt värde som förändras om typsnittets storlek
+förändras. Vill man i stället ha en marginal med absolut storlek, kan man t ex ange
+antalet pixlar, exempelvis <code>40px</code>. Observera att det <strong>inte</strong>
+får vara ett mellanslag mellan måttenheten och måttets värde. <code>40 px</code>
+och <code>4 em</code> är fel och kommer inte att fungera.
+</p>
+
+<p class="marginHeader">Validera</p>
+
+<p class="bodyText">Precis som med HTML är det viktigt att CSS-mallen är
+korrekt. För att detektera fel så använder du företrädesvis 
+<a title="CSS validator" href="http://jigsaw.w3.org/css-validator/">W3Cs CSS validator</a>.
+Gör det med jämna mellanrum under tiden du arbetar fram mallen. Är det många fel så
+blir det svårare att hitta felaktigheterna. 
+</p>
+
+<p class="bodyText">Fortsätt nu med att revidera fler egenskaper för body, och
+därefter även för övriga element du använt dig av. För att bygga ut med fler
+regler, radar du bara upp dem efter varandra.
+</p>
+
+<pre class="exempel">
+  body {
+  font-family : "Times New Roman", serif ;
+  margin-left : 4em ;
+  }
+  h1 {
+  font-family : Arial, sans-serif
+  }
+</pre>
+
+<p class="bodyText">De egenskaper som man brukar vilja definiera är följande.
+</p>
+<ul class="bodyText">
+<li>Färg på texten (<code>color</code>)</li>
+<li>Bakgrundsfärg (<code>background-color</code>)</li>
+<li>Fontstorlek</li>
+<li>Fontstil, fontvikt (kursivering t ex)</li>
+<li>Fontvariant (small caps t ex)</li>
+<li>Ramar</li>
+<li>Padding (utrymmet mellan text och ram)</li>
+<li>Centrering, jämn höger- eller vänstermarginal </li>
+</ul>
+
+<p class="bodyText">Använd 
+<a href="http://www.w3.org/TR/CSS21/propidx.html" title="CSS spec">W3Cs specifikation</a> (eller någon annan resurs)
+för att hitta namnen på dessa
+egenskaper och hur de skall hanteras. Kontrollera regelbundet om det fungerar
+och validera i CSS-validatorn. När du anser dig klar skall du också kontrollera
+i en annan webbläsare om det fått samma effekt där. Notera skillnader och försök
+avgöra vilka egenskaper det gäller.
+</p>
+
+<hr style="width : '80%'" />
+<p class="footer">
+Fortsätt med <a href="html-2.html">HTML-fördjupningen.</a> <br/>
+Gå tillbaka till <a href="html-1.html">HTML-introduktionen</a> <br/>
+Uppdaterad: 2010-01-18<br />
+Mikael Gunnarsson</p>
+</body>
+</html>
+
+

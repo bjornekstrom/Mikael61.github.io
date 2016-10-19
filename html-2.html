@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="exercisesStyle.css" type="text/css"  />
+<title>(X)HTML-&ouml;vning 2</title>
+</head>
+<body>
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; margin-right: 30px; color : red; background-color : FFFFCC;">
+Webbredaktörprogrammet VT10</h2>
+
+<h1 style=
+"font-family : Garamond; font-variant : small-caps; color : navy; background-color : silver; margin-left : 80px; margin-right : 80px;">
+(X)HTML-&ouml;vning 2
+</h1>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+Sektionering, element <code>div</code> och <code>span</code></h2>
+
+<p class="bodyText">
+I dessa övningar skall du arbeta med att dela in ditt dokument i sektioner med
+avseende på grupper av element som har något gemensamt. I andra
+XML-tillämpningar, som t ex TEI (för digitalisering av tryckt material), 
+finns element definierade som avser att
+inkludera grupper av element med likartad betydelse eller funktion. Ett exempel i TEI är
+<code>fileDesc</code> (för bibliografisk beskrivning) som innehåller <code>titleStmt</code>,
+<code>publicationStmt</code> och <code>sourceDesc</code>, vilka i sin tur innehåller uppgifter 
+nödvändiga för att identifiera ett dokument, dess förlagor och omständigheter kring publiceringen.
+</p>
+<p class="bodyText">
+Något motsvarande finns inte definierat i HTML, och om man önskar använda HTML
+för att strukturera en text på ett meningsfullt sätt och samtidigt göra det
+möjligt att med hjälp av CSS modifiera exempelvis placeringen av grupper av
+element (som en navigationsmeny) så kan man göra bruk av ett element
+<code>div</code>, som på förhand inte har någon som helst inneboende betydelse.
+Elementet <code>div</code> kan dock ges två användbara attribut <code>id</code>
+och <code>class</code>.
+</p>
+
+<pre class="exempel">
+&lt;div class="kapitel"&gt;
+  &lt;h2&gt; ... &lt;/h2&gt;
+  &lt;p&gt; ... &lt;/p&gt;
+  &lt;p&gt; ... &lt;/p&gt;
+  &lt;p&gt; ... &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="kapitel"&gt;
+  &lt;h2&gt; ... &lt;/h2&gt;
+  &lt;p&gt; ... &lt;/p&gt;
+  &lt;p&gt; ... &lt;/p&gt;
+  &lt;p&gt; ... &lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+<p class="bodyText">kan exempelvis vara ett sätt på vilket det är möjligt att sektionera en text
+bestående av flera kapitel. Eftersom det inte finns något element för
+kapitelindelning i HTML så skapar man en <em>klass</em> av
+<code>div</code>-element, för att liksom emulera ett egenhändigt definierat
+kapitel-element.</p>
+
+<p class="note">Observera att värdet är helt och hållet godtyckligt men det är bra 
+om det är mnemoniskt, dvs om det är ett uttryck som hjälper till att minnas för vilket 
+ändamål det skapats. Det skall inte innehålla mellanslag, och för enkelhets skull endast 
+bokstäverna a-z, A-Z, eventuellt följt av någon siffra.</p>
+
+<p class="bodyText">
+Om det i stället är så att man har en typ av sektion som man vet med sig alltid
+endast förekommer en enda gång i ett dokument kan man med fördel använda
+attributet <code>id</code>. <code>id</code> kan, liksom <code>class</code>, 
+åsättas i stort sett varje element. Skillnaden är att det i ett dokument <em>inte</em>
+får finnas två element med <em>samma</em> värde för <code>id</code>.
+</p>
+
+<pre class="exempel">
+&lt;div id="leftMenu"&gt;
+  &lt;ul&gt; 
+    &lt;li&gt; ... &lt;/li&gt;
+    &lt;li&gt; ... &lt;/li&gt;
+    &lt;li&gt; ... &lt;/li&gt;
+    &lt;li&gt; ... &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</pre>
+
+<p class="bodyText">
+är ett sätt att skapa en behållare för en navigationsmeny.
+</p>
+
+<p class="bodyText">
+Elementet <span>span</span> kan användas på motsvarande sätt, men på "frasnivå",
+dvs skillnaden är att <code>div</code> är ett block-element och
+<code>span</code> ett inline-element. <code>span</code> kan därmed inte
+innehålla block-element (som <code>h1</code> eller <code>p</code>).
+</p>
+
+<pre class="exempel">
+&lt;span class="personNamn"&gt;Mikael Gunnarsson
+&lt;/span&gt;
+</pre>
+
+<p class="bodyText">
+är ett möjligt sätt att förfara med markeringen av personnamn i en text, om man
+finner ett behov av att kunna göra det.
+</p>
+
+<p class="bodyText">
+Din uppgift är nu att ta fram någon tidigare version av <cite>Valans
+spådom</cite> och skapa sektioner i den, namngivna med <code>class</code> eller
+<code>id</code>. Se det som en förberedelse inför nästföljande övningar i CSS,
+där du bl a skall modifiera placeringen av dem. Du behöver givetvis inte skapa
+div-sektioner om där redan finns ett HTML-element som i stället kan ges <code>class</code>
+eller <code>id</code>. Exemplet ovan med navigationsmenyn, givet att den inte
+skall innehålla något annat en en onumrerad lista, är bättre att hantera enligt
+nedan.
+</p>
+
+<pre class="exempel">
+  &lt;ul id="leftMenu"&gt; 
+    &lt;li&gt; ... &lt;/li&gt;
+    &lt;li&gt; ... &lt;/li&gt;
+    &lt;li&gt; ... &lt;/li&gt;
+    &lt;li&gt; ... &lt;/li&gt;
+  &lt;/ul&gt;
+</pre>
+
+<hr style="width : '80%'" />
+
+<p class="footer">
+Fortsätt med <a href="CSS-2.html">CSS fördjupningen.</a> <br/>
+Gå tillbaka till <a href="CSS-1.html">CSS-introduktionen</a> <br/>
+Uppdaterad: 2010-01-18<br />
+Mikael Gunnarsson</p>
+</body>
+</html>
+
+

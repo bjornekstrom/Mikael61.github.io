@@ -1,0 +1,502 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <link rel="stylesheet" href="exercisesStyle.css" type="text/css"  />
+<title>CSS-&ouml;vning 2</title>
+<style type="text/css">
+.exempelIEHostile .exempel {
+background-color : silver !important ;
+}
+</style>
+</head>
+<body>
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; margin-right: 30px; color : red; background-color : FFFFCC;">
+Webbredaktörprogrammet VT10</h2>
+
+<h1 style=
+"font-family : Garamond; font-variant : small-caps; color : navy; background-color : silver; margin-left : 80px; margin-right : 80px;">
+CSS-&ouml;vning 2
+</h1>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+Fördjupning</h2>
+
+<p class="bodyText">
+I de här sista introduktionsövningarna introduceras flertalet tillvägagångssätt,
+egenskaper och selektorer, som är lite svårare att bemästra. Även här gäller att
+du inte skall behöva redigera HTML-uppmärkningen. Vad som introduceras är
+följande:
+</p>
+
+<ul class="bodyText">
+ <li>Kontextberoende selektorer</li>
+ <li>Selektorer med referens till klasser och id</li>
+ <li>Pseudoklasser</li>
+ <li>Flytande element</li>
+ <li>Positionering</li>
+</ul>
+
+<p class="bodyText">
+Utgå ifrån följande exempel, eller det du gjorde i förra övningen (HTML 2). Vi
+tänker oss alltså att du har dina CSS-regler i filen <kbd>stil.css</kbd> (men i det följande 
+utgår jag ifrån att det inte finns några regler alls där).
+</p>
+
+
+<pre class="exempel">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv"&gt;
+ &lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+  &lt;link rel="stylesheet" type="text/css" href="stil.css" /&gt;
+  &lt;title&gt;Valans spådom&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;div id="header"&gt;
+			&lt;h1&gt;Valans spådom&lt;/h1&gt;
+			&lt;img src="bild.gif" alt="Valans bild"/&gt;
+		&lt;/div&gt;
+		&lt;ul id="leftMenu"&gt;
+			&lt;li&gt;
+				&lt;a href="http://..." title="Urtext"&gt; ... &lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href="http://..." title="Om texten"&gt; ... &lt;/a&gt;
+			&lt;/li&gt;
+		&lt;/ul&gt;
+		&lt;div id="body"&gt;
+			&lt;div class="vers"&gt;
+				&lt;h2&gt; Vers 1&lt;/h2&gt;
+				&lt;p&gt;
+	Hören mig alla &lt;br/&gt;
+        heliga släkten, &lt;br/&gt;
+        större och smärre &lt;br/&gt;
+        söner av Heimdall; &lt;br/&gt;
+        du vill ju, Valfader, &lt;br/&gt;
+        att väl jag täljer &lt;br/&gt;
+        forntida sägner, &lt;br/&gt;
+        de första, &lt;br/&gt;
+        jag minnes. &lt;br/&gt;
+				&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="vers"&gt;
+				&lt;h2&gt; Vers 2&lt;/h2&gt;
+				&lt;p&gt;Jättar, i urtid&lt;br/&gt;
+      alstrade, minns jag,&lt;br/&gt;
+      som mig fordom&lt;br/&gt;
+      fostrat hava;&lt;br/&gt;
+      nio världar jag minns,&lt;br/&gt;
+      och vad som var i de nio,&lt;br/&gt;
+      måttgivande trädet&lt;br/&gt;
+      under mullen djupt.&lt;/p&gt;
+			&lt;/div&gt;
+			&lt;div class="vers"&gt;
+				&lt;h2&gt;Vers 3&lt;/h2&gt;
+				&lt;p&gt; I åldrarnas morgon,&lt;br/&gt;
+      då Ymer levde,&lt;br/&gt;
+      var ej sand, ej sjö,&lt;br/&gt;
+      ej svala vågor;&lt;br/&gt;
+      jorden fanns icke,&lt;br/&gt;
+      ej upptill himlen;&lt;br/&gt;
+      ett gapande svalg fanns&lt;br/&gt;
+      men gräs fanns ingenstädes.&lt;/p&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div id="footer"&gt;
+			&lt;p&gt;Transkriberad av:&lt;/p&gt;
+			&lt;p id="update"&gt;Senaste uppdatering: &lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p class="marginHeader">Kontext-<br/>beroende <br/>selektorer
+</p>
+
+<p class="bodyText">Om vi nu önskar texten till alla verser i röd färg, så
+är det enkelt att göra med 
+</p>
+
+<pre class="exempel">
+p {
+color : red
+}
+</pre>
+
+<p class="bodyText">Emellertid så innebär det att text i alla stycken blir
+rödfärgad. För att förhindra det kan vi ange ett villkor, t ex att endast
+stycken som befinner sig i ett div-element skall bli röda, genom att före
+selektorn för aktuellt element skjuta till ett <code>div</code> och två 
+mellanslag mellan en vinkelparentes.
+</p>
+
+<pre class="exempel">
+div > p {
+color : red
+}
+</pre>
+
+<p class="bodyText">Bara <kbd>div p</kbd> fungerar också, men inkluderar
+då eventuella p-element längre ner i trädet. Någon begränsning på längden
+av en sådan selektor finns inte, <kbd>div div p em</kbd> skulle vara möjligt.
+</p>
+
+<p class="bodyText">Men inte heller det hjälper riktigt, därför att övriga
+stycken också befinner sig inuti ett div-element. 
+</p>
+
+<p class="marginHeader"><code>class</code> och <code>id</code>
+</p>
+
+<p class="bodyText">Om vi i stället sätter en regel genom att utnyttja den
+etikett vi satt på div-elementet tidigare, med hjälp av attributet <code>class</code>, så fixar vi
+det villkoret. 
+</p>
+
+<pre class="exempel">
+div.vers > p {
+color : red
+}
+</pre>
+
+<p class="bodyText">Nu gäller regeln endast stycken som befinner sig i sektioner
+med klassen 'vers'. På motsvarande sätt används element med <code>id</code>n. Den lilla
+sidfoten kan revideras på följande sätt
+</p>
+
+<div class="exempelIEHostile"><pre class="exempel">
+div#footer p {
+margin : 0 ;
+font-style : italic ;
+background-color : gray
+}
+div#footer p#update {
+background-color : silver
+}
+</pre></div>
+
+<p class="note">Det här fungerar inte riktigt bra i IE 6.0. Den äldre webbläsarens hantering av
+bl a selektorer är bristfällig, och globalt sett är IE 6.0 den vanligaste webbläsaren.</p>
+
+<p class="bodyText">Notera alltså hur '.' betyder klass, och '#' betyder id. Här har, som du ser, den på förhand givna marginalen för
+alla stycken i ett element <code>div</code> med klassen 'footer' nollställts, och
+för sidfotens stycken har en grå bakgrundsfärg, samt en kursivering lagts till. 
+Den andra regeln avser alla stycken med <code>id</code> 'update', vars bakgrundsfärg satts
+till silver. Den andra regelns bakgrundsfärg ges företräde framför den första
+regelns bakgrundsfärg, eftersom den är mer specifik. 
+</p>
+
+<p class="bodyText">I själva verket, skall sägas, att eftersom det inte får
+finnas två element med samma id i ett dokument, är <kbd>p</kbd> överflödigt. Det
+räcker med <br/><code>#footer #update</code>.
+</p>
+
+<p class="bodyText">CSS-specifikationen har en <a href="http://www.w3.org/TR/CSS21/selector.html" title="selektorer">systematisk genomgång</a> av olika typer
+av selektorer</p>
+
+<p class="bodyText">En annan selektor som kan vara bra att känna till är den <em>universella</em> selektorn <code>*</code> 
+som refererar till <em>alla</em> element. För att exempelvis lättare identifiera alla element i ett dokument 
+kan man sätta en tunn ram för alla element, något som bara är tillämpligt när man arbetar med formgivningen.
+</p>
+
+<p class="exempel">
+* {
+border : solid black 1px
+}
+</p>
+
+<p class="bodyText">Samma tecken, men med en annan innebörd, är aktuell i samband med
+kommentarer i CSS-filen. I en CSS-fil används inte <code>&lt;!-- utkommenterad text --&gt; </code>
+för att infoga kommentarer, utan <code>/* utkommenterad text */ </code>. När du inte behöver ramarna
+som hjälp längre, kan du kommentera ut den regeln enligt nedan.
+</p>
+
+<pre class="exempel">
+/*
+* {
+border : solid black 1px
+}
+*/
+</pre>
+
+<p class="bodyText">När man avser att göra en mycket omfattande
+formgivning önskar man ofta god kontroll på marginaler och padding. Det kan
+ bli lite knepigt eftersom många element har på förhand givna marginaler och padding
+ som är webbläsarberoende. Dessa är det då bra att nollställa.
+</p>
+
+<p class="exempel">
+* {
+margin : 0 ;
+padding : 0
+}
+</p>
+
+<p class="bodyText">Prova nu med att modifiera layouten för de
+div-element som du givit <code>class</code> eller <code>id</code> utifrån de CSS-egenskaper 
+du bekantat dig med i tidigare övningar.
+</p>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+Pseudo-klasser</h2>
+
+<p class="bodyText">Där finns i CSS något som kallas för pseudo-klasser. Exempelvis, när det 
+gäller elementet <code>a</code> (en länk) så kan det vara så att webbläsaren tidigare
+"besökt" den resurs som länken pekar på. Vidare finns det pseudo-klasser som avser att beteckna
+hur en användare interagerar med element, t ex när pekaren befinner sig ovanför ett element. 
+För <code>a</code> brukar stilar för följande pseudoklasser definieras. 
+</p>
+
+<ul class="bodyText">
+<li><code>link</code> betecknar länkarna innan de är besökta och utan att musen befinner 
+sig över det område som avgränsas av elementet <code>a</code>s märken.</li>
+<li><code>visited</code> betecknar länkar vars mål har besökts av aktuell webbläsare</li>
+<li><code>hover</code> betecknar den status ett element har när man för musen över den</li>
+<li><code>active</code> betecknar ett ankare vars länk just för tillfället har aktiverats. </li>
+</ul>
+
+<p class="bodyText">
+Här är ett exempel, men prova också att sätta andra egenskaper. 
+</p>
+
+<pre class="exempel">
+a {
+text-decoration : none
+}
+a:link { color : blue
+}
+a:visited { color : red
+}
+a:hover { color : black
+}
+a:active { color : yellow
+}
+</pre>
+
+<p class="note">Notera att dessa pseudoklasser måste definieras i den ordning de
+ges ovan. Ordningen kan kommas ihåg med uttrycket<em>LoVeHAte</em>.
+</p>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+Flytande element</h2>
+
+<p class="bodyText">Så här långt har du sett hur elementen beter sig utifrån om
+de är definierade som block- eller inlineelement. Blockelementens textinnehåll
+tar hela det horisontella utrymmet i anspråk och inlineelementen radas upp efter
+varandra horistontellt. Vi kallar detta för det <em>normala flödet</em>. Det normala flödet
+är 
+mycket begränsat med avseende på möjligheterna till kontroll av var på skärmen eller pappret
+ett element läggs ut.
+</p>
+
+<p class="bodyText">Element kan brytas ur det normala flödet på flera sätt. Ett
+element som befinner sig mellan två andra element kan man låta <em>flyta</em>,
+vilket innebär att de två andra elementen inte "låtsas om" att det flytande
+elementet finns där, och, om det är två inline-element, så lägger de sig tätt
+intill varandra som om det flytande elementet inte fanns. Det flytande element
+läggs tätt emot föräldraelementets vänster- eller högerpadding, samtidigt som
+det normala flödet lämnar utrymme för det flytande elementets innehåll
+</p>
+
+<p class="bodyText">Prova med att låta menyn flyta och ge det en gul bakgrund så
+att du ser var elementet hamnar, samt definiera en padding och marginaler.
+</p>
+
+<pre class="exempel">
+#leftMenu { 
+float : left ;
+background-color : yellow ;
+margin : 1em ;
+padding : 1em ;
+border : solid red 1px
+}
+</pre>
+
+<p class="bodyText">Notera hur det normala flödet,
+när det blivit längre än det flytande elementet, dras mot vänstermarginalen.
+Hade detta varit en för texten illustrerande bild eller kanske en initial
+bokstav i den följande texten, kunde det varit användbart. Nu ser det mest
+konstigt ut. Låt därför även sektionen med verserna flyta. 
+</p>
+
+<pre class="exempel">
+#body { 
+float : left ;
+}
+</pre>
+
+<p class="bodyText">Flytande element kan ställa till besvär som du ser. Sidfoten, 
+som nu är det enda stycke text efter rubriken som tillhör det normala flödet, 
+lägger sig kloss mot bilden. Det kan dock åtgärdas på följande sätt.
+</p>
+
+<pre class="exempel">
+#footer {
+clear : left
+}
+</pre>
+
+<p class="bodyText">
+<code>clear</code> är en viktig egenskap i kombination med
+flytande element. Den används för att ge direktiv om att innan elementets
+innehåll läggs ut, så ska vänstermarginalen vara ren på flytande element. Andra
+värden, vars innebörd är intuitiv, är <kbd>left</kbd> och <kbd>both</kbd>.
+</p>
+<p class="bodyText">
+Observera att om det sista flytande element är bredare än webbläsarens fönster
+så kommer de två flytande elementen inte att läggas ut bredvid varandra. Prova
+med att gradvis öka bredden på de flytande elementen. Öka 600 nedan, tills
+elementet inte längre får plats.
+</p>
+
+<pre class="exempel">
+#body { 
+float : left ;
+width : 600px
+}
+</pre>
+
+<p class="bodyText">
+Kontentan är att man får vara försiktig och sätta bredden på elementen så att
+båda elementen ryms i varje webbläsare man vill att det skall fungera i.
+Användare har olika skärmupplösningar! För närvarande är det vanligast med 1024x768 pixler. 
+(Se <a href="http://marketshare.hitslink.com/">Global Market Share Statistics</a>, även för
+annan typ av statistik.)
+</p>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+Positionering</h2>
+
+<p class="bodyText">Ibland har man behov av att mer exakt positionera text. Där
+är fr a två värden till egenskapen <code>position</code> som är värda att beakta, 
+<code>absolute</code>
+och <code>relative</code>
+</p>
+
+<p class="bodyText">Ett
+element som befinner sig mellan två andra element kan man låta positionera <em>absolut</em>,
+vilket innebär att de två andra elementen ignorerar det positionerade
+elementet, och, om det är två inline-element, så lägger de sig tätt
+intill varandra som om det positionerade elementet inte fanns. Så långt är det
+likt det flytande elementet, men där är två väsentliga skillnader. 1) Det
+normala flödet ignorerar det absolut positionerade elementet helt och hållet,
+och om det positionerade elementet inte placerats på ett "säkert ställe" kommer
+det normala flödets innehåll att överlappa det positionerade elementets
+innehåll. 2) Därför måste att absolut positionerat element också ges en absolut
+position på papperet, skärmen, eller vilken typ av "viewport" som är aktuell.
+Även dess höjd och bredd bör beräknas för att undvika överlappning.
+</p>
+
+<p class="bodyText">Ett stabilt sätt att åstadkomma två kolumner är att låta den
+vänstra kolumnen genereras av ett absolut positionerat element och den högra kolumnen tillhöra det 
+normala flödet men ha en vänstermarginal som är lika med eller större än den vänstra kolumnen
+är bred (annars får man en överlappning). Nedan är ett förslag. 
+</p>
+
+<pre class="exempel">
+#leftMenu { 
+position : absolute ;
+left : 10px ;
+background-color : yellow ;
+border : solid red 1px ;
+width : 150px ;
+height : 150px
+}
+#body { 
+width : 600px ;
+margin-left : 170px
+}
+</pre>
+
+<p class="bodyText">
+Egenskaperna <code>left</code>, <code>top</code>, <code>right</code>,
+<code>bottom</code> används för att precisera var man vill att det positionerade
+elementet skall placeras. <kbd>left : 10px</kbd> ger att det läggs 10px från
+omgivande elements (förälderelementets) yttre vänstermarginal.
+</p>
+
+<p class="bodyText">Ett
+element som befinner sig mellan två andra element kan man låta positionera <em>relativt</em>,
+vilket innebär att de två andra elementen lämnar utrymme för det relativt positionerade
+elementet, som om det fortfarande fanns där. Det relativt positionerade
+elementet har dock i själva verket förflyttats från den position det skulle ha
+haft i det normala flödet, vilket måste preciseras med lämpliga egenskaper, t ex
+<code>left</code>, vars referenspunkt nu inte är det omgivande elementets
+ytterkant utan elementets ursprungliga position i det normala flödet. Det är
+möjligt med negativa värden när det gäller dessa mått. <kbd>left : -20px</kbd>
+är 20px till vänster om ursprungspositionen
+</p>
+
+<p class="bodyText">
+Prova med att ändra i din stilmall från absolute till relative. Prova till sist
+med att ändra till <kbd>position : fixed</kbd> i stället och se vad som händer.
+<kbd>position : fixed</kbd> fungerar i Safari, senaste version av Firefox, och
+IE 8, men inte i Opera eller IE 6.
+</p>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+Mediaberoende regler</h2>
+
+<p class="bodyText">
+Ibland kan det vara bra att skriva olika regler för olika media, t ex för pappersutskrift respektive
+bildskärm. Det kan göras genom att bädda in reglerna med <code>@media [media] { }</code>, t ex enligt nedan.
+</p>
+
+<pre class="exempel">
+@media screen { 
+body { font-family : Verdana, sans-serif }
+}
+@media print { 
+body { font-family : Times, serif }
+}
+</pre>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+Avslutning</h2>
+
+
+<p class="bodyText">
+Kolumnliknande former (som experimenten med float och position ovan resulterar i)
+ är det mycket vanligt att man önskar sig, inte bara 2
+kolumner, som vi exemplifierat med här, utan kanske 3 eller 4. Tidigare, när
+CSS-reglers effekt
+var betydligt mer oförutsägbar i olika webbläsare, löste man sådant med att
+använda tabell-element ur repertoaren av HTML-element. Varje tabellkolumn fick
+utgöra en kolumnavdelning på webbsidan. Vi har undvikit att introducera den tekniken, 
+därför att
+den gör våld på innebörden av tabellelementen, resulterar i en svårredigerad
+HTML-kod, försvårar en rationell och enkel revidering av en webbplats layout och
+försvårar tillgängligheten för användare med behov av talsyntes eller andra hjälpmedel, eller annan
+läsutrustning än en fullvuxen desktop-dator (mobiltelefon t ex). Det går utmärkt
+att lösa med hjälp av egenskaperna <code>float</code> och <code>position</code>.
+</p>
+
+<p class="bodyText">
+Dessa fyra övningar har endast hastigt introducerat  de element i HTML och de CSS-tekniker som
+vi tror att du kan ha mest uppenbar användning av. Att mer ingående förstå och
+mer effektivt hantera teknikerna är något som kräver övning, nyfikenhet,
+påhittighet och ett regelbundet konsulterande av den dokumentation som står till
+buds. Kursens lärare/handledare ser givetvis också sin roll i att bistå dig i detta uppdrag
+och tror sig veta, av erfarenhet, att kommunikation med handledare och
+medstudenter är av avgörande betydelse.
+</p>
+
+
+<hr style="width : '80%'" />
+<p class="footer">
+Gå tillbaka till <a href="html-2.html">HTML-fördjupningen</a> <br/>
+Uppdaterad: 2010-01-23<br />
+Mikael Gunnarsson</p>
+</body>
+</html>
+
+

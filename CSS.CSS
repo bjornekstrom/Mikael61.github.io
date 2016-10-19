@@ -1,0 +1,90 @@
+STRONG {
+	COLOR: black; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+}
+OL {
+	MARGIN-LEFT: 3em
+}
+ACRONYM {
+	font-stretch: expanded
+}
+P {
+	COLOR: black; FONT-SIZE: 11pt; MARGIN-LEFT: 2em; MARGIN-RIGHT: 2em
+}
+BLOCKQUOTE {
+	COLOR: black; FONT-SIZE: 9pt; MARGIN-LEFT: 3em; MARGIN-RIGHT: 2em
+}
+H4 {
+	COLOR: black; FONT-SIZE: 13pt; MARGIN-LEFT: 2cm
+}
+H3 {
+	FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 1.3em; MARGIN-LEFT: 2em
+}
+H2 {
+	COLOR: blue; FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 1.5em; MARGIN-TOP: 0em; PADDING-BOTTOM: 0em; PADDING-LEFT: 0em; PADDING-RIGHT: 0em; PADDING-TOP: 0em
+}
+H1 {
+	BACKGROUND-COLOR: silver; COLOR: blue; FONT-FAMILY: "Arial bold", sans-serif; FONT-SIZE: 1.7em; padding : 0.3em; TEXT-ALIGN: left ; border-bottom : solid red ; border-left : solid red
+}
+BODY {
+	BACKGROUND-COLOR: white; BACKGROUND-IMAGE: url(gtent/yelgrain.gif); FONT-SIZE: 11pt; MARGIN-LEFT: 11em; MARGIN-RIGHT: 3em
+}
+A {
+	TEXT-DECORATION: none
+}
+.viktigt {
+	COLOR: black; FONT-SIZE: 12pt; FONT-STYLE: oblique
+}
+.tips {
+	FONT-SIZE: 9pt; MARGIN-LEFT: 12em
+}
+.exempel {
+	BACKGROUND-COLOR: yellow; FONT-SIZE: 10pt; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.news {
+	BACKGROUND-COLOR: yellow; COLOR: black; FONT-SIZE: 14pt; FONT-VARIANT: small-caps; MARGIN-LEFT: 4em; MARGIN-RIGHT: 4em
+}
+.footer {
+	BACKGROUND-COLOR: yellow; COLOR: black
+}
+.CENTER {
+	COLOR: black; TEXT-ALIGN: center
+}
+.reference {
+	COLOR: gray
+}
+.references {
+	MARGIN-LEFT: 4em; TEXT-INDENT: -1em
+}
+.kommentar {
+	FONT-STYLE: italic; MARGIN-LEFT: 4em
+}
+.creator {
+	FONT-WEIGHT: bold
+}
+.underrubrik {
+	FONT-SIZE: 1.1em; FONT-STYLE: italic; MARGIN-LEFT: 5px
+}
+.user-declaration {
+	FONT-FAMILY: Arial, sans-serif; MARGIN-LEFT: -3px; MARGIN-RIGHT: -10px
+}
+.inledning {
+	MARGIN-LEFT: 5em
+}
+.rubrik {
+	COLOR: gray; FONT-SIZE: 1em; FONT-WEIGHT: bold; LEFT: 10px; POSITION: absolute; WIDTH: 8em
+}
+.index {
+	FONT-SIZE: 1em; FONT-WEIGHT: bold; LEFT: 10px; POSITION: absolute; WIDTH: 9em
+}
+
+Q {
+	FONT-STYLE: italic
+}
+
+.header {
+	FONT-FAMILY: Arial, sans-serif; FONT-SIZE: 8pt; MARGIN-BOTTOM: 15px; MARGIN-LEFT: 35px; MARGIN-TOP: 10px
+}
+@media screen {
+.url {display : none}
+BODY {margin-left : 11em}
+}

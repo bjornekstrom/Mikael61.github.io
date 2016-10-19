@@ -1,0 +1,468 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="exercisesStyle.css" type="text/css"  />
+<title>(X)HTML-&ouml;vning 1</title>
+</head>
+<body>
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; margin-right: 30px; color : red; background-color : FFFFCC;">
+Webbredaktörprogrammet VT10</h2>
+
+<h1 style=
+"font-family : Garamond; font-variant : small-caps; color : navy; background-color : silver; margin-left : 80px; margin-right : 80px;">
+(X)HTML-&ouml;vning 1
+</h1>
+
+<h2 style=
+"font-family : Garamond; font-variant : small-caps; margin-left: 80px; color : navy">
+(X)HTML från början</h2>
+
+<p class="bodyText">
+I dessa inledande övningar 
+skall du försöka identifiera en trädstruktur och dess element i en given oformaterad 
+text och 
+därefter märka upp den med den repertoar av HTML-element som står till buds. 
+Du ska bekanta dig med textstruktur, hyperlänkar och olika typer av listor, 
+samt hur man kan infoga bilder i en text. Det är säkert frestande att fråga hur
+man kan göra si eller så för att få grafiskt mer tilltalande form. Vi väntar emellertid med
+den saken helt och hållet tills vi introducerat CSS.
+<br/>
+Hädanefter kommer vi för enkelhets skull att emellanåt
+tala i termer av HTML och inte XHTML. 
+</p>
+<p class="note">Uttrycket 'XHTML' avser alltid XML-varianter av äldre SGML-varianter som väsentligen är identiska. 
+<code>XHTML 1.0 Strict</code> är identisk med <code>HTML 4.01 Strict</code> men
+i XML-syntax. I båda fallen är dock rotelementets namn  
+<code>html</code>.</p>
+<p class="bodyText">
+En html-fil kan precis som en XML-fil produceras med vilken texteditor som helst
+(men observera vad som sagts i inledningen till de <a title="xml-övningar" href="http://www.adm.hb.se/~mg/ko2/uppgift1.htm">
+första XML-övningarna</a>, om
+teckenkodning). Här utgår vi dock från att du använder EditiX.
+Starta därför EditiX och välj <kbd>New</kbd> från <kbd>File</kbd>-menyn. Välj därefter
+i listan <code>XHTML 1.0 document</code>. EditiX kommer nu att infoga en
+grundläggande uppmärkning som liknar följande:
+</p>
+
+<pre class="exempel">
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;!-- New document created with EditiX at Sat Dec 12 17:25:09 CET 2009 --&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+ &lt;head&gt;
+  &lt;title&gt; Your TITLE &lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+<p class="bodyText">
+I formellt avseende är detta en korrekt bas att utgå ifrån. Alla html-dokument
+har ett rotelement <code>html</code> i vilket ingår ett <code>head </code>och
+ett <code>body</code>, samt att det i elementet <code>head</code> är obligatoriskt med ett
+element <code>title</code> som givetvis skall innehålla webbsidans titel (det är
+denna som framträder i webbläsarfönstrets titeletikett 
+och vanligen används av sökmaskiner vid listning av träffar). 
+Emellertid är det i praktiken fördelaktigt att något utvidga uppmärkningen. Dels
+är den första xml-deklarationen med sin deklaration av teckenkodning inte nog
+för alla webbläsare, utan dessa behöver ytterligare en instruktion i ett s k
+meta-element som är definierat som ett tomt element. I själva verket är det lika 
+bra att exkludera xml-deklarationen av skäl som vi tills vidare ignorerar.
+Vidare kan det vara
+fördelaktigt att ange det språk som dokumentet är skrivet på, med ett attribut
+till rotelementet. Modifiera därför enligt följande:
+</p>
+
+<pre class="exempel">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv"&gt;
+ &lt;head&gt;
+  &lt;title&gt; Your TITLE &lt;/title&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p class="note">Teknisk notis, som kan ignoreras: attributet <code>xmlns</code> till elementet html är en s k
+namnrymdsdeklaration (Se Ray, 2003, för detta fenomen) och uttrycker den s k
+givna namnrymden (default namespace), vilket (formellt sett) möjliggör inklusionen
+av andra xml-tillämpningar i html-dokumentet. <code>lang</code> är ett för alla
+XML-tillämpningar
+förhandsdefinierat attribut. Genom prefixet <code>xml:</code> till
+<code>lang</code> refereras till denna övergripande namnrymd.
+</p>
+
+<p class="bodyText">
+I exemplet ovan kan du se att utf-8 har valts som teckenkodning. Valet av teckenkodning är inte
+ovidkommande och ett besvärligt kapitel. I många fall räcker det att göra som ovan, och helt enkelt
+bara tala om vad man har använt, men vissa webbservrar kan ställa till problem om de inte är konfigurerade
+att beakta vad som sägs i ett <code>meta</code>-element enligt ovan. Varje webbserver skickar alltid med en
+s k http-header, som du som användare aldrig ser, där teckenkodning skall anges, och där vad som anges
+äger prioritet över vad som sägs i dokumentets <code>meta</code>-element. Ett sätt att inte behöva bekymra
+sig om detta, är att ersätta alla svenska tecken (och andra icke-engelska) med teckenentiter, å med &amp;aring;, ä med &amp;auml; och 
+ö med &amp;ouml;.
+</p>
+
+
+<p class="bodyText">
+Det är nu dags att fylla &quot;skelettet&quot; med innehåll. Kopiera och klistra
+in från nedanstående exempel den rena texten mellan de båda
+<code>body</code>-märkena och spara filen som exempelvis <kbd>valan.htm</kbd> 
+på en plats i filsystemet där du kan hitta tillbaka till den. Observera att
+filnamnet skall ha ändelsen <kbd>htm</kbd> eller <kbd>html</kbd>, och endast bör
+innehålla alfanumeriska tecken utan diakriter. <strong>Mellanslag är inte acceptabla i
+filnamn</strong>. Förse också dokumentet med en lämplig titel, dvs skriv något i
+elementet <code>title</code>.
+</p>
+
+
+
+<pre class="exempel">
+    
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv"&gt;
+&lt;head&gt;
+  &lt;title&gt;&lt;/title&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+Valans spådom
+
+           Vers 1
+      
+      Hören mig alla
+      heliga släkten,
+      större och smärre
+      söner av Heimdall;
+      du vill ju, Valfader,
+      att väl jag täljer
+      forntida sägner,
+      de första,
+      jag minnes.
+
+
+          Vers 2
+
+      Jättar, i urtid
+      alstrade, minns jag,
+      som mig fordom
+      fostrat hava;
+      nio världar jag minns,
+      och vad som var i de nio,
+      måttgivande trädet
+      under mullen djupt.
+
+          Vers 3
+
+      I åldrarnas morgon,
+      då Ymer levde,
+      var ej sand, ej sjö,
+      ej svala vågor;
+      jorden fanns icke,
+      ej upptill himlen;
+      ett gapande svalg fanns
+      men gräs fanns ingenstädes.
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p class="bodyText">Växla nu till Utforskaren (eller Finder i Mac-miljö), leta
+rätt på filen och öppna den med en valfri webbläsare. Eftersom texten inte har 
+någon uppmärkning alls blir det en enda lång ström av ord som läggs ut i 
+webbläsarfönstret. Karaktäristiskt för såväl XML som SGML är också att tabbar,
+serier av mellanslag och radbrytningstecken <em>i normalfallet</em> ignoreras när text 
+skall läggas ut.
+</p>
+
+<p class="bodyText">Betrakta nu texten och fundera en liten stund på hur den kan 
+analyseras med avseende på innehållselement. 
+</p>
+
+<p class="bodyText">I html finns fyra element som kan
+vara aktuella att använda här:
+</p>
+
+<ul class="bodyText">
+   <li><code>h1</code> - för rubriker på högsta nivån</li>
+   <li><code>h2</code> - för rubriker på nivå 2</li>
+   <li><code>p</code> - för stycken</li>
+   <li><code>br</code> - för radbrytningar</li>
+</ul>
+
+<p class="bodyText">
+Alla dessa är normala element med ett öppnande och ett stängande element, utom 
+radbrytningar som är tomt och skrivs <code>&lt;br /&gt;</code>. Använd
+nu dessa för att märka upp texten. Markera respektive avsnitt av text som du
+avser att märka upp med något av de första tre elementen, välj ur <kbd>Edit</kbd>-menyn <kbd>Surround by a tag</kbd>
+(eller dess motsvarande snabbkommando) och därefter det element du vill märka
+upp avsnittet med.
+</p>
+
+<p class="note">Det mellanslag som i märken för tomma element anges före <code>/</code>
+har att göra med att webbläsare egentligen behandlar XHTML som om det vore HTML
+(SGML alltså) och att det i SGML finns ett särskilt sett att förkorta
+uppmärkning som kan sammanblandas med tomma XHTML-element. Mellanslaget är
+alltså till för att säkra kompatibilitet.
+</p>
+
+<pre class="exempel">
+      &lt;h1&gt;Valans spådom&lt;/h1&gt;
+
+          &lt;h2&gt; Vers 1&lt;/h2&gt;
+      
+     &lt;p&gt; Hören mig alla&lt;br /&gt;
+      heliga släkten,&lt;br /&gt;
+      större och smärre&lt;br /&gt;
+      söner av Heimdall;&lt;br /&gt;
+      du vill ju, Valfader,&lt;br /&gt;
+      att väl jag täljer&lt;br /&gt;
+      forntida sägner,&lt;br /&gt;
+      de första,&lt;br /&gt;
+      jag minnes.&lt;/p&gt;
+
+
+         &lt;h2&gt; Vers 2&lt;/h2&gt;
+
+      &lt;p&gt;Jättar, i urtid&lt;br /&gt;
+      alstrade, minns jag,&lt;br /&gt;
+      som mig fordom&lt;br /&gt;
+      fostrat hava;&lt;br /&gt;
+      nio världar jag minns,&lt;br /&gt;
+      och vad som var i de nio,&lt;br /&gt;
+      måttgivande trädet&lt;br /&gt;
+      under mullen djupt.&lt;/p&gt;
+
+          &lt;h2&gt;Vers 3&lt;/h2&gt;
+
+     &lt;p&gt; I åldrarnas morgon,&lt;br /&gt;
+      då Ymer levde,&lt;br /&gt;
+      var ej sand, ej sjö,&lt;br /&gt;
+      ej svala vågor;&lt;br /&gt;
+      jorden fanns icke,&lt;br /&gt;
+      ej upptill himlen;&lt;br /&gt;
+      ett gapande svalg fanns&lt;br /&gt;
+      men gräs fanns ingenstädes.&lt;/p&gt;
+</pre>
+
+<p class="bodyText">I exemplet har vi alltså valt att &quot;översätta&quot; elementet 'vers'
+till <code>p</code>, eftersom det inte finns något element i html som är avsett
+för skönlitterära verser. I själva verket används <code>p</code> för väldigt
+mycket annat än just stycken i en brödtext. Observera att den här lösningen har
+översatt strofindelningen med en indelning medelst radbrytningar mellan strofer, 
+men det kunde också ha gjorts på något annat sätt.
+Därför finns inte heller ett <code>br</code> i slutet av varje strof.
+</p>
+
+<p class="bodyText">
+Granska nu din text i webbläsaren som tidigare, utan att stänga EditiX och genom
+att endast <em>uppdatera</em> webbläsarens innehåll (vilket görs på olika sätt
+beroende på i vilken miljö du sitter). Sannolikt liknar den nedanstående
+skärmdump.
+<br/>
+<img src="screenvalan.jpg" alt="skärmdump" width="100%"/>
+</p>
+
+<p class="bodyTextPostXML">
+Här finns en betydelsefull skillnad mellan andra xml-tillämpningar och xhtml som
+kräver en förklaring. Så här långt har vi inte definierat någon stil för vår
+text och ändå ser vi att rubriker och stycken formateras på ett bestämt sätt. I
+samband med övningarna i XML så presenterades all uppmärkning också i
+webbläsarfönstret innan någon stil definierats, men när det gäller xhtml och
+html så finns i webbläsarna en fördefinierad stil definierad för varje
+html-element. Exempelvis är det <code>meta</code>-element som ligger inom
+<code>head</code> osynligt.
+</p>
+
+<p class="note">Det är viktigt att notera att varje vers här inte inkluderar
+rubriken, eftersom html inte tillåter rubriker inuti stycken.  <code>&lt;h2&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;/p&gt;</code> är OK, men inte <code>
+&lt;p&gt;&lt;h2&gt;&lt;/h2&gt;&lt;/p&gt;</code>
+</p>
+<p class="marginHeader">Listor</p>
+<p class="bodyText">
+Låt oss nu prova en annan lösning för att på så vis lära känna några andra
+html-element. Det finns i html två typer av listor som är användbara i många sammanhang,
+punktlistor (<code>ul</code>) och numrerade listor (<code>ol</code>).
+Strukturen för <code>ol</code> är följande:
+</p>
+
+<pre class="exempel">
+&lt;ol&gt; 
+   &lt;li&gt;Hören mig alla&lt;/li&gt;
+   &lt;li&gt;heliga släkten,&lt;/li&gt;
+   ....
+&lt;/ol&gt;
+</pre>
+
+<p class="bodyText">
+Ersätt nu den tidigare uppmärkningen av varje verskropp av <code>p</code> respektive <code>br</code>, med
+numrerade listor. När du gjort det så kan du spara och samtidigt döpa om filen till t ex
+<kbd>valan-ol.htm</kbd> för att på så sätt kunna återvända till tidigare lösningar
+i kommande övningar, där mer fokus läggs på utformning av elementen. Efter varje förändring 
+du gör kan du byta namn på filen, för att på 
+så sätt bevara historiken. Prova också
+med <code>ul</code> i st f <code>ol</code>.
+</p>
+
+<p class="bodyText">
+Det är också möjligt att nästla listor, t ex enligt följande:
+</p>
+
+<pre class="exempel">
+&lt;ol&gt;
+   &lt;li&gt; Vers 1
+     &lt;ol&gt; 
+      &lt;li&gt;Hören mig alla&lt;/li&gt;
+      &lt;li&gt;heliga släkten,&lt;/li&gt;
+      ....
+      &lt;/ol&gt; 
+   &lt;/li&gt;
+   &lt;li&gt; Vers 2
+      &lt;ol&gt; 
+        &lt;li&gt; 
+	...
+        &lt;/li&gt; 
+     &lt;/ol&gt;
+   &lt;/li&gt;
+&lt;/ol&gt;
+</pre>
+
+<p class="bodyText">
+Prova. Men här får du vara varsam så att nästlandet blir korrekt. 
+</p>
+<p class="marginHeader">Länkar</p>
+<p class="bodyText">
+En av de mest utmärkande företeelser för webbsidor är hyperlänkar som kan
+beskrivas som en definierad relation mellan ett område i din webbsida och en
+annan webbsida (eller ett annat område), där ett område vanligen utgörs av ett
+stycke text eller en bild. Länkar definieras med elementet <code>a</code> som är en
+förkortning av <em>anchor</em> (ankare) och har alltid ett eller flera attribut.
+</p>
+
+<pre class="exempel">
+  &lt;a href=&quot;http://www.hb.se&quot;&gt;HBs webbplats&lt;/a&gt; 
+</pre>
+
+<p class="bodyText">
+Värdet till attributet <code>href</code> (<em>hyperlink reference</em>) är alltså
+i det här fallet en URL. 
+</p>
+
+<p class="note">Värdet till <code>href</code> kan vara en URI eller en URI
+referens. URIer är t ex URLer och URNer, medan en URI referens kan vara endast
+ett filnamn, t ex som i <code>&lt;a
+href=&quot;index.htm&quot;&gt;Hem&lt;/a&gt;</code>, vilken måste lösas upp
+internt för att webbläsaren skall kunna lokalisera filen.  
+</p>
+
+<p class="bodyText">
+Det är lämpligt att också alltid lägga till ett 
+element <code>title</code>,
+för att på så sätt signalera målet för länken 
+</p>
+
+<pre class="exempel">
+  &lt;a href=&quot;http://www.hb.se&quot; title=&quot;Högskolan i Borås&quot;&gt;HBs webbplats&lt;/a&gt; 
+</pre>
+
+<p class="bodyText">
+Leta nu upp lite resurser som relaterar till det stycke fornnordisk
+kulturhistoria du arbetat med, och lista dem som länkar i en onumrerad lista. Du
+får själv välja var du vill placera dem, men notera att <code>a</code> är en typ
+av element som måste finnas inuti ett omgivande element av annan typ, t ex
+<code>p</code>. <code>a</code> tillhör kategorin <em>inline</em>-element
+</p>
+
+<pre class="exempel">
+...
+ &lt;body&gt;
+   &lt;a href=&quot;http://www.hb.se&quot; title=&quot;Högskolan i Borås&quot;&gt;HBs webbplats&lt;/a&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p class="bodyText">är felaktigt, men</p>
+
+<pre class="exempel">
+...
+ &lt;body&gt;
+   &lt;p&gt;&lt;a href=&quot;http://www.hb.se&quot; title=&quot;Högskolan i Borås&quot;&gt;HBs webbplats&lt;/a&gt;&lt;/p&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p class="bodyText">eller </p>
+
+<pre class="exempel">
+...
+ &lt;body&gt;
+   &lt;ol&gt;
+   &lt;li&gt;&lt;a href=&quot;http://www.hb.se&quot; title=&quot;Högskolan i Borås&quot;&gt;HBs webbplats&lt;/a&gt;&lt;/li&gt;
+   &lt;/ol&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+<p class="bodyText">är korrekt.</p>
+<p class="marginHeader">Bilder</p>
+<p class="bodyText">
+Bilder är givetvis en annan väsentlig företeelse i samband med webbsidor. Det
+element som används är <code>img</code> som alltid har minst ett attribut,
+<code>src</code>, vars värde är en URI eller URI referens som identifierar en
+bildfil. 
+</p>
+
+<pre class="exempel">
+  &lt;img src=&quot;bild.gif&quot; alt=&quot;logotyp för HB&quot; /&gt; 
+</pre>
+
+<p class="bodyText">Bilder lagras alltså separat från html-filen och bäddas in i
+texten i webbläsaren när denna läser in html-filen.
+De är normalt
+av en av tre olika typer, <code>gif</code>, <code>jpg</code> eller
+<code>png</code>. 
+</p>
+
+<p class="note">Värdet till attributet <code>alt</code> skall alltid anges för
+den händelse användaren inte kan ta del av bildens innehåll.
+</p>
+
+<p class="bodyText">Prova nu med att lokalisera en passande bild till Valans sång och 
+infoga den på lämplig plats. För <code>img</code> gäller att det är ett
+inline-element och likartade begränsningar som för <code>a</code> gäller.
+Placera därför bilden lämpligen i ett <code>p</code>-element.
+</p>
+
+<p class="bodyText">När du är klar så se till att EditiX inte ger några felmeddelanden. För säkerhets skull skall du också validera filen i W3Cs HTML-validator. <a href="http://validator.w3.org/" title="W3C validation">http://validator.w3.org/</a>
+</p>
+
+<p class="marginHeader">Publicering</p>
+
+<p class="bodyText">För att din fil skall bli tillgänglig på nätet eller på annan plats över huvud taget skall du också publicera den, så att du kan referera till den med en url. Om du är campusstudent så följer du instruktionerna här i PingPong som ges under "Instruktioner för homepage". Om du är distansstuderande så är det en bra idé att leta efter möjligheter att få tillgång till en webbarea någonstans, eventuellt på något s k webbhotell som inte kostar allt för mycket. Du kommer att ha nytta av det längre fram.
+</p>
+
+
+<hr style="width : '80%'" />
+<p class="footer">
+Fortsätt med <a href="CSS-1.html">CSS-introduktionen</a> <br/>
+Uppdaterad: 2010-01-21<br />
+Mikael Gunnarsson</p>
+</body>
+</html>
+
+

@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" href="exercisesStyle.css" type="text/css"/>
+<style type="text/css">
+.form {
+	font-family : Courier New, sans-serif;
+	font-weight : bold;
+	color : gray
+}
+</style>
+<title>Tillämpningsanvisningar för SKOS-uppgiften</title>
+</head>
+<body>
+<h1 style="font-family : Garamond; font-variant : small-caps; margin-left: 80px; margin-right: 30px; color : red; background-color : FFFFCC;"> 
+Masterprogrammet <em>biblioteks- och informationsvetenskap</em>
+</h1>
+<h2 style="text-align : center"> Tillämpningsanvisningar för SKOS-uppgiften <br/>
+  <span style="font-size : 11pt ; font-weight : normal">Senaste uppdatering:
+  2016-11-16</span> </h2>
+<p class="bodyText">I det följande ges anvisningar för examinationsuppgiften till delmomentet XML/SKOS, 
+i vilken du skall implementera en mindre vokabulär i SKOS-form.
+  Anvisningarna är normerande men är
+  inte fullständigt uttömmande. Utöver att vara normerande ger de också god hjälp
+  för uppgiftens genomförande. </p>
+<p class="bodyText">Kontrollerade vokabulärer i olika former har en lång historia
+  och användningen av fastställda vokabulärer utgör något centralt i alla verksamheter
+  som syftar till att bringa ordning i en samling objekt, begrepp eller andra
+  företeelser. Biologens klassifikation av flora och fauna är bara ett exempel.
+  Bibliotekens uppställning av böcker och att ge en meningsfull struktur åt en
+  webbplats är två andra exempel där kontrollerade vokabulärer är oundgängliga.</p>
+<h2>Uppgiften</h2>
+
+<p class="bodyText">Uppgiften går ut på att du skall skapa en
+  vokabulär med koncept och semantiska relationer mellan koncepten i form av en
+  SKOS. Man kan säga att uppgiften uppställer två svårigheter. För det
+  första skall du kunna hantera en XML-tillämpning på ett korrekt sätt
+  och för det andra skall du konceptuellt modellera en vokabulär. Båda
+  aspekterna ligger i slutändan till grund för betygsättningen.</p>
+
+
+<p class="bodyText"> Med utgångspunkt från en del av ett existerande schema (Dewey, SAB-systemet, Agrovoc etc) ska du identifiera relevanta
+koncept (begrepp, fenomen, händelser etc) som du uppfattar hänger någorlunda ihop. Dessa representeras redan av symboler och/eller 
+olika benämningar som du dock inte ska känna dig tvingad att själv använda för din vokabulär. I själva verket är det säkert så att de
+kan vara direkt olämpliga att använda som "föredragen benämning" (<code>prefLabel</code>). Din vokabulär ska du föreställa dig starkt 
+  begränsad till ett tänkt område (t ex modellbygge eller "risker med olika idrotter") som åtminstone delvis täcks av det schema du valt
+  att studera. Du ska också föreställa dig att det finns litteratur som rimligen kan indexeras (beskrivas) med hjälp av dessa koncept.
+  De föredragna benämningar du väljer på koncepten (<code>prefLabel</code>) ska vara sådana som är behjälpliga för den som söker efter
+ material och för den som beskriver materialet.
+ </p>
+
+<h2>Dokumenttypen SKOS</h2>
+
+<p class="bodyText">SKOS är huvudsakligen dokumenterad i W3Cs
+  rekommendation (och den senast gällande är daterad 
+  2009). Däri anges hur SKOS skall tillämpas. Emellertid är W3Cs
+  rekommendationer sällan lätta att läsa för en nybörjare och någon
+  annan fullständig dokumentation finns inte att uppbringa.  Där finns
+  inte heller någon DTD eller något XML schema definierat, som annars
+  är brukligt för XML-tillämpningar. I stora drag bör du klara dig med
+  den introduktion du får i samband med övningarna i Borås.</p>
+
+<p class="bodyText"> Av erfarenhet vet vi att det är mycket svårt att
+  som nybörjare göra rätt om det inte finns något tekniskt stöd till
+  hands. Det är t ex lätt att i stället för <code>skos:Concept</code>
+  skriva <code>skos:concept</code>, vilket är felaktigt. Därför har en
+  DTD konstruerats för ändamålet. DTDn möjliggör för EditiX (eller någon annan
+  validerande editor) att lämna
+  felmeddelanden för sådant som inte bara är icke välformad XML utan
+  även för sådant som är tekniskt inkorrekt med avseende på SKOS. </p>
+
+<p class="bodyText">Därför finns en DTD publicerad i GitHub som du
+  skall 1) hämta, 2) placera i <strong>samma mapp
+  </strong> som du har din XML-fil i, med filnamnet
+  <code>skos.dtd</code>, och 3) infoga följande rad i din XML-fil (om
+  den inte redan finns där)</p>
+
+<pre class="exempel">&lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;</pre>
+<p class="bodyText">i den s k prologen direkt efter xml-deklarationen.</p>
+<p class="bodyText">I XML-övning 2 och 3 fick du stifta bekantskap med hur en
+  DTD skapas (om du brydde dig om att göra dem, vilket inte var obligatoriskt). De kunskaper du har med dig från dem kan du i så fall använda för att läsa
+  DTDn och dess innehåll, men annars låter du bara filen ligga i filsystemet utan att öppna den.</p>
+<p class="bodyText">Arbeta hela tiden stegvis, låt EditiX regelbundet kontrollera
+  om din fil är korrekt eller inte (tangentkombination Ctrl+k), var uppmärksam
+  på eventuella felmeddelanden och åtgärda genom att korrigera dem omeddelbart.
+  En SKOS-fil med många fel är oerhört svår att korrigera, men med endast ett
+  eller två fel är det betydligt enklare. </p>
+<h2>Stilmallarna</h2>
+<p class="bodyText">För SKOS har två stycken stilmallar (XSL) producerats. Dessa
+  ger två olika presentationer av dina SKOS-data och är avsedda att visa på vad
+  man kan göra med en SKOS och samtidigt ge lite stöd för den konceptuella utformningen
+  av din vokabulär. Det förtjänar att understrykas att stilmallarna är sekundära
+  i relation till SKOS-filen. Med det menas att det är SKOS-filen som ligger
+  till grund för examinationen, inte dess presentation som kan fungera även om
+  SKOS-filen inte är korrekt.</p>
+
+<p class="bodyText">Precis som när det gäller DTDn måste de två filerna 1) hämtas
+  från GitHub, 2) placeras i <strong>samma mapp </strong> som du har din XML-fil,
+  med lämpliga filnamn,
+  och 3) infoga följande rad i din XML-fil (om den inte redan finns där)</p>
+<pre class="exempel">
+&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
+
+</pre>
+<p class="bodyText">i den s k prologen direkt efter den DOCTYPE-deklaration som
+  du lade till för DTDn. Värdet till attributet href kan sedan skiftas för att
+  byta mellan de två stilmallarna.</p>
+
+<p class="bodyText"> Den första stilmallen är utformad för att efterlikna traditionella
+  existerande tesaurer, men innehåller mer utförlig text. Den sorterar alfabetiskt
+  efter innehållet i elementen <em>prefLabel</em> och <em>altLabel</em>. Observera
+  att sorteringsalgoritmen beaktar även mellanslag och radbrytningar som tecken,
+  så du måste påbörja namnet direkt efter det öppnande märkets &gt; om du vill
+  att sorteringen skall vara förutsägbar.</p>
+<pre class="exempel">
+  &lt;skos:altLabel xml:lang=&quot;en&quot;&gt;Dog
+  &lt;/skos:altLabel&gt;
+</pre>
+<p class="bodyText">och inte</p>
+<pre class="exempel">
+  &lt;skos:altLabel xml:lang=&quot;en&quot;&gt; 
+     Dog
+  &lt;/skos:altLabel&gt;
+</pre>
+<p class="bodyText">Den andra stilmallen presenterar alla koncept med sina föredragna
+  namn i trädform för att åskådliggöra den hierarkiska strukturen &mdash; Den
+  här stilmallen är utmärkt för att upptäcka om du har någon inkonsekvens i din
+  konceptuella struktur. Om t ex något koncept har fler än ett bredare koncept,
+  om du glömt att ange smalare eller bredare koncept där de egentligen skall
+  finnas, eller om du har ett smalare koncept som refererar till sig självt som
+  smalare, så kan konstiga saker hända.</p>
+<p class="bodyText">Med hjälp av stilmallarna kan du lättare identifiera inkonsekvenser
+  och felaktigheter i din SKOS, men betänk att alla data du har i din SKOS inte
+  kommer med i presentationen. För den andra stilmallen (<code>skos-styleHie.xsl</code>)
+  används t ex endast elementen prefLabel, narrower och broader, samt de tre
+  Dublin Core-elementen. </p>
+<p class="bodyText">Följande SKOS-elements innehåll eller attributvärden behandlas
+  av <code>skos-styleList.xsl</code>:</p>
+<pre class="exempel">
+{prefLabel, altLabel, narrower, broader, related, definition, 
+scopeNote, example}
+</pre>
+<p class="bodyText">och följande Dublin Core elements innehåll</p>
+<pre class="exempel">
+{title, description, creator}
+</pre>
+<h2>EditiX</h2>
+<p class="bodyText">För uppgiften rekommenderas EditiX, även om all XML kan redigeras
+  med hjälp av t ex notepad. Emellertid är det osannolikt att uppgiften kan klaras
+  utan det stöd i form av felidentifikation som EditiX (eller någon annan dedikerad
+  XML-editor) ger. Var mycket uppmärksam på de felmeddelanden som EditiX ger
+  och fortsätt inte jobba innan du identifierat de fel som EditiX reagerat på
+  och blivit av med alla felmeddelanden.</p>
+<p class="bodyText">Ett inte helt ovanligt problem är att man får felmeddelanden
+  som säger att EditiX inte hittar DTDn (Can't load the DTD ...) eller att några
+  element inte är deklarerade. Inte så sällan beror detta på att man inte har
+  DTDn på rätt plats i filsystemet eller inte ens laddat ner den.  </p>
+<p class="bodyText">Vet man att man gjort rätt så bör man kontrollera vilket
+  filnamn man givit sin XML (SKOS-fil) och hur filstrukturen ser ut i den dator
+  man arbetar med. Filnamn eller mappnamn som innehåller mellanslag och/eller
+  språkspecifika tecken (t ex å, ä och ö) kan ofta ställa till problem. Korrigera
+  då fil- och mappnamn.</p>
+<p class="bodyText">Ett annat problem är att man förväntar sig att EditiX skall
+  öppnas så att SKOS-filen kan redigeras när man klickar eller dubbelklickar
+  på SKOS-filen i utforskaren (eller motsvarande filhanterare på en MAC eller
+  dator med annat operativsystem). Det går inte, därför att xml-filer vanligen
+  är associerade med något annat program för läsning (t ex Internet Explorer).
+  EditiX skall först startas och därefter öppnas SKOS-filen inifrån EditiX.</p>
+<h2>Vanliga missuppfattningar</h2>
+<p class="bodyText"> I en strikt struktur som i biologisk klassifikation där
+  familjen Canidae (hunddjur) är överordnad arten Canis Lupus och arten Canis
+  Lupus är överordnad underarten Canis Lupus Familiaris (hundar) kan vi intuitivt
+  dra slutsatsen att hundar är hunddjur, eftersom relationerna är generiska.
+  I en pragmatisk struktur däremot kan vi ha <span class="form">Konstarter narrower
+  Drama</span> och <span class="form">Drama narrower Orestien</span>, men här
+  följer inte <span class="form">Konstarter narrower Orestien</span>. Här beror
+  det på att Orestien är <em>ett exempel</em> på ett drama medan drama är <em>en
+  typ</em> av konstart. Bl a för att <em>narrower</em> kan beteckna olika slag
+  av semantiska relationer är <em>narrower</em> och <em>broader</em> intransitiva
+  i SKOS. </p>
+<p class="bodyText"> I ovanstående exempel kan man göra misstaget att fastställa
+  både <span class="form">Canidae narrower Canis Lupus</span> och <span class="form">Canidae
+  narrower Canis Lupus Familiaris</span>. Semantiskt är det korrekt, men det
+  bryter mot principerna för SKOS och för alla vokabulärer ö h t, vilket är lätt
+  att inse om man föreställer sig hur många narrower-deklarationer som då måste
+  göras för en toppterm. </p>
+<p class="bodyText">Ett annat problem som ofta uppstår är att man normalt för
+  en ganska begränsad domän ser associativa relationer mellan nästan alla koncept.
+  Var varsam med related och beakta att relationen är disjunkt i förhållande
+  till broader och narrower, dvs <span class="form">A narrower B</span> och <span class="form">A
+  related B</span> är felaktigt. </p>
+<p class="bodyText">Ett annat misstag man kan göra är att glömma symmetrin, dvs
+  om <span class="form">A related B</span> så skall även <span class="form">B
+  related A</span> anges, och om <span class="form">A narrower B</span> så skall
+  också <span class="form">B broader A</span> anges.</p>
+  
+  
+<h2>Inlämningsförfarande och omexamination</h2>
+<p class="bodyText"> SKOS-filen (XML-filen) lämnas in i därför avsedd modul i
+  PingPong.</p>
+<p class="bodyText">Den deadline som anges i PingPong är absolut och inlämningsmodulen
+  är stängd när deadline passerat. Observera att XML-filen måste ha extensionen
+  .xml för att du skall kunna lämna in den. Inlämningar som skickas in som bilaga
+  till ett PIM eller e-post-meddelande kommer inte att beaktas.</p>
+
+<p class="bodyText">När alla inlämningar granskats och betygsatts
+  öppnar modulen för kompletterande inlämning (Tidigast 3 veckor efter
+  deadline). I övrigt får du kontrollera med PingPong vad som gäller för omexamination.</p>
+
+<h2>Bedömningskriterier</h2>
+<p class="bodyText"> För betyget <strong>G</strong> gäller att SKOS-filen är
+  välformad och giltig, samt att följande element från SKOS har använts </p>
+<pre class="exempel">
+{prefLabel, altLabel, narrower, broader, related}
+</pre>
+<p class="bodyText">och följande DublinCore-element</p>
+<pre class="exempel">
+{title, description, creator}
+</pre>
+<p class="bodyText">Vidare krävs att elementen använts på ett enligt SKOS korrekt
+  sätt, exempelvis att det råder symmetri mellan koncept med associativa relationer,
+  samt att den konceptuella strukturen är rimlig. Ett exempel på en orimlig struktur
+  är där alla utom ett koncept har ett och samma koncept som broader.</p>
+<p class="bodyText"> För betyget <strong>VG</strong> ställs högre krav på vokabulärens
+  konsistens och att termernas inneboende semantik observerats, så
+  att t ex ett koncept som uppenbart är överordnat ett annat har hanterats på
+  ett adekvat sätt. Vidare fordras att ytterligare element ur SKOS än de ovan
+  nämnda har tillämpats, och tillämpats på ett korrekt sätt. För det ändamålet
+  måste sannolikt ytterligare dokumentation konsulteras, t ex W3Cs specifikationer.
+  (Om du vill laborera med SKOS-element som inte är definierade i DTDn eller
+  element från någon annan namnrymd måste du sätta DTDn ur spel genom att radera
+  länken till den. Men observera att detta bör inte göras förrän i ett sent skede.) </p>
+<p class="bodyText"> </p>
+<hr style="width : '80%'"/>
+<p class="footer"> 
+  Mikael.Gunnarsson at hb.se</p>
+</body>
+</html>

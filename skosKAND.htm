@@ -56,11 +56,11 @@ vi har att göra med, och vilken teckenkodning som valts. (Se tillbaka på de f�
 	<p class="note">I det fortsatta, när det talas om element och attribut, talas det om dem utan att inkludera namnrymdsprefixet.</p>
 		<pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;rdf:RDF 
+<strong>&lt;rdf:RDF 
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"&gt;
   
-&lt;/rdf:RDF&gt;
+&lt;/rdf:RDF&gt;</strong>
 	</pre>
 	
 	<p class="bodyText">Vi skall också ha en länk till en XSL som ger vokabulären en presentation - dvs transformerar SKOS-filen till XHTML. Den här stilmallen skall 
@@ -81,8 +81,8 @@ vi har att göra med, och vilken teckenkodning som valts. (Se tillbaka på de f�
 
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
-&lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;
+<strong>&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
+&lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;</strong>
 &lt;rdf:RDF 
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"&gt;
@@ -104,7 +104,7 @@ tre koncept som är generiskt relaterade.
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns:skos="http://www.w3.org/2004/02/skos/core#"&gt;
   
-  
+<strong>  
 &lt;skos:Concept rdf:about="#dogs"&gt;
 &lt;/skos:Concept&gt;
 
@@ -116,7 +116,7 @@ tre koncept som är generiskt relaterade.
 
 &lt;skos:Concept rdf:about="#canids"&gt;
 &lt;/skos:Concept&gt;
-
+</strong>
 
   
 &lt;/rdf:RDF&gt;

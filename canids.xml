@@ -15,7 +15,7 @@
 		<skos:altLabel>Dogs</skos:altLabel>
 		<skos:broader rdf:resource="#wolves"/>
 		<skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Hundar#"/>
-		<skos:example rdf:resource=" http://sv.wikipedia.org/wiki/Fil:Norwegian_Elkhound.jpg"/>
+		<skos:example rdf:resource="http://sv.wikipedia.org/wiki/Fil:Norwegian_Elkhound.jpg"/>
 	</skos:Concept>
 	<skos:Concept rdf:about="#wolves">
 		<skos:definition>Ett rovdjur</skos:definition>

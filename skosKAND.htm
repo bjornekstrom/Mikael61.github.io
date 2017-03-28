@@ -18,36 +18,21 @@
 SKOS &mdash;  Introduktionsövningar
 
 </h1>
-		<p class="bodyText">Följande övningar tjänar till att göra dig bekant med Simple Knowledge Organization System (SKOS), som är en XML-tillämpning 
-		avsedd för att implementera kontrollerade vokabulärer av den typen som biblioteksverksamheten känner som tesaurer (tesauri, thesaurer). 
-		SKOS är mer begränsad än t ex 
-		OWL och XTM, i den meningen att de associationer som kan etableras mellan olika koncept
-		är mindre nyanserade och begränsade till möjligheten att definiera över- och underordning, samt till mer eller mindre obestämda associationer 
-		utan hierarkiska implikationer. 
-		Fördelen är att SKOS
- är en relativt enkel tillämpning för att närma sig fenomenet kontrollerade vokabulärer.
-</p>
+		<p class="bodyText">Följande övningar tjänar till att göra dig bekant med Simple Knowledge Organization System (SKOS), som är en XML-tillämpning avsedd för att implementera kontrollerade vokabulärer av den typen som biblioteksverksamheten känner som tesaurer (tesauri, thesaurer). SKOS är mer begränsad än till exempel OWL och XTM, i den meningen att de associationer som kan etableras mellan olika koncept är mindre nyanserade och begränsade till möjligheten att definiera över- och underordning, samt till mer eller mindre obestämda associationer utan hierarkiska implikationer. 
+		Fördelen är att SKOS är en relativt enkel tillämpning för att närma sig fenomenet kontrollerade vokabulärer. </p>
+		<p class="bodyText">Övningarna bygger på att du omväxlande läser här och kodar på egen hand i någon XML-editor, till exempel EditiX eller XMLSpear. För varje steg finns en instruktion samt exemplifierande kod. Läs instruktionerna noggrant och kopiera koden från exemplet till din egen fil. När nästa kodexempel kommer är den nytillkomna koden markerad med fetstil - då är det enbart den koden du ska kopiera, övrig kod bör du redan ha i ditt dokument.</p>
 
 
 <h2>SKOS som XML-tillämpning</h2>
-<p class="bodyText">Till skillnad från de flesta andra XML-tillämpningar finns inte SKOS definierat som en DTD eller ett XML schema, vilket dock inte betyder att SKOS
-inte är väldefinierat. W3Cs rekommendationer och övrig dokumentation skall ses som normativ och det är vanligen dit man vänder sig för att fastställa vad som är korrekt 
-och inkorrekt. Det är dock viktigt att komma ihåg att även om det är lite osäkert om man kan tala om giltig och ogiltig SKOS, så kan man i alla fall tala om välformad 
-och icke välformad SKOS. Avsaknaden av en DTD har visat sig vara problematisk i undervisningssammanhang, därför har en 
-	sådan konstruerats för den här kursen. 
-Tillägget av en DTD möjliggör att du får utvidgat stöd av EditiX när du jobbar med att utveckla din SKOS, 
-	så att du får felmeddelanden när du t ex placerar ett 
-<code>skos:broader</code>-element direkt under rotelementet <code>rdf:RDF</code>.
+<p class="bodyText">Precis som alla XML-dokument skall en SKOS inledas med en XML-deklaration som talar om vilken version av XML vi har att göra med, och vilken teckenkodning som valts. 
 </p>
-
-<p class="bodyText">Precis som alla XML-dokument skall en SKOS inledas med en XML-deklaration som talar om vilken version av XML
-vi har att göra med, och vilken teckenkodning som valts. (Se tillbaka på de första XML-övningarna om du är osäker på innebörden). 
-</p>
-
-
 		<pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 	</pre>
+	<p class="bodyText">
+		Spara därefter SKOS-filen någonstans där du hittar den igen. SKOS-filen skall ha extensionen
+	<code>xml</code> och dess namn får <strong>inte innehålla mellanslag</strong> samt endast tecken ur sekvenserna 0-9, a-z och A-Z. Om du arbetar i EditiX eller XMLSpear kommer programmet att spara med UTF-8 som teckenkodning automatiskt.
+		</p>
 
 	<p class="bodyText">Därefter skall SKOSen bäddas in i ett rotelement som utgörs av elementet RDF, eftersom
 	SKOS också är en delmängd av RDF. Rotelementet skall också ha två namnrymdsdeklarationer som knyter SKOS-instansen till definitionen 
@@ -63,22 +48,18 @@ vi har att göra med, och vilken teckenkodning som valts. (Se tillbaka på de f�
 &lt;/rdf:RDF&gt;</strong>
 	</pre>
 	
-	<p class="bodyText">Vi skall också ha en länk till en XSL som ger vokabulären en presentation - dvs transformerar SKOS-filen till XHTML. Den här stilmallen skall 
-		du hämta från <a href="https://github.com/Mikael61/Skos">https://github.com/Mikael61/Skos</a> och placera lokalt på samma ställe som du sparar SKOS-filen. SKOS-filen skall ha extensionen
-	<code>xml</code> och dess namn <strong>inte innehålla mellanslag</strong> samt endast tecken ur sekvenserna 0-9, a-z och A-Z. XSL-filen skall ha namnet <code>skos-styleList.xsl</code> 
-		(som den är benämnd i Github-arkivet)
-	men 
-	du kan givetvis byta namn på den om du samtidigt korrigerar <code>href</code>-värdet i XML-filen.
- Slutligen infogar du också en länk till DTDn, som du givetvis också
-	måste hämta från samma Github-arkiv (med namnet skos.dtd) och placera i samma lokala mapp som övriga filer.
+	<p class="bodyText">Vi skall också ha en länk till en XSL som ger vokabulären en presentation - det vill säga transformerar SKOS-filen till XHTML. För att länken ska fungera måste du spara XSL-filen i samma mapp som du sparat SKOS-filen. Se instruktioner för hur du hämtar filerna nedan. XSL-filen skall ha namnet <code>skos-styleList.xsl</code> men du kan givetvis byta namn på den om du samtidigt korrigerar <code>href</code>-värdet i XML-filen.
+		
+Slutligen infogar du också en länk till DTDn, som du också måste spara i samma lokala mapp som övriga filer.
 </p>
-		<p class="note">För att hämta de filer du behöver för övningarna (bl a skos.dtd) 
-			så väljer du alternativet 'download ZIP' 
-			från menyn 'Clone or download' och packar upp filarkivet. I vissa sammanhang publiceras också samma filer i
-			PingPong, då pekar du på respektive fil i dokument-mappen och högerklickar för att därefter spara
+		<p class="bodyText">Till skillnad från de flesta andra XML-tillämpningar finns inte SKOS definierat som en DTD eller ett XML schema, vilket dock inte betyder att SKOS inte är väldefinierat. W3Cs rekommendationer och övrig dokumentation skall ses som normativ och det är vanligen dit man vänder sig för att fastställa vad som är korrekt och inkorrekt. Det är dock viktigt att komma ihåg att även om det är lite osäkert om man kan tala om giltig och ogiltig SKOS, så kan man i alla fall tala om välformad och icke välformad SKOS. Avsaknaden av en DTD har visat sig vara problematisk i undervisningssammanhang, därför har en 	sådan konstruerats för den här kursen. Tillägget av en DTD möjliggör att du får utvidgat stöd av EditiX eller XMLSpear när du jobbar med att utveckla din SKOS, så att du får felmeddelanden när du t ex placerar ett <code>skos:broader</code>-element direkt under rotelementet <code>rdf:RDF</code>.
+</p>
+		
+		<p class="note"><strong>Hämta filerna från GitHub</strong><br />
+			Filerna du behöver för övningarna finns att hämta på <a href="https://github.com/Mikael61/Skos">https://github.com/Mikael61/Skos</a>. För att hämta de filer du behöver så väljer du alternativet 'download ZIP' från menyn 'Clone or download' och packar upp filarkivet.<br />
+		<strong>Hämta filerna från Ping Pong</strong><br /> I vissa kurser finns filerna även i kursens Dokument-mapp i Ping Pong. För att spara dem pekar du på respektive fil i dokument-mappen och högerklickar för att därefter spara
 		på lämplig plats. På en Mac får du hålla nere Ctrl när du klickar på filens namn.</p>
-
-
+		
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 <strong>&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
@@ -128,14 +109,8 @@ ett koncept i en SKOS, som det sedan är möjligt att referera till. Vi introduc
 koncept och preliminärt kan fungera som toppkoncept. Förväxla inte den här <strong>identifikatorn</strong> med innehållet i prefLabel, som är den
 <strong>föredragna benämningen</strong> på ett koncept.</p>
 <h2>Konceptens föredragna namn och synonymer</h2>
-<p class="bodyText">I fortsättningen skall du nu utveckla dessa fyra koncept genom att definiera t ex olika namn för vart och ett av dem, 
-och semantiska relationer mellan dem. I det här exemplet kan vi börja med att definiera föredragna termer (<em>prefLabel</em>) för ett 
-av koncepten. Ett koncept kan endast ha en föredragen term för ett givet språk och i det här exemplet kan man fundera över om t ex <em>hund</em>,
-<em>dog</em>, <em>chien </em>alla skall vara föredragna termer på svenska, engelska respektive franska, eller om man skall välja <em>canis lupus familiaris</em> som enda föredragna term och låta de övriga vara alternativa namn (<em>altLabel</em>) på respektive språk.</p>
-<p class="bodyText">Här väljer vi ändå den sistnämnda lösningen, eftersom vi kan betrakta den latinska formen som den vedertagna vetenskapliga termen.</p>
-<p class="bodyText">Observera att du härefter i samband med examinationsuppgiften i stället skall välja synynomer eller nära synonymer som altLabel. 
-Det är endast för enkelhets skull vi här använder benämningar på olika språk
-</p>
+<p class="bodyText">I fortsättningen skall du nu utveckla dessa fyra koncept genom att definiera till exempel olika namn för vart och ett av dem, och semantiska relationer mellan dem. I det här exemplet kan vi börja med att definiera föredragna termer (<em>prefLabel</em>) för ett av koncepten. Ett koncept kan endast ha en föredragen term för ett givet språk. Finns det fler namn för konceptet i form av synonymer eller nära synonymer måste de vara alternativa namn (<em>altLabel</em>).</p>
+
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;
@@ -146,13 +121,13 @@ Det är endast för enkelhets skull vi här använder benämningar på olika spr
   
   
 &lt;skos:Concept rdf:about="#dogs"&gt;
-  <strong>&lt;skos:prefLabel xml:lang=&quot;la&quot;&gt;Canis lupus familiaris
+  <strong>&lt;skos:prefLabel&gt;Hundar
   &lt;/skos:prefLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;en&quot;&gt;Dog
+  &lt;skos:altLabel&gt;Vovvar
   &lt;/skos:altLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;sv&quot;&gt;Hund
+  &lt;skos:altLabel&gt;Jyckar
   &lt;/skos:altLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;fr&quot;&gt;Chien
+  &lt;skos:altLabel&gt;Byrackor
   &lt;/skos:altLabel&gt;</strong>
 &lt;/skos:Concept&gt;
 
@@ -196,13 +171,13 @@ Det är endast för enkelhets skull vi här använder benämningar på olika spr
   
   
 &lt;skos:Concept rdf:about="#dogs"&gt;
-  &lt;skos:prefLabel xml:lang=&quot;la&quot;&gt;Canis lupus familaris
+  &lt;skos:prefLabel&gt;Hundar
   &lt;/skos:prefLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;en&quot;&gt;Dog
+  &lt;skos:altLabel&gt;Vovvar
   &lt;/skos:altLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;sv&quot;&gt;Hund
+  &lt;skos:altLabel&gt;Jyckar
   &lt;/skos:altLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;fr&quot;&gt;Chien
+  &lt;skos:altLabel&gt;Byrackor
   &lt;/skos:altLabel&gt;
   <strong>&lt;skos:broader rdf:resource=&quot;#wolves&quot;/&gt;</strong>
 &lt;/skos:Concept&gt;
@@ -222,7 +197,7 @@ Det är endast för enkelhets skull vi här använder benämningar på olika spr
 	</pre>
 
 
-<p class="bodyText">Notera här att elementet broader noterats som ett s k tomt element och att vi länkar elementet (och därmed konceptet)<strong> till </strong>det mer generella konceptet <em>wolves</em>. Det är här vi använder den unika identiteten från about-attributet, och inte något av det överordnade konceptets definierade namn (preLabel). Observera  # som genomgående föregår id:t. Notera att <span style="background-color : yellow ; font-family : Courier, sans-serif">&lt;skos:broader rdf:resource=&quot;#canids&quot;/&gt;</span> vore felaktigt i enlighet med 
+<p class="bodyText">Notera här att elementet broader noterats som ett så kallat tomt element och att vi länkar elementet (och därmed konceptet)<strong> till </strong>det mer generella konceptet <em>wolves</em>. Det är här vi använder den unika identiteten från about-attributet, och inte något av det överordnade konceptets definierade namn (preLabel). Observera  # som genomgående föregår id:t. Notera att <span style="background-color : yellow ; font-family : Courier, sans-serif">&lt;skos:broader rdf:resource=&quot;#canids&quot;/&gt;</span> vore felaktigt i enlighet med 
 vad som sagts ovan.</p>
 <p class="note">Observera att presentationen med hjälp av XSL inte kommer att fungera om du glömmer tecknet #. </p>
 
@@ -232,9 +207,9 @@ vad som sagts ovan.</p>
  <span class="form">A broader B</span> är ett fel.</p>
  <p class="bodyText">Precis som det är nödvändigt att deklarera relationen related för båda koncepten i en association av den typen, så är det också nödvändigt att deklarera 
  <span class="form">A narrower B</span> om man har deklarerat <span class="form">B broader A</span>.</p>
- <p class="bodyText" style="font-weight : bold">Beakta gärna  vad som sägs i Harpring (2010,<a href="http://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/relationships.html"> kap.3</a>) om semantiska relationer, och särskilt avsnittet om associativa relationer (dvs related).</p>
+ <p class="bodyText" style="font-weight : bold">Beakta gärna  vad som sägs i Harpring (2010,<a href="http://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/relationships.html"> kap.3</a>) om semantiska relationer, och särskilt avsnittet om associativa relationer (det vill säga related).</p>
 
-<h2>Definitioner mm</h2>
+<h2>Definitioner med mera</h2>
 
 <p class="bodyText">Ofta önskar man definiera eller precisera användningen av ett koncept i en vokabulär. Detta kan göras med exempelvis elementen 
 <em>scopeNote</em>, <em>definition</em> eller <em>example</em>. <em>scopeNote</em> används ofta för att precisera vilken betydelse ett koncept med ett kanske lite 
@@ -250,17 +225,17 @@ I exemplet nedan har en definition lagts till.</p>
   
   
 &lt;skos:Concept rdf:about="#dogs"&gt;
-  &lt;skos:prefLabel xml:lang=&quot;la&quot;&gt;Canis lupus familaris
+&lt;skos:prefLabel&gt;Hundar
   &lt;/skos:prefLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;en&quot;&gt;Dog
+  &lt;skos:altLabel&gt;Vovvar
   &lt;/skos:altLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;sv&quot;&gt;Hund
+  &lt;skos:altLabel&gt;Jyckar
   &lt;/skos:altLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;fr&quot;&gt;Chien
+  &lt;skos:altLabel&gt;Byrackor
   &lt;/skos:altLabel&gt;
   &lt;skos:broader rdf:resource=&quot;#wolves&quot;/&gt;
   <strong>&lt;skos:definition&gt;
-    Tama hunddjur som hålls för sällskaps skull, eller för djurskötsel
+    Tama hunddjur som hålls för sällskaps skull, eller för djurskötsel.
   &lt;/skos:definition&gt;</strong>
 &lt;/skos:Concept&gt;
 
@@ -279,7 +254,7 @@ I exemplet nedan har en definition lagts till.</p>
 	</pre>
 
 <p class="bodyText">Vad beträffar dessa element gäller att de också kan vara tomma och i stället referera till resurser som definierar, preciserar eller 
-exemplifierar koncepten, exempelvis med en URL. <code>skos-styleList.xsl</code> implementerar <em>example</em> som en hyperlänk i HTML.</p>
+exemplifierar koncepten, exempelvis med en URL. <code>skos-styleList.xsl</code> implementerar i de fallen <em>definition</em> och <em>example</em> som hyperlänkar i HTML.</p>
 
 <pre class="exempel">
 &lt;?xml version="1.0" encoding="UTF-8"?&gt;
@@ -291,13 +266,13 @@ exemplifierar koncepten, exempelvis med en URL. <code>skos-styleList.xsl</code> 
   
   
 &lt;skos:Concept rdf:about="#dogs"&gt;
-  &lt;skos:prefLabel xml:lang=&quot;la&quot;&gt;Canis lupus familaris
+  &lt;skos:prefLabel&gt;Hundar
   &lt;/skos:prefLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;en&quot;&gt;Dog
+  &lt;skos:altLabel&gt;Vovvar
   &lt;/skos:altLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;sv&quot;&gt;Hund
+  &lt;skos:altLabel&gt;Jyckar
   &lt;/skos:altLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;fr&quot;&gt;Chien
+  &lt;skos:altLabel&gt;Byrackor
   &lt;/skos:altLabel&gt;
   &lt;skos:broader rdf:resource=&quot;#wolves&quot;/&gt;
   <strong>&lt;skos:definition rdf:resource=&quot;http://sv.wikipedia.org/wiki/Hundar#&quot;/&gt;
@@ -341,13 +316,13 @@ exemplifierar koncepten, exempelvis med en URL. <code>skos-styleList.xsl</code> 
 <strong><br />&lt;skos:ConceptScheme rdf:about=&quot;MyScheme&quot;&gt;<br /> &lt;dc:title&gt;&lt;/dc:title&gt; <br /> &lt;dc:description&gt;&lt;/dc:description&gt;<br /> &lt;dc:creator&gt;&lt;/dc:creator&gt;<br />&lt;/skos:ConceptScheme&gt;</strong>
   
 &lt;skos:Concept rdf:about="#dogs"&gt;
-  &lt;skos:prefLabel xml:lang=&quot;la&quot;&gt;Canis lupus familaris
+ &lt;skos:prefLabel&gt;Hundar
   &lt;/skos:prefLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;en&quot;&gt;Dog
+  &lt;skos:altLabel&gt;Vovvar
   &lt;/skos:altLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;sv&quot;&gt;Hund
+  &lt;skos:altLabel&gt;Jyckar
   &lt;/skos:altLabel&gt;
-  &lt;skos:altLabel xml:lang=&quot;fr&quot;&gt;Chien
+  &lt;skos:altLabel&gt;Byrackor
   &lt;/skos:altLabel&gt;
   &lt;skos:broader rdf:resource=&quot;#wolves&quot;/&gt;
   &lt;skos:definition rdf:resource=&quot;http://sv.wikipedia.org/wiki/Hundar#&quot;/&gt;<strong>
@@ -365,23 +340,16 @@ exemplifierar koncepten, exempelvis med en URL. <code>skos-styleList.xsl</code> 
 
 &lt;/rdf:RDF&gt;
 	</pre>
-
-<p class="bodyText">
-När du anser dig klar med ditt egna experimenterande kan du också ta en titt på 
-<a href="https://mikael61.github.io/canids.xml">https://mikael61.github.io/canids.xml</a>
-där ovanstående exempel är lite utvidgat. Några mindre vokabulärer sammanställda i övningssammang finns också att studera:</p>
-<ul class="bodyText"><li><a href="malinalmstedtjansson.xml">Geografiska indelningar för släkt- och hembygdsforskning</a> 
-</li><li><a href="haidi.xml">Vokabulär för Österrikes matkultur</a></li><li><a href="partiideologier2.xml">Politiska partier i Sveriges riksdag 2006-2010 och dess ideologier</a></li></ul>
-
-<p class="bodyText">Samt från den s k verkligheten, något lite mer komplext: <a href="http://id.loc.gov/authorities/subjects/sh2002000569.html">http://id.loc.gov/authorities/subjects/sh2002000569.html</a> och välj 'Visualization' så ser du en alternativ möjlighet att presentera en SKOS-struktur.<em> Notera att dessa exempel bara belyser vad som gjorts och <strong>inte</strong> på något vis skall ses som normerande.</em></p>
-<p class="bodyText">Den XSL som ges till dessa övningar ger bara ett exempel på hur en SKOS
-  kan transformeras. Flera SKOS-element, som dock inte behöver användas, har t ex ingen transformation alls
+		
+		<h2>Se på filen i webbläsaren</h2>
+		<p class="bodyText">När du lagt till namn samt semantiska relationer mellan övriga koncept kan du öppna filen i webbläsaren - men glöm inte att spara filen först. Välj en webbläsare med stöd för XML, till exempel Firefox, Safari eller Internet Explorer (men EJ Chrome) och öppna filen i den med Ctrl + O. Om länken till stilmallen är korrekt och du har sparat XSL-filen i samma mapp som din XML-fil bör du kunna se en lista där alla namn (både föredragna och alternativa) listas i alfabetisk ordning.</p>
+		<p class="bodyText">Den XSL som ges till dessa övningar ger bara ett exempel på hur en SKOS
+  kan transformeras. Flera SKOS-element, som dock inte behöver användas, har till exempel ingen transformation alls
   och kommer inte att ges någon presentation alls i webbläsaren. 
   Det finns i Github-arkivet ytterligare en XSL som med utgångspunkt
   från innehållet i varje koncepts <code>prefLabel</code> och konceptens hierarkiska relationer åskådliggör din vokabulär i 
   trädform. 
 </p>
-
 		<p class="bodyText">Om du laddar ner filen <code>skos-styleHie.xsl</code>från Github och placerar den i samma lokala mapp som övriga filer under namnet <code>skos-styleHie.xsl</code>, kan du byta ut  <br/>
 <span style="background-color : yellow ; font-family : Courier, sans-serif">&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
 </span> mot <br/>
@@ -389,13 +357,22 @@ där ovanstående exempel är lite utvidgat. Några mindre vokabulärer sammanst
 </span> för att få en trädform.</p>
 
 <p class="bodyText">Du använder med fördel stilmallarna för att kontrollera så att du får det resultat du förväntar dig. Det måste dock sägas att för <code>skos-styleHie.xsl</code> 
-gäller att den förutsätter att din SKOS inte är polyhierarkisk, dvs att något koncept inte har fler än ett <code>broader</code>-element.  I övrigt är <code>skos-styleHie.xsl</code>  
-ett bra verktyg för att upptäcka felaktigheter i hierarkin.</p>
+gäller att den förutsätter att din SKOS inte är polyhierarkisk, dvs att något koncept inte har fler än ett <code>broader</code>-element. I övrigt är <code>skos-styleHie.xsl</code>  
+ett bra verktyg för att upptäcka felaktigheter i hierarkin. <code>skos-styleList.xsl</code> kan i sin tur vara till hjälp för att upptäcka vissa felaktigheter med avseende på SKOS-reglerna, var uppmärksam på eventuella röda felmeddelanden.</p>
+		<h2>Avslutningsvis</h2>
+<p class="bodyText">
+När du anser dig klar med ditt egna experimenterande kan du också ta en titt på 
+<a href="https://mikael61.github.io/canids.xml">https://mikael61.github.io/canids.xml</a>
+där ovanstående exempel är lite utvidgat. Några mindre vokabulärer sammanställda i övningssammang finns också att studera:</p>
+<ul class="bodyText"><li><a href="malinalmstedtjansson.xml">Geografiska indelningar för släkt- och hembygdsforskning</a> 
+</li><li><a href="haidi.xml">Vokabulär för Österrikes matkultur</a></li><li><a href="partiideologier2.xml">Politiska partier i Sveriges riksdag 2006-2010 och dess ideologier</a></li></ul>
+
+<p class="bodyText">Samt från den så kallade verkligheten, något lite mer komplext: <a href="http://id.loc.gov/authorities/subjects/sh2002000569.html">http://id.loc.gov/authorities/subjects/sh2002000569.html</a> och välj 'Visualization' så ser du en alternativ möjlighet att presentera en SKOS-struktur.<em> Notera att dessa exempel bara belyser vad som gjorts och <strong>inte</strong> på något vis skall ses som normerande.</em></p>	
 
 <hr style="width : '80%'"/>
 		<p class="footer">
 
-Uppdaterad: 2016-11-22<br/>
+Uppdaterad: 2017-03-28<br/>
 
 Mikael.Gunnarsson at hb.se</p>
 	</body>

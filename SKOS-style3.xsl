@@ -123,7 +123,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/">
 				</xsl:variable>
 				<xsl:if test="count(/rdf:RDF/skos:Concept[@rdf:about=$id])>1"><p class="error">Det finns fler koncept som har &quot;<xsl:value-of select="$id"/>
 &quot; som ID. Värdet i rdf:about måste vara unikt.</p></xsl:if>
-				<xsl:if test="parent::skos:Concept/@rdf:about[contains(., ' ')]"> <p class="error">Du har angett &quot;<xsl:value-of select="$id" />&quot; som ID för detta koncept. Använd inte IDn med mellanslag.</p></xsl:if>
+				<xsl:if test="parent::skos:Concept/@rdf:about[contains(., ' ')]"> <p class="error"></p></xsl:if>
 				
 				</div>
 				<div class="right">

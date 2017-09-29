@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE rdf:RDF SYSTEM "skos.dtd">
 <?xml-stylesheet type="text/xsl" href="SKOS-style3.xsl"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
 	xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
 	xmlns:dc="http://purl.org/dc/elements/1.1/">
-	<skos:ConceptScheme rdf:about="#MyScheme">
+	<skos:ConceptScheme rdf:about="#canids">
 		<dc:title>Hunddjur</dc:title>
-		<dc:description>Exempelvokabulär för övnings skull</dc:description>
+		<dc:description>Kontrollerad vokabulär för indexering av dokument som handlar om hunddjur.</dc:description>
 		<dc:creator>Mikael Gunnarsson</dc:creator>
+		<dc:creator>Maria Idebrant</dc:creator>
 	</skos:ConceptScheme>
 	<skos:Concept rdf:about="#dogs">
-		<skos:definition>Tama hunddjur som hålls som sällskap, för jakt eller assistans vid nyttodjursskötsel</skos:definition>
-		<skos:prefLabel>Canis lupus familiaris</skos:prefLabel>
-		<skos:altLabel>Hundar</skos:altLabel>
-		<skos:altLabel>Dogs</skos:altLabel>
+			<skos:prefLabel>Hundar
+			  </skos:prefLabel>
+			  <skos:altLabel>Vovvar
+			  </skos:altLabel>
+			  <skos:altLabel>Jyckar
+			  </skos:altLabel>
+			  <skos:altLabel>Byrackor
+			  </skos:altLabel>
+		<skos:definition>Tama hunddjur som hålls som sällskap, för jakt eller assistans vid nyttodjursskötsel.</skos:definition>
 		<skos:broader rdf:resource="#wolves"/>
 		<skos:definition rdf:resource="http://sv.wikipedia.org/wiki/Hundar#"/>
 		<skos:example rdf:resource="http://sv.wikipedia.org/wiki/Fil:Norwegian_Elkhound.jpg"/>
 	</skos:Concept>
 	<skos:Concept rdf:about="#wolves">
-		<skos:definition>Ett rovdjur</skos:definition>
-		<skos:prefLabel>Canis lupus</skos:prefLabel>
-		<skos:altLabel>Wolves</skos:altLabel>
-		<skos:altLabel>Vargar</skos:altLabel>
+		<skos:prefLabel>Vargar</skos:prefLabel>
+		<skos:altLabel>Ulvar</skos:altLabel>
 		<skos:broader rdf:resource="#hunddjur"/>
 		<skos:narrower rdf:resource="#dogs"/>
 	</skos:Concept>
 	<skos:Concept rdf:about="#foxes">
-		<skos:definition>Kortbenta rovdjur</skos:definition>
-		<skos:prefLabel>Vulpes</skos:prefLabel>
-		<skos:altLabel>Rävar</skos:altLabel>
-		<skos:altLabel>Foxes</skos:altLabel>
+		<skos:prefLabel>Rävar</skos:prefLabel>
 		<skos:broader rdf:resource="#hunddjur"/>
-		<skos:scopeNote>Avser här även alla underarter, som rödräv, och även fjällräv som annars tillhör ett annat släkte</skos:scopeNote>
+		<skos:scopeNote>Avser här även alla underarter, som rödräv, och även fjällräv som annars tillhör ett annat släkte.</skos:scopeNote>
 	</skos:Concept>
 	<skos:Concept rdf:about="#hunddjur">
-		<skos:prefLabel>Canidae</skos:prefLabel>
-		<skos:altLabel>Hunddjur</skos:altLabel>
-		<skos:altLabel>Canids</skos:altLabel>
+		<skos:prefLabel>Hunddjur</skos:prefLabel>
 		<skos:narrower rdf:resource="#foxes"/>
 		<skos:narrower rdf:resource="#wolves"/>
 	</skos:Concept>

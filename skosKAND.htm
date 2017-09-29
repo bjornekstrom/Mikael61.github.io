@@ -342,7 +342,10 @@ exemplifierar koncepten, exempelvis med en URL. <code>skos-styleList.xsl</code> 
 	</pre>
 		
 		<h2>Se på filen i webbläsaren</h2>
-		<p class="bodyText">När du lagt till namn samt semantiska relationer mellan övriga koncept kan du öppna filen i webbläsaren - men glöm inte att spara filen först. Välj en webbläsare med stöd för XML, till exempel Firefox, Safari eller Internet Explorer (men EJ Chrome) och öppna filen i den med Ctrl + O. Om länken till stilmallen är korrekt och du har sparat XSL-filen i samma mapp som din XML-fil bör du kunna se en lista där alla namn (både föredragna och alternativa) listas i alfabetisk ordning.</p>
+		<p class="bodyText">När du lagt till namn samt semantiska relationer mellan övriga koncept kan du öppna filen i webbläsaren - men glöm inte att spara filen först. Välj en webbläsare med stöd för XML, till exempel Firefox, Safari eller Internet Explorer (men EJ Chrome) och öppna filen i den med Ctrl + O. Om länken till stilmallen är korrekt och du har sparat XSL-filen i samma mapp som din XML-fil bör du kunna se en lista där alla namn (både föredragna och alternativa) listas i alfabetisk ordning - motsvarande bilden nedan.</p>
+		<p class="bodyText">
+		<img src="skos-styleList.png" alt="Skärmdump över hur vokabulären kan se ut med skos-styleList.png som stilmall." />
+		</p>
 		<p class="bodyText">Den XSL som ges till dessa övningar ger bara ett exempel på hur en SKOS
   kan transformeras. Flera SKOS-element, som dock inte behöver användas, har till exempel ingen transformation alls
   och kommer inte att ges någon presentation alls i webbläsaren. 
@@ -354,8 +357,12 @@ exemplifierar koncepten, exempelvis med en URL. <code>skos-styleList.xsl</code> 
 <span style="background-color : yellow ; font-family : Courier, sans-serif">&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
 </span> mot <br/>
 <span  style="background-color : yellow ; font-family : Courier, sans-serif">&lt;?xml-stylesheet type="text/xsl" href="skos-styleHie.xsl"?&gt;
-</span> för att få en trädform.</p>
+</span> för att få en trädform motsvarande bilden nedan.</p>
 
+<p class="bodyText">
+	<img src="skos-styleHie.png" alt="Skärmdump över hur vokabulären kan se ut med skos-styleHie.png som stilmall." />
+</p>		
+		
 <p class="bodyText">Du använder med fördel stilmallarna för att kontrollera så att du får det resultat du förväntar dig. Det måste dock sägas att för <code>skos-styleHie.xsl</code> 
 gäller att den förutsätter att din SKOS inte är polyhierarkisk, dvs att något koncept inte har fler än ett <code>broader</code>-element. I övrigt är <code>skos-styleHie.xsl</code>  
 ett bra verktyg för att upptäcka felaktigheter i hierarkin. <code>skos-styleList.xsl</code> kan i sin tur vara till hjälp för att upptäcka vissa felaktigheter med avseende på SKOS-reglerna, var uppmärksam på eventuella röda felmeddelanden.</p>
@@ -372,8 +379,8 @@ där ovanstående exempel är lite utvidgat. Några mindre vokabulärer sammanst
 <hr style="width : '80%'"/>
 		<p class="footer">
 
-Uppdaterad: 2017-03-28<br/>
+Uppdaterad: 2017-09-29<br/>
 
-Mikael.Gunnarsson at hb.se</p>
+Mikael.Gunnarsson at hb.se // reviderad av av Maria.Idebrant at hb.se</p>
 	</body>
 </html>

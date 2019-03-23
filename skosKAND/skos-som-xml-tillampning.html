@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>2 SKOS som XML-tillämpning | Introduktion till SKOS</title>
+  <meta name="description" content="2 SKOS som XML-tillämpning | Introduktion till SKOS">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="2 SKOS som XML-tillämpning | Introduktion till SKOS" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 SKOS som XML-tillämpning | Introduktion till SKOS" />
+  
+  
+  
+
+<meta name="author" content="Mikael Gunnarsson">
+<meta name="author" content="Maria Idebrant">
+<meta name="author" content="Björn Ekström">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="skos-introduktionsovningar.html">
+<link rel="next" href="koncept.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="skos-introduktionsovningar.html"><a href="skos-introduktionsovningar.html"><i class="fa fa-check"></i><b>1</b> SKOS — Introduktionsövningar</a></li>
+<li class="chapter" data-level="2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html"><i class="fa fa-check"></i><b>2</b> SKOS som XML-tillämpning</a></li>
+<li class="chapter" data-level="3" data-path="koncept.html"><a href="koncept.html"><i class="fa fa-check"></i><b>3</b> Koncept</a></li>
+<li class="chapter" data-level="4" data-path="konceptens-foredragna-namn-och-synonymer.html"><a href="konceptens-foredragna-namn-och-synonymer.html"><i class="fa fa-check"></i><b>4</b> Konceptens föredragna namn och synonymer</a></li>
+<li class="chapter" data-level="5" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html"><i class="fa fa-check"></i><b>5</b> Semantiska relationer</a></li>
+<li class="chapter" data-level="6" data-path="definitioner-med-mera.html"><a href="definitioner-med-mera.html"><i class="fa fa-check"></i><b>6</b> Definitioner med mera</a></li>
+<li class="chapter" data-level="7" data-path="beskriv-din-vokabular.html"><a href="beskriv-din-vokabular.html"><i class="fa fa-check"></i><b>7</b> Beskriv din vokabulär</a></li>
+<li class="chapter" data-level="8" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html"><i class="fa fa-check"></i><b>8</b> Se på filen i webbläsaren</a></li>
+<li class="chapter" data-level="9" data-path="avslutningsvis.html"><a href="avslutningsvis.html"><i class="fa fa-check"></i><b>9</b> Avslutningsvis</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introduktion till SKOS</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="skos-som-xml-tillampning" class="section level1">
+<h1><span class="header-section-number">2</span> SKOS som XML-tillämpning</h1>
+<p>Precis som alla XML-dokument skall en SKOS inledas med en
+XML-deklaration som talar om vilken version av XML vi har att göra med,
+och vilken teckenkodning som valts.</p>
+<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></code></pre>
+<p>Spara därefter SKOS-filen någonstans där du hittar den igen. SKOS-filen
+skall ha extensionen <code>xml</code> och dess namn får <strong>inte innehålla
+mellanslag</strong> samt endast tecken ur sekvenserna 0-9, a-z och A-Z. Om du
+arbetar i EditiX eller XMLSpear kommer programmet att spara med UTF-8
+som teckenkodning automatiskt.</p>
+<p>Därefter skall SKOSen bäddas in i ett rotelement som utgörs av elementet
+RDF, eftersom SKOS också är en delmängd av RDF. Rotelementet skall också
+ha två namnrymdsdeklarationer som knyter SKOS-instansen till
+definitionen av både RDF och SKOS.</p>
+<p>I det fortsatta, när det talas om element och attribut, talas det om dem
+utan att inkludera namnrymdsprefixet.</p>
+<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span>
+<span class="kw">&lt;rdf:RDF</span> 
+<span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span>
+<span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="kw">&gt;</span>
+  
+<span class="kw">&lt;/rdf:RDF&gt;</span></code></pre>
+<p>Vi skall också ha en länk till en XSL som ger vokabulären en
+presentation - det vill säga transformerar SKOS-filen till XHTML. För
+att länken ska fungera måste du spara XSL-filen i samma mapp som du
+sparat SKOS-filen. Se instruktioner för hur du hämtar filerna nedan.
+XSL-filen skall ha namnet <code>skos-styleList.xsl</code> men du kan givetvis byta
+namn på den om du samtidigt korrigerar <code>href</code>-värdet i XML-filen.
+Slutligen infogar du också en länk till DTDn, som du också måste spara i
+samma lokala mapp som övriga filer.</p>
+<p>Till skillnad från de flesta andra XML-tillämpningar finns inte SKOS
+definierat som en DTD eller ett XML schema, vilket dock inte betyder att
+SKOS inte är väldefinierat. W3Cs rekommendationer och övrig
+dokumentation skall ses som normativ och det är vanligen dit man vänder
+sig för att fastställa vad som är korrekt och inkorrekt. Det är dock
+viktigt att komma ihåg att även om det är lite osäkert om man kan tala
+om giltig och ogiltig SKOS, så kan man i alla fall tala om välformad och
+icke välformad SKOS. Avsaknaden av en DTD har visat sig vara
+problematisk i undervisningssammanhang, därför har en sådan konstruerats
+för den här kursen. Tillägget av en DTD möjliggör att du får utvidgat
+stöd av EditiX eller XMLSpear när du jobbar med att utveckla din SKOS,
+så att du får felmeddelanden när du t ex placerar ett
+<code>skos:broader</code>-element direkt under rotelementet <code>rdf:RDF</code>.</p>
+<p><strong>Hämta filerna från GitHub</strong><br />
+Filerna du behöver för övningarna finns att hämta på
+<a href="https://github.com/Mikael61/Skos" class="uri">https://github.com/Mikael61/Skos</a>. För att hämta de filer du behöver så
+väljer du alternativet 'download ZIP' från menyn 'Clone or download'
+och packar upp filarkivet.<br />
+<strong>Hämta filerna från Ping Pong</strong><br />
+I vissa kurser finns filerna även i kursens Dokument-mapp i Ping Pong.
+För att spara dem pekar du på respektive fil i dokument-mappen och
+högerklickar för att därefter spara på lämplig plats. På en Mac får du
+hålla nere Ctrl när du klickar på filens namn.</p>
+<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span>
+<span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;skos-styleList.xsl&quot;<span class="kw">?&gt;</span>
+<span class="dt">&lt;!DOCTYPE </span>rdf:RDF SYSTEM &quot;skos.dtd&quot;<span class="dt">&gt;</span>
+<span class="kw">&lt;rdf:RDF</span> 
+<span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span>
+<span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="kw">&gt;</span>
+  
+<span class="kw">&lt;/rdf:RDF&gt;</span></code></pre>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="skos-introduktionsovningar.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="koncept.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+},
+"search": false
+});
+});
+</script>
+
+</body>
+
+</html>

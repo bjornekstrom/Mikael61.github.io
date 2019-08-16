@@ -129,11 +129,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="skos-introduktionsovningar.html"><a href="skos-introduktionsovningar.html"><i class="fa fa-check"></i><b>1</b> SKOS — Introduktionsövningar</a></li>
-<li class="chapter" data-level="2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html"><i class="fa fa-check"></i><b>2</b> SKOS som XML-tillämpning</a></li>
+<li class="chapter" data-level="1" data-path="skos-introduktionsovningar.html"><a href="skos-introduktionsovningar.html"><i class="fa fa-check"></i><b>1</b> SKOS - Introduktionsövningar</a></li>
+<li class="chapter" data-level="2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html"><i class="fa fa-check"></i><b>2</b> SKOS som XML-tillämpning</a><ul>
+<li class="chapter" data-level="2.1" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#hamta-xsl--och-dtd-filer"><i class="fa fa-check"></i><b>2.1</b> Hämta XSL- och DTD-filer</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#fran-github"><i class="fa fa-check"></i><b>2.1.1</b> Från GitHub</a></li>
+<li class="chapter" data-level="2.1.2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#fran-ping-pong"><i class="fa fa-check"></i><b>2.1.2</b> Från Ping Pong</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#hanvisning-till-xsl"><i class="fa fa-check"></i><b>2.2</b> Hänvisning till XSL</a></li>
+<li class="chapter" data-level="2.3" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#hanvisning-till-dtd"><i class="fa fa-check"></i><b>2.3</b> Hänvisning till DTD</a></li>
+<li class="chapter" data-level="2.4" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#giltig-skos"><i class="fa fa-check"></i><b>2.4</b> Giltig SKOS?</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="koncept.html"><a href="koncept.html"><i class="fa fa-check"></i><b>3</b> Koncept</a></li>
 <li class="chapter" data-level="4" data-path="konceptens-foredragna-namn-och-synonymer.html"><a href="konceptens-foredragna-namn-och-synonymer.html"><i class="fa fa-check"></i><b>4</b> Konceptens föredragna namn och synonymer</a></li>
-<li class="chapter" data-level="5" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html"><i class="fa fa-check"></i><b>5</b> Semantiska relationer</a></li>
+<li class="chapter" data-level="5" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html"><i class="fa fa-check"></i><b>5</b> Semantiska relationer</a><ul>
+<li class="chapter" data-level="5.1" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#semantiska-relationer-i-skos"><i class="fa fa-check"></i><b>5.1</b> Semantiska relationer i SKOS</a></li>
+<li class="chapter" data-level="5.2" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#fortsatt-anvanda-relationerna"><i class="fa fa-check"></i><b>5.2</b> Fortsätt använda relationerna</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#mer-om-associativa-relationer-related"><i class="fa fa-check"></i><b>5.2.1</b> Mer om associativa relationer (<code>related</code>)</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="definitioner-med-mera.html"><a href="definitioner-med-mera.html"><i class="fa fa-check"></i><b>6</b> Definitioner med mera</a></li>
 <li class="chapter" data-level="7" data-path="beskriv-din-vokabular.html"><a href="beskriv-din-vokabular.html"><i class="fa fa-check"></i><b>7</b> Beskriv din vokabulär</a></li>
 <li class="chapter" data-level="8" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html"><i class="fa fa-check"></i><b>8</b> Se på filen i webbläsaren</a></li>
@@ -161,25 +174,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p class="author"><em>Maria Idebrant</em></p>
 <p class="author"><em>Björn Ekström</em></p>
 </div>
-<div id="skos-introduktionsovningar" class="section level1">
-<h1><span class="header-section-number">1</span> SKOS — Introduktionsövningar</h1>
-<p>Följande övningar tjänar till att göra dig bekant med Simple Knowledge
-Organization System (SKOS), som är en XML-tillämpning avsedd för att
-implementera kontrollerade vokabulärer av den typen som
-biblioteksverksamheten känner som tesaurer (tesauri, thesaurer). SKOS är
+<div id="skos---introduktionsovningar" class="section level1">
+<h1><span class="header-section-number">1</span> SKOS - Introduktionsövningar</h1>
+<p>Dessa övningar syftar till att göra dig bekant med Simple Knowledge
+Organization System (SKOS). SKOS är en XML-tillämpning avsedd för att
+ge upphov till kontrollerade vokabulärer av den typ som
+biblioteksverksamheten känner som tesaurer (tesauri, thesaurer).</p>
+<p>SKOS är
 mer begränsad än till exempel OWL och XTM, i den meningen att de
 associationer som kan etableras mellan olika koncept är mindre
 nyanserade och begränsade till möjligheten att definiera över- och
 underordning, samt till mer eller mindre obestämda associationer utan
 hierarkiska implikationer. Fördelen är att SKOS är en relativt enkel
-tillämpning för att närma sig fenomenet kontrollerade vokabulärer.</p>
-<p>Övningarna bygger på att du omväxlande läser här och kodar på egen hand
-i någon XML-editor, till exempel EditiX eller XMLSpear. För varje steg
-finns en instruktion samt exemplifierande kod. Läs instruktionerna
-noggrant och kopiera koden från exemplet till din egen fil. När nästa
-kodexempel kommer är den nytillkomna koden markerad med fetstil - då är
-det enbart den koden du ska kopiera, övrig kod bör du redan ha i ditt
-dokument.</p>
+tillämpning för att närma sig kontrollerade vokabulärer.</p>
+<p>Övningarna bygger på att du i tur och ordning läser och kodar på egen hand
+i någon XML-editor, till exempel <a href="https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html">Oxygen</a>, <a href="http://editix.com/">EditiX</a> eller <a href="http://www.donkeydevelopment.com/">XMLSpear</a>. För varje steg
+finns en instruktion samt exemplifierande kod.</p>
+<p>Läs instruktionerna noggrant och kopiera relevant kod från exemplen till din egen fil.</p>
 </div>
             </section>
 

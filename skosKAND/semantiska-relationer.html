@@ -129,11 +129,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="skos-introduktionsovningar.html"><a href="skos-introduktionsovningar.html"><i class="fa fa-check"></i><b>1</b> SKOS — Introduktionsövningar</a></li>
-<li class="chapter" data-level="2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html"><i class="fa fa-check"></i><b>2</b> SKOS som XML-tillämpning</a></li>
+<li class="chapter" data-level="1" data-path="skos-introduktionsovningar.html"><a href="skos-introduktionsovningar.html"><i class="fa fa-check"></i><b>1</b> SKOS - Introduktionsövningar</a></li>
+<li class="chapter" data-level="2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html"><i class="fa fa-check"></i><b>2</b> SKOS som XML-tillämpning</a><ul>
+<li class="chapter" data-level="2.1" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#hamta-xsl--och-dtd-filer"><i class="fa fa-check"></i><b>2.1</b> Hämta XSL- och DTD-filer</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#fran-github"><i class="fa fa-check"></i><b>2.1.1</b> Från GitHub</a></li>
+<li class="chapter" data-level="2.1.2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#fran-ping-pong"><i class="fa fa-check"></i><b>2.1.2</b> Från Ping Pong</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#hanvisning-till-xsl"><i class="fa fa-check"></i><b>2.2</b> Hänvisning till XSL</a></li>
+<li class="chapter" data-level="2.3" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#hanvisning-till-dtd"><i class="fa fa-check"></i><b>2.3</b> Hänvisning till DTD</a></li>
+<li class="chapter" data-level="2.4" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#giltig-skos"><i class="fa fa-check"></i><b>2.4</b> Giltig SKOS?</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="koncept.html"><a href="koncept.html"><i class="fa fa-check"></i><b>3</b> Koncept</a></li>
 <li class="chapter" data-level="4" data-path="konceptens-foredragna-namn-och-synonymer.html"><a href="konceptens-foredragna-namn-och-synonymer.html"><i class="fa fa-check"></i><b>4</b> Konceptens föredragna namn och synonymer</a></li>
-<li class="chapter" data-level="5" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html"><i class="fa fa-check"></i><b>5</b> Semantiska relationer</a></li>
+<li class="chapter" data-level="5" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html"><i class="fa fa-check"></i><b>5</b> Semantiska relationer</a><ul>
+<li class="chapter" data-level="5.1" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#semantiska-relationer-i-skos"><i class="fa fa-check"></i><b>5.1</b> Semantiska relationer i SKOS</a></li>
+<li class="chapter" data-level="5.2" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#fortsatt-anvanda-relationerna"><i class="fa fa-check"></i><b>5.2</b> Fortsätt använda relationerna</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#mer-om-associativa-relationer-related"><i class="fa fa-check"></i><b>5.2.1</b> Mer om associativa relationer (<code>related</code>)</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="6" data-path="definitioner-med-mera.html"><a href="definitioner-med-mera.html"><i class="fa fa-check"></i><b>6</b> Definitioner med mera</a></li>
 <li class="chapter" data-level="7" data-path="beskriv-din-vokabular.html"><a href="beskriv-din-vokabular.html"><i class="fa fa-check"></i><b>7</b> Beskriv din vokabulär</a></li>
 <li class="chapter" data-level="8" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html"><i class="fa fa-check"></i><b>8</b> Se på filen i webbläsaren</a></li>
@@ -157,33 +170,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="semantiska-relationer" class="section level1">
 <h1><span class="header-section-number">5</span> Semantiska relationer</h1>
-<p>Hund är nu en underart till varg och således är det koncept som vi givit
-identiteten <em>wolves</em> ett bredare (broader) koncept än <em>dogs</em>, vilket
-skall deklareras. Observera att det inte av detta följer att <em>canids</em> är
-ett bredare koncept än <em>dogs</em>, eftersom relationen <em>broader</em> inte är
-<strong><em>transitiv</em></strong>. <span style="font-size : 0.8em">(I egentlig mening är förstås canids ett bredare
-begrepp än dogs, men restriktionen här gäller de slutsatser som kan dras
-inom ramen för SKOS)</span> Det här innebär dock
-inte att man för varje koncept skall deklarera som broader alla koncept
-som är överordnade.</p>
-<p>Jämför t ex följande extrakt ur SAB-systemet, det svenska
-klassifikationsschemat för bibliotek</p>
-<pre class="sourceCode xml"><code class="sourceCode xml"> Pr Transportmedel och kommunikationer 
+<p>Hund är nu en underart till varg och således är det koncept som vi givit identiteten wolves ett bredare (<code>broader</code>) koncept än dogs, vilket skall deklareras. Observera att det inte av detta följer att canids är ett bredare koncept än dogs, eftersom relationen broader inte är transitiv. (I egentlig mening är förstås canids ett bredare begrepp än dogs, men restriktionen här gäller de slutsatser som kan dras inom ramen för SKOS). Det här innebär dock inte att man för varje koncept skall deklarera som <code>broader</code> alla koncept som är överordnade.</p>
+<p>Jämför t ex följande extrakt ur SAB-systemet, det svenska klassifikationsschemat för bibliotek</p>
+<pre><code> Pr Transportmedel och kommunikationer 
  -- Prab Motorfordon 
- -- -- Prabad Karosseri </code></pre>
-<p>där Karosseri snarast är att betrakta som en <em>meronym</em> till Motorfordon
-medan Motorfordon är ett <em>exempel</em> på Transportmedel. Att se
-Transportmedel och kommunikationer som ett mer generiskt begrepp än
-Karosseri blir semantiskt märkligt. I själva verket är det inte heller
-<em>ett</em> begrepp utan ett exempel på vad som brukar kallas
-<em><a href="http://www.jamescrobertson.com/infosci/pre-post.html">prekoordinering</a></em></p>
+ -- -- Prabad Karosseri</code></pre>
+<p>där Karosseri snarast är att betrakta som en meronym till Motorfordon medan Motorfordon är ett exempel på Transportmedel. Att se Transportmedel och kommunikationer som ett mer generiskt begrepp än Karosseri blir semantiskt märkligt. I själva verket är det inte heller ett begrepp utan ett exempel på vad som brukar kallas <a href="http://www.jamescrobertson.com/infosci/pre-post.html">prekoordinering</a>.</p>
+<div id="semantiska-relationer-i-skos" class="section level2">
+<h2><span class="header-section-number">5.1</span> Semantiska relationer i SKOS</h2>
+<p>Vi återgår till koden, där <code>broader</code>-element lagts till för konceptet <em>Hundar</em>.</p>
 <pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span>
 <span class="dt">&lt;!DOCTYPE </span>rdf:RDF SYSTEM &quot;skos.dtd&quot;<span class="dt">&gt;</span>
 <span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;skos-styleList.xsl&quot;<span class="kw">?&gt;</span>
 <span class="kw">&lt;rdf:RDF</span> 
 <span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span>
 <span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="kw">&gt;</span>
-  
   
 <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#dogs&quot;</span><span class="kw">&gt;</span>
   <span class="kw">&lt;skos:prefLabel&gt;</span>Hundar
@@ -205,34 +206,21 @@ Karosseri blir semantiskt märkligt. I själva verket är det inte heller
 
 <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#canids&quot;</span><span class="kw">&gt;</span>
 <span class="kw">&lt;/skos:Concept&gt;</span>
-
-
   
 <span class="kw">&lt;/rdf:RDF&gt;</span></code></pre>
-<p>Notera här att elementet broader noterats som ett så kallat tomt element
-och att vi länkar elementet (och därmed konceptet) <strong>till</strong> det mer
-generella konceptet <em>wolves</em>. Det är här vi använder den unika
-identiteten från about-attributet, och inte något av det överordnade
-konceptets definierade namn (prefLabel). Observera # som genomgående
-föregår id:t. Notera att <code>&lt;skos:broader rdf:resource=&quot;#canids&quot;/&gt;</code> vore felaktigt i enlighet med vad som sagts ovan.</p>
-<p>Observera att presentationen med hjälp av XSL inte kommer att fungera om
-du glömmer tecknet #.</p>
-<p>Samma princip som <em>broader</em> följer elementen <em>narrower</em> och <em>related</em>.
-Fortsätt nu med att bygga ut din vokabulär med instanser av alla dessa
-tre element för detta och övriga koncept (där det är tillämpligt).
-Observera att <em>related</em> är en symmetrisk relation, så att om <span class="form">A related
-B</span>, även <span class="form">B related A</span> gäller. Det är nödvändigt att
-deklarera relationen för båda koncepten. Relationen <em>related</em> är vidare
-disjunkt från <em>broader</em> och <em>narrower</em>. <span class="form">A related B</span> och <span class="form">A
-broader B</span> är ett fel.</p>
-<p>Precis som det är nödvändigt att deklarera relationen related för båda
-koncepten i en association av den typen, så är det också nödvändigt att
-deklarera <span class="form">A narrower B</span> om man har deklarerat <span class="form">B broader
-A</span>.</p>
-<p>Beakta gärna vad som sägs i Harpring
-(2010,<a href="http://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/relationships.html">kap.3</a>)
-om semantiska relationer, och särskilt avsnittet om associativa
-relationer (det vill säga related).</p>
+<p>Elementet <code>broader</code> har här noterats som ett så kallat tomt element. Vi länkar också elementet (och därmed konceptet) till det mer generella konceptet wolves. Det är här vi använder den unika identiteten från <code>about</code>-attributet, och inte något av det överordnade konceptets definierade namn (<code>prefLabel</code>). Observera <code>#</code> som genomgående föregår id:t. Notera att <code>&lt;skos:broader rdf:resource=&quot;#canids&quot;/&gt;</code> vore felaktigt i enlighet med vad som sagts ovan. Observera också att presentationen med hjälp av XSL inte kommer att fungera om du glömmer tecknet <code>#</code>.</p>
+</div>
+<div id="fortsatt-anvanda-relationerna" class="section level2">
+<h2><span class="header-section-number">5.2</span> Fortsätt använda relationerna</h2>
+<p>Lägg till ett <code>broader</code>-element enligt ovan och hänvisa med motsvarande <code>narrower</code> till det element som avses ha en semantisk koppling.</p>
+<p>Samma princip som <code>broader</code> följer alltså elementet <code>narrower</code>, men också elementet <code>related</code>. Fortsätt nu med att bygga ut din vokabulär med instanser av alla dessa tre element för detta och övriga koncept (där det är tillämpligt).</p>
+<div id="mer-om-associativa-relationer-related" class="section level3">
+<h3><span class="header-section-number">5.2.1</span> Mer om associativa relationer (<code>related</code>)</h3>
+<p>Observera att related är en symmetrisk relation, så att om <code>A related B</code>, även <code>B related A</code> gäller. Det är nödvändigt att deklarera relationen för båda koncepten.</p>
+<p>Relationen <code>related</code> är oförenlig med <code>broader</code> och <code>narrower</code>. <code>A related B</code> och <code>A broader B</code> är alltså fel. Precis som det är nödvändigt att deklarera relationen <code>related</code> för båda koncepten i en association av den typen, så är det också nödvändigt att deklarera <code>A narrower B</code> om man har deklarerat <code>B broader A</code>.</p>
+<p>Beakta gärna vad som sägs i <a href="http://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/relationships.html">Harpring (2010, kap.3)</a> om semantiska relationer, och särskilt avsnittet om associativa relationer (det vill säga <code>related</code>).</p>
+</div>
+</div>
 </div>
             </section>
 

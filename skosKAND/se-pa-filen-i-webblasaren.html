@@ -170,12 +170,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="se-pa-filen-i-webblasaren" class="section level1">
 <h1><span class="header-section-number">8</span> Se på filen i webbläsaren</h1>
-<p>När du lagt till namn samt semantiska relationer mellan övriga koncept kan du öppna filen i webbläsaren - men glöm inte att spara filen först. Välj en webbläsare med stöd för XML, till exempel Firefox, Safari eller Internet Explorer (men EJ Chrome) och öppna filen i den med <code>Ctrl + O</code>.</p>
-<p>Om länken till stilmallen är korrekt och du har sparat XSL-filen i samma mapp som din XML-fil bör du kunna se en lista där alla namn (både föredragna och alternativa) listas i alfabetisk ordning - motsvarande bilden nedan.</p>
-<div class="figure">
-<img src="img/skos-styleList.png" alt="Skärmdump över hur vokabulären kan se ut med skos-styleList.png som stilmall." />
-<p class="caption">Skärmdump över hur vokabulären kan se ut med skos-styleList.png som stilmall.</p>
-</div>
+<p>När du lagt till namn samt semantiska relationer mellan övriga koncept kan du öppna filen i webbläsaren - men glöm inte att spara filen först.</p>
+<p>Gå sedan till <a href="https://www.w3schools.com/xml/tryxslt.asp?xmlfile=cdcatalog&amp;xsltfile=cdcatalog">W3Schools XML-visualiserare</a>. Ta bort texten i båda rutorna. Klistra in din XML-kod i vänsterfältet och koden i <code>skos-styleList.xsl</code> i högerfältet. Klicka sedan på <code>Edit the XML or XSLT code above and Click Me</code>.</p>
+<p>Om länken till stilmallen är korrekt och du bör du kunna se en lista där alla namn (både föredragna och alternativa) listas i alfabetisk ordning - motsvarande bilden nedan.</p>
+<p><img src="img/skos-styleList.png" /></p>
 <p>Den XSL som ges till dessa övningar ger bara ett exempel på hur en SKOS
 kan transformeras. Flera SKOS-element, som dock inte behöver användas,
 har till exempel ingen transformation alls och kommer inte att ges någon
@@ -183,17 +181,12 @@ presentation alls i webbläsaren. Det finns i Github-arkivet ytterligare
 en XSL som med utgångspunkt från innehållet i varje koncepts <code>prefLabel</code>
 och konceptens hierarkiska relationer åskådliggör din vokabulär i
 trädform.</p>
-<p>Om du laddar ner filen <code>skos-styleHie.xsl</code> och placerar den i
-samma lokala mapp som övriga filer under namnet <code>skos-styleHie.xsl</code>, kan
-du byta ut</p>
+<p>Om du laddar ner filen <code>skos-styleHie.xsl</code> och istället kopierar koden i filen till det högra fältet i <a href="https://www.w3schools.com/xml/tryxslt.asp?xmlfile=cdcatalog&amp;xsltfile=cdcatalog">W3Schools XML-visualiserare</a>, så kan du byta ut</p>
 <p><code>&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;skos-styleList.xsl&quot;?&gt;</code></p>
 <p>mot</p>
 <p><code>&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;skos-styleHie.xsl&quot;?&gt;</code></p>
 <p>för att få en trädform motsvarande bilden nedan.</p>
-<div class="figure">
-<img src="img/skos-styleList.png" alt="Skärmdump över hur vokabulären kan se ut med skos-styleList.png som stilmall." />
-<p class="caption">Skärmdump över hur vokabulären kan se ut med skos-styleList.png som stilmall.</p>
-</div>
+<p><img src="img/skos-styleHie.png" /></p>
 <p>Du använder med fördel stilmallarna för att kontrollera så att du får
 det resultat du förväntar dig. Det måste dock sägas att för
 <code>skos-styleHie.xsl</code> gäller att den förutsätter att din SKOS inte är

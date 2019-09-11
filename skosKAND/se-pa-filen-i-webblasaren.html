@@ -149,7 +149,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="definitioner-med-mera.html"><a href="definitioner-med-mera.html"><i class="fa fa-check"></i><b>6</b> Definitioner med mera</a></li>
 <li class="chapter" data-level="7" data-path="beskriv-din-vokabular.html"><a href="beskriv-din-vokabular.html"><i class="fa fa-check"></i><b>7</b> Beskriv din vokabulär</a></li>
-<li class="chapter" data-level="8" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html"><i class="fa fa-check"></i><b>8</b> Se på filen i webbläsaren</a></li>
+<li class="chapter" data-level="8" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html"><i class="fa fa-check"></i><b>8</b> Se på filen i webbläsaren</a><ul>
+<li class="chapter" data-level="8.1" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html#visualisera-i-alfabetisk-listform"><i class="fa fa-check"></i><b>8.1</b> Visualisera i alfabetisk listform</a></li>
+<li class="chapter" data-level="8.2" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html#visualisera-i-hierarkisk-tradform"><i class="fa fa-check"></i><b>8.2</b> Visualisera i hierarkisk trädform</a></li>
+<li class="chapter" data-level="8.3" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html#anvand-bada-stilmallarna"><i class="fa fa-check"></i><b>8.3</b> Använd båda stilmallarna</a></li>
+</ul></li>
 <li class="chapter" data-level="9" data-path="avslutningsvis.html"><a href="avslutningsvis.html"><i class="fa fa-check"></i><b>9</b> Avslutningsvis</a></li>
 </ul>
 
@@ -170,23 +174,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="se-pa-filen-i-webblasaren" class="section level1">
 <h1><span class="header-section-number">8</span> Se på filen i webbläsaren</h1>
-<p>När du lagt till namn samt semantiska relationer mellan övriga koncept kan du öppna filen i webbläsaren - men glöm inte att spara filen först.</p>
-<p>Gå sedan till <a href="https://www.w3schools.com/xml/tryxslt.asp?xmlfile=cdcatalog&amp;xsltfile=cdcatalog">W3Schools XML-visualiserare</a>. Ta bort texten i båda rutorna. Klistra in din XML-kod i vänsterfältet och koden i <code>skos-styleList.xsl</code> i högerfältet. Klicka sedan på <code>Edit the XML or XSLT code above and Click Me</code>.</p>
-<p>Om länken till stilmallen är korrekt och du bör du kunna se en lista där alla namn (både föredragna och alternativa) listas i alfabetisk ordning - motsvarande bilden nedan.</p>
+<p>När du lagt till namn samt semantiska relationer mellan övriga koncept kan du öppna filen i webbläsaren - men glöm inte att spara filen först. Nu ska vi titta på XML-filen i webbläsaren genom att visualisera den med hjälp av stilmallarna <code>skos-styleList.xsl</code> och <code>skos-styleHie.xsl</code>.</p>
+<div id="visualisera-i-alfabetisk-listform" class="section level2">
+<h2><span class="header-section-number">8.1</span> Visualisera i alfabetisk listform</h2>
+<ol style="list-style-type: decimal">
+<li>Gå till <a href="https://www.w3schools.com/xml/tryxslt.asp?xmlfile=cdcatalog&amp;xsltfile=cdcatalog">W3Schools XML-visualiserare</a>.</li>
+<li>Ta bort texten i båda rutorna.</li>
+<li>Klistra in din XML-kod i vänsterfältet.</li>
+<li>Klistra in koden i <code>skos-styleList.xsl</code> i högerfältet.</li>
+<li>Klicka sedan på <code>Edit the XML or XSLT code above and Click Me</code>.</li>
+</ol>
+<p>Om du gjort dert ovanstående så bör du kunna se en lista där alla namn (både föredragna och alternativa) listas i alfabetisk ordning - motsvarande bilden nedan.</p>
 <p><img src="img/skos-styleList.png" /></p>
 <p>Den XSL som ges till dessa övningar ger bara ett exempel på hur en SKOS
 kan transformeras. Flera SKOS-element, som dock inte behöver användas,
 har till exempel ingen transformation alls och kommer inte att ges någon
-presentation alls i webbläsaren. Det finns i Github-arkivet ytterligare
-en XSL som med utgångspunkt från innehållet i varje koncepts <code>prefLabel</code>
-och konceptens hierarkiska relationer åskådliggör din vokabulär i
-trädform.</p>
-<p>Om du laddar ner filen <code>skos-styleHie.xsl</code> och istället kopierar koden i filen till det högra fältet i <a href="https://www.w3schools.com/xml/tryxslt.asp?xmlfile=cdcatalog&amp;xsltfile=cdcatalog">W3Schools XML-visualiserare</a>, så kan du byta ut</p>
-<p><code>&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;skos-styleList.xsl&quot;?&gt;</code></p>
-<p>mot</p>
-<p><code>&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;skos-styleHie.xsl&quot;?&gt;</code></p>
-<p>för att få en trädform motsvarande bilden nedan.</p>
+presentation alls i webbläsaren.</p>
+</div>
+<div id="visualisera-i-hierarkisk-tradform" class="section level2">
+<h2><span class="header-section-number">8.2</span> Visualisera i hierarkisk trädform</h2>
+<p>Det finns i Github-arkivet (och på Pingpong) ytterligare en XSL som med utgångspunkt från innehållet i varje koncepts <code>prefLabel</code> och konceptens hierarkiska relationer åskådliggör din vokabulär i trädform.</p>
+<ol style="list-style-type: decimal">
+<li>Ladda ner ner stilmallsfilen <code>skos-styleHie.xsl</code> och kopiera koden i filen till det högerfältet i <a href="https://www.w3schools.com/xml/tryxslt.asp?xmlfile=cdcatalog&amp;xsltfile=cdcatalog">W3Schools XML-visualiserare</a>.</li>
+<li>Byt ut <code>&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;skos-styleList.xsl&quot;?&gt;</code> mot <code>&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;skos-styleHie.xsl&quot;?&gt;</code> i din XML fil. Klistra in din nya XML-kod i vänsterfältet</li>
+</ol>
+<p>På det här viset visualiseras tesaurusen i trädform likt nedan:</p>
 <p><img src="img/skos-styleHie.png" /></p>
+</div>
+<div id="anvand-bada-stilmallarna" class="section level2">
+<h2><span class="header-section-number">8.3</span> Använd båda stilmallarna</h2>
 <p>Du använder med fördel stilmallarna för att kontrollera så att du får
 det resultat du förväntar dig. Det måste dock sägas att för
 <code>skos-styleHie.xsl</code> gäller att den förutsätter att din SKOS inte är
@@ -196,6 +212,7 @@ polyhierarkisk, dvs att något koncept inte har fler än ett
 att upptäcka felaktigheter i hierarkin. <code>skos-styleList.xsl</code> kan i sin
 tur vara till hjälp för att upptäcka vissa felaktigheter med avseende på
 SKOS-reglerna, var uppmärksam på eventuella röda felmeddelanden.</p>
+</div>
 </div>
             </section>
 

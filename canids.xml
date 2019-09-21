@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
  <!DOCTYPE rdf:RDF SYSTEM "skos.dtd">
-<?xml-stylesheet type="text/xsl" href="SKOS-style3.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/SKOS-style3.xsl"?>
 <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
 	xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
 	xmlns:dc="http://purl.org/dc/elements/1.1/">

@@ -174,31 +174,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="se-pa-filen-i-webblasaren" class="section level1">
 <h1><span class="header-section-number">8</span> Se på filen i webbläsaren</h1>
-<p>När du lagt till namn samt semantiska relationer mellan övriga koncept kan du öppna filen i webbläsaren - men glöm inte att spara filen först. Nu ska vi titta på XML-filen i webbläsaren genom att visualisera den med hjälp av stilmallarna <code>skos-styleList.xsl</code> och <code>skos-styleHie.xsl</code>.</p>
+<p>När du lagt till namn samt semantiska relationer mellan övriga koncept kan du öppna filen i webbläsaren (Firefox) - men glöm inte att spara filen först. Vi ska hänvisa till två stilmallar för att titta på filen på olika sätt, <code>skos-styleList.xsl</code> och <code>skos-styleHie.xsl</code>. Stilmallarna finns <a href="https://github.com/Mikael61/Mikael61.github.io">upplagda på Github</a>.</p>
 <div id="visualisera-i-alfabetisk-listform" class="section level2">
 <h2><span class="header-section-number">8.1</span> Visualisera i alfabetisk listform</h2>
-<ol style="list-style-type: decimal">
-<li>Gå till <a href="https://www.w3schools.com/xml/tryxslt.asp?xmlfile=cdcatalog&amp;xsltfile=cdcatalog">W3Schools XML-visualiserare</a>.</li>
-<li>Ta bort texten i båda rutorna.</li>
-<li>Klistra in din XML-kod i vänsterfältet.</li>
-<li>Klistra in koden i <code>skos-styleList.xsl</code> i högerfältet.</li>
-<li>Klicka sedan på <code>Edit the XML or XSLT code above and Click Me</code>.</li>
-</ol>
-<p>Om du gjort dert ovanstående så bör du kunna se en lista där alla namn (både föredragna och alternativa) listas i alfabetisk ordning - motsvarande bilden nedan.</p>
+<p>Hänvisa till XSL-stilmallen <code>skos-styleList.xsl</code> genom att lägga till följande efter XML-deklarationen men innan rotelementet:</p>
+<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></code></pre>
+<p>Öppna sedan din XML-fil i webbläsaren Firefox. Om detta gjorts så bör du kunna se en lista där alla namn (både föredragna och alternativa) listas i alfabetisk ordning - motsvarande bilden nedan.</p>
 <p><img src="img/skos-styleList.png" /></p>
-<p>Den XSL som ges till dessa övningar ger bara ett exempel på hur en SKOS
-kan transformeras. Flera SKOS-element, som dock inte behöver användas,
-har till exempel ingen transformation alls och kommer inte att ges någon
-presentation alls i webbläsaren.</p>
+<p>Den XSL som ges till dessa övningar ger bara ett exempel på hur en SKOS kan transformeras. Flera SKOS-element, som dock inte behöver användas, har till exempel ingen transformation alls och kommer inte att ges någon presentation alls i webbläsaren.</p>
 </div>
 <div id="visualisera-i-hierarkisk-tradform" class="section level2">
 <h2><span class="header-section-number">8.2</span> Visualisera i hierarkisk trädform</h2>
-<p>Det finns i Github-arkivet (och på Pingpong) ytterligare en XSL som med utgångspunkt från innehållet i varje koncepts <code>prefLabel</code> och konceptens hierarkiska relationer åskådliggör din vokabulär i trädform.</p>
-<ol style="list-style-type: decimal">
-<li>Ladda ner ner stilmallsfilen <code>skos-styleHie.xsl</code> och kopiera koden i filen till det högerfältet i <a href="https://www.w3schools.com/xml/tryxslt.asp?xmlfile=cdcatalog&amp;xsltfile=cdcatalog">W3Schools XML-visualiserare</a>.</li>
-<li>Byt ut <code>&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;skos-styleList.xsl&quot;?&gt;</code> mot <code>&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;skos-styleHie.xsl&quot;?&gt;</code> i din XML fil. Klistra in din nya XML-kod i vänsterfältet</li>
-</ol>
-<p>På det här viset visualiseras tesaurusen i trädform likt nedan:</p>
+<p>Det finns i Github-repositoriet ytterligare en XSL som med utgångspunkt från innehållet i varje koncepts <code>prefLabel</code> och konceptens hierarkiska relationer åskådliggör din vokabulär i trädform. Byt därför ut</p>
+<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></code></pre>
+<p>mot</p>
+<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleHie.xsl&quot;<span class="kw">?&gt;</span></code></pre>
+<p>i din XML fil. Spara och ladda om filen i Firefox. På det här viset visualiseras tesaurusen i trädform likt nedan:</p>
 <p><img src="img/skos-styleHie.png" /></p>
 </div>
 <div id="anvand-bada-stilmallarna" class="section level2">

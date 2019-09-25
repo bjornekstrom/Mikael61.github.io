@@ -21,7 +21,7 @@ xmlns:dc="http://purl.org/dc/elements/1.1/">
 				  * {margin : 0}
 				  body {
 				  margin : 3em 4em 3em 4em ;
-				  font-family : Ubuntu, sans-serif ;
+				  font-family : Arial, sans-serif ;
 				  font-size : 12pt;
 				  }
 				  h2 {margin-bottom : 1em;}

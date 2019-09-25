@@ -10,7 +10,7 @@
 				<style type="text/css">
 				  * {margin : 0}
 				  body { margin : 3em 4em 3em 4em ;
-				  font-family : Ubuntu, sans-serif ;
+				  font-family : Arial, sans-serif ;
 				  font-size : 12pt
 				  }
 				  td {

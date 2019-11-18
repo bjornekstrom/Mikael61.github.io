@@ -18,7 +18,7 @@ Masterprogrammet <em>biblioteks- och informationsvetenskap</em>
 </h1>
 <h2 style="text-align : center"> Tillämpningsanvisningar för SKOS-uppgiften <br/>
   <span style="font-size : 11pt ; font-weight : normal">Senaste uppdatering:
-  2016-11-16</span> </h2>
+  2019-11-18</span> </h2>
 <p class="bodyText">I det följande ges anvisningar för examinationsuppgiften till delmomentet XML/SKOS, 
 i vilken du skall implementera en mindre vokabulär i SKOS-form.
   Anvisningarna är normerande men är
@@ -41,9 +41,9 @@ i vilken du skall implementera en mindre vokabulär i SKOS-form.
 
 
 <p class="bodyText"> Med utgångspunkt från en del av ett existerande schema (Dewey, SAB-systemet, Agrovoc etc) ska du identifiera relevanta
-koncept (begrepp, fenomen, händelser etc) som du uppfattar hänger någorlunda ihop. Dessa representeras redan av symboler och/eller 
+koncept (begrepp, fenomen, händelser etc) som du uppfattar hänger någorlunda ihop. Dessa representeras där av symboler och/eller 
 olika benämningar som du dock inte ska känna dig tvingad att själv använda för din vokabulär. I själva verket är det säkert så att de
-kan vara direkt olämpliga att använda som "föredragen benämning" (<code>prefLabel</code>). Din vokabulär ska du föreställa dig starkt 
+	<strong>kan vara direkt olämpliga</strong> att använda som "föredragen benämning" (<code>prefLabel</code>). Din vokabulär ska du föreställa dig starkt 
   begränsad till ett tänkt område (t ex modellbygge eller "risker med olika idrotter") som åtminstone delvis täcks av det schema du valt
   att studera. Du ska också föreställa dig att det finns litteratur som rimligen kan indexeras (beskrivas) med hjälp av dessa koncept.
   De föredragna benämningar du väljer på koncepten (<code>prefLabel</code>) ska vara sådana som är behjälpliga för den som söker efter
@@ -71,41 +71,21 @@ kan vara direkt olämpliga att använda som "föredragen benämning" (<code>pref
   även för sådant som är tekniskt inkorrekt med avseende på SKOS. </p>
 
 <p class="bodyText">Därför finns en DTD publicerad i GitHub som du
-  skall 1) hämta, 2) placera i <strong>samma mapp
-  </strong> som du har din XML-fil i, med filnamnet
-  <code>skos.dtd</code>, och 3) infoga följande rad i din XML-fil (om
-  den inte redan finns där)</p>
+  skall använda på det sätt som beskrivs i övningarna</p>
 
-<pre class="exempel">&lt;!DOCTYPE rdf:RDF SYSTEM "skos.dtd"&gt;</pre>
-<p class="bodyText">i den s k prologen direkt efter xml-deklarationen.</p>
-<p class="bodyText">I XML-övning 2 och 3 fick du stifta bekantskap med hur en
-  DTD skapas (om du brydde dig om att göra dem, vilket inte var obligatoriskt). De kunskaper du har med dig från dem kan du i så fall använda för att läsa
-  DTDn och dess innehåll, men annars låter du bara filen ligga i filsystemet utan att öppna den.</p>
-<p class="bodyText">Arbeta hela tiden stegvis, låt EditiX regelbundet kontrollera
+<p class="bodyText">Arbeta hela tiden stegvis, låt EditiX eller oXygen regelbundet kontrollera
   om din fil är korrekt eller inte (tangentkombination Ctrl+k), var uppmärksam
   på eventuella felmeddelanden och åtgärda genom att korrigera dem omeddelbart.
   En SKOS-fil med många fel är oerhört svår att korrigera, men med endast ett
   eller två fel är det betydligt enklare. </p>
 <h2>Stilmallarna</h2>
-<p class="bodyText">För SKOS har två stycken stilmallar (XSL) producerats. Dessa
+<p class="bodyText">För SKOS har två stycken stilmallar (XSL) producerats. (Se övningsmaterialet) Dessa
   ger två olika presentationer av dina SKOS-data och är avsedda att visa på vad
   man kan göra med en SKOS och samtidigt ge lite stöd för den konceptuella utformningen
   av din vokabulär. Det förtjänar att understrykas att stilmallarna är sekundära
   i relation till SKOS-filen. Med det menas att det är SKOS-filen som ligger
   till grund för examinationen, inte dess presentation som kan fungera även om
-  SKOS-filen inte är korrekt.</p>
-
-<p class="bodyText">Precis som när det gäller DTDn måste de två filerna 1) hämtas
-  från GitHub, 2) placeras i <strong>samma mapp </strong> som du har din XML-fil,
-  med lämpliga filnamn,
-  och 3) infoga följande rad i din XML-fil (om den inte redan finns där)</p>
-<pre class="exempel">
-&lt;?xml-stylesheet type="text/xsl" href="skos-styleList.xsl"?&gt;
-
-</pre>
-<p class="bodyText">i den s k prologen direkt efter den DOCTYPE-deklaration som
-  du lade till för DTDn. Värdet till attributet href kan sedan skiftas för att
-  byta mellan de två stilmallarna.</p>
+  SKOS-filen inte är korrekt. Observera att det är stilmallarna som definierar i vilken ordning koncepten presenteras.</p>
 
 <p class="bodyText"> Den första stilmallen är utformad för att efterlikna traditionella
   existerande tesaurer, men innehåller mer utförlig text. Den sorterar alfabetiskt
@@ -146,27 +126,27 @@ scopeNote, example}
 {title, description, creator}
 </pre>
 <h2>EditiX</h2>
-<p class="bodyText">För uppgiften rekommenderas EditiX, även om all XML kan redigeras
+<p class="bodyText">För uppgiften rekommenderas EditiX eller oXygen, även om all XML kan redigeras
   med hjälp av t ex notepad. Emellertid är det osannolikt att uppgiften kan klaras
-  utan det stöd i form av felidentifikation som EditiX (eller någon annan dedikerad
-  XML-editor) ger. Var mycket uppmärksam på de felmeddelanden som EditiX ger
-  och fortsätt inte jobba innan du identifierat de fel som EditiX reagerat på
+  utan det stöd i form av felidentifikation som EditiX, oXygen eller någon annan dedikerad
+  XML-editor ger. Var mycket uppmärksam på de felmeddelanden som editorn ger
+  och fortsätt inte jobba innan du identifierat de fel som den reagerat på
   och blivit av med alla felmeddelanden.</p>
 <p class="bodyText">Ett inte helt ovanligt problem är att man får felmeddelanden
-  som säger att EditiX inte hittar DTDn (Can't load the DTD ...) eller att några
-  element inte är deklarerade. Inte så sällan beror detta på att man inte har
+  som säger att EditiX eller oXygen inte hittar DTDn (Can't load the DTD ...) eller att några
+  element inte är deklarerade. Inte så sällan beror detta på att du har
   DTDn på rätt plats i filsystemet eller inte ens laddat ner den.  </p>
-<p class="bodyText">Vet man att man gjort rätt så bör man kontrollera vilket
-  filnamn man givit sin XML (SKOS-fil) och hur filstrukturen ser ut i den dator
-  man arbetar med. Filnamn eller mappnamn som innehåller mellanslag och/eller
+<p class="bodyText">Vet du att du gjort rätt så bör du kontrollera vilket
+  filnamn du givit din XML (SKOS-fil) och hur filstrukturen ser ut i den dator
+  du arbetar med. Filnamn eller mappnamn som innehåller mellanslag och/eller
   språkspecifika tecken (t ex å, ä och ö) kan ofta ställa till problem. Korrigera
   då fil- och mappnamn.</p>
-<p class="bodyText">Ett annat problem är att man förväntar sig att EditiX skall
+<p class="bodyText">Ett annat problem är att man förväntar sig att editorn skall
   öppnas så att SKOS-filen kan redigeras när man klickar eller dubbelklickar
   på SKOS-filen i utforskaren (eller motsvarande filhanterare på en MAC eller
-  dator med annat operativsystem). Det går inte, därför att xml-filer vanligen
+  dator med annat operativsystem). Det går inte alltid, därför att xml-filer vanligen
   är associerade med något annat program för läsning (t ex Internet Explorer).
-  EditiX skall först startas och därefter öppnas SKOS-filen inifrån EditiX.</p>
+  Editorn kan då först startas och därefter öppnas SKOS-filen inifrån den.</p>
 <h2>Vanliga missuppfattningar</h2>
 <p class="bodyText"> I en strikt struktur som i biologisk klassifikation där
   familjen Canidae (hunddjur) är överordnad arten Canis Lupus och arten Canis

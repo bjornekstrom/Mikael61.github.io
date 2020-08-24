@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Avslutningsvis | Introduktion till SKOS</title>
-  <meta name="description" content="9 Avslutningsvis | Introduktion till SKOS" />
+  <title>7 Beskriv din vokabulär | Introduktion till SKOS</title>
+  <meta name="description" content="7 Beskriv din vokabulär | Introduktion till SKOS" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Avslutningsvis | Introduktion till SKOS" />
+  <meta property="og:title" content="7 Beskriv din vokabulär | Introduktion till SKOS" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Avslutningsvis | Introduktion till SKOS" />
+  <meta name="twitter:title" content="7 Beskriv din vokabulär | Introduktion till SKOS" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="se-på-filen-i-webbläsaren.html"/>
-
+<link rel="prev" href="definitioner-med-mera.html"/>
+<link rel="next" href="se-på-filen-i-webbläsaren.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -172,38 +172,73 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="avslutningsvis" class="section level1">
-<h1><span class="header-section-number">9</span> Avslutningsvis</h1>
-<p>När du anser dig klar med ditt egna experimenterande kan du också ta en
-titt på <a href="https://mikael61.github.io/skosKAND/musicthesaurus.xml" class="uri">https://mikael61.github.io/skosKAND/musicthesaurus.xml</a> där ovanstående exempel
-är lite utvidgat.</p>
-<p>Några mindre vokabulärer sammanställda i
-övningssammang finns också att studera:</p>
-<ul>
-<li><a href="https://mikael61.github.io/malinalmstedtjansson.xml">Geografiska indelningar för släkt- och
-hembygdsforskning</a></li>
-<li><a href="https://mikael61.github.io/haidi.xml">Vokabulär för Österrikes
-matkultur</a></li>
-<li><a href="https://mikael61.github.io/partiideologier2.xml">Politiska partier i Sveriges riksdag 2006-2010 och dess
-ideologier</a></li>
-</ul>
-<p>Samt från den så kallade verkligheten, något lite mer komplext:
-<a href="http://id.loc.gov/authorities/subjects/sh2002000569.html" class="uri">http://id.loc.gov/authorities/subjects/sh2002000569.html</a> och välj
-'Visualization' så ser du en alternativ möjlighet att presentera en
-SKOS-struktur.</p>
-<p><em>Notera att dessa exempel bara belyser vad som gjorts och
-<strong>inte</strong> på något vis skall ses som normerande.</em></p>
-<hr />
-<p>Uppdaterad: 2020-08-24<br />
-Mikael.Gunnarsson at hb.se // reviderad av Bjorn.Ekstrom at hb.se</p>
+<div id="beskriv-din-vokabulär" class="section level1">
+<h1><span class="header-section-number">7</span> Beskriv din vokabulär</h1>
+<p>Signifikant för SKOS är att kontrollerade vokabulärer distribueras över
+webben och samma vokabulär i princip kan användas inom flera olika
+tillämpningsområden samt att flera vokabulärer kan kombineras. Därför
+bör man söka beskriva sin kontrollerade vokabulär så väl som möjligt.
+Vi kan göra detta genom att lyfta in en annan standard; <em>Dublin Core
+Metadata Element Set</em>.</p>
+<p>Vi deklarerar för rotelementet att vi nyttjar
+ytterligare en namnrymd och använder från denna elementen <code>title</code>,
+<code>description</code> och <code>creator</code> (semantiken hos dessa element torde vara
+självförklarande). Meningen är förstås att du själv lägger till dina
+uppgifter inuti dessa element.</p>
+<p>Observera att namnrymdsdeklarationen är en av tre sådana och skall vara
+en del av det öppnande märket <code>rdf:RDF</code>. Lägg därför till <code>xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;</code> under SKOS-deklarationen i <code>rdf:RDF</code>-rotelementet. Observera också det lilla <code>&gt;</code> som
+skall följa efter den nya deklarationen och inte föregå den.</p>
+<p>Se XML-koden som utför beskrivningen av vokabulären i elementet <code>Conceptscheme</code> strax under <code>rdf:RDF</code>-märket.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb12-2" data-line-number="2"><span class="dt">&lt;!DOCTYPE </span>rdf:RDF SYSTEM &quot;skos.dtd&quot;<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb12-3" data-line-number="3"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb12-4" data-line-number="4"><span class="kw">&lt;rdf:RDF</span> </a>
+<a class="sourceLine" id="cb12-5" data-line-number="5"><span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></a>
+<a class="sourceLine" id="cb12-6" data-line-number="6"><span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span></a>
+<a class="sourceLine" id="cb12-7" data-line-number="7"><span class="ot">  xmlns:dc=</span><span class="st">&quot;http://purl.org/dc/elements/1.1/&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-8" data-line-number="8">    </a>
+<a class="sourceLine" id="cb12-9" data-line-number="9">    <span class="kw">&lt;skos:ConceptScheme</span><span class="ot"> rdf:about=</span><span class="st">&quot;MyScheme&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-10" data-line-number="10">      <span class="kw">&lt;dc:title&gt;&lt;/dc:title&gt;</span> </a>
+<a class="sourceLine" id="cb12-11" data-line-number="11">      <span class="kw">&lt;dc:description&gt;&lt;/dc:description&gt;</span></a>
+<a class="sourceLine" id="cb12-12" data-line-number="12">      <span class="kw">&lt;dc:creator&gt;&lt;/dc:creator&gt;</span></a>
+<a class="sourceLine" id="cb12-13" data-line-number="13">    <span class="kw">&lt;/skos:ConceptScheme&gt;</span></a>
+<a class="sourceLine" id="cb12-14" data-line-number="14">    </a>
+<a class="sourceLine" id="cb12-15" data-line-number="15">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-16" data-line-number="16">    <span class="kw">&lt;skos:prefLabel&gt;</span>Stränginstrument<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb12-17" data-line-number="17">    <span class="kw">&lt;skos:narrower</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#gitarrer&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb12-18" data-line-number="18">    <span class="kw">&lt;skos:narrower</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#nyckelharpor&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb12-19" data-line-number="19">    <span class="kw">&lt;/skos:Concept&gt;</span> </a>
+<a class="sourceLine" id="cb12-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb12-21" data-line-number="21">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#gitarrer&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-22" data-line-number="22">    <span class="kw">&lt;skos:prefLabel&gt;</span>Gitarrer<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb12-23" data-line-number="23">        <span class="kw">&lt;skos:altLabel&gt;</span>Guror<span class="kw">&lt;/skos:altLabel&gt;</span></a>
+<a class="sourceLine" id="cb12-24" data-line-number="24">    <span class="kw">&lt;skos:broader</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb12-25" data-line-number="25">    <span class="kw">&lt;skos:related</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#rockmusik&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb12-26" data-line-number="26">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb12-27" data-line-number="27"></a>
+<a class="sourceLine" id="cb12-28" data-line-number="28">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#nyckelharpor&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-29" data-line-number="29">    <span class="kw">&lt;skos:prefLabel&gt;</span>Nyckelharpor<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb12-30" data-line-number="30">    <span class="kw">&lt;skos:broader</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb12-31" data-line-number="31">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb12-32" data-line-number="32">    </a>
+<a class="sourceLine" id="cb12-33" data-line-number="33">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#rockmusik&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb12-34" data-line-number="34">    <span class="kw">&lt;skos:prefLabel&gt;</span>Rockmusik<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb12-35" data-line-number="35">    <span class="kw">&lt;skos:related</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#gitarrer&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb12-36" data-line-number="36">    <span class="kw">&lt;skos:definition&gt;</span>&quot;[S]amlande genrebenämning på musikstilar som vuxit fram ur rock’n’roll sedan mitten av 1950-talet.&quot; Källa: https://www.ne.se/uppslagsverk/encyklopedi/l%C3%A5ng/rock<span class="kw">&lt;/skos:definition&gt;</span></a>
+<a class="sourceLine" id="cb12-37" data-line-number="37">    <span class="kw">&lt;skos:example</span><span class="ot"> rdf:resource=</span><span class="st">&quot;https://www.youtube.com/watch?v=7oUWoj6KXpM&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb12-38" data-line-number="38">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb12-39" data-line-number="39"></a>
+<a class="sourceLine" id="cb12-40" data-line-number="40"><span class="kw">&lt;/rdf:RDF&gt;</span></a></code></pre></div>
+<p>Lägg till en passande beskrivning enligt <code>title</code>,
+<code>description</code> och <code>creator</code> och fortsätt sedan till nästa del i uppgiften.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="se-på-filen-i-webbläsaren.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="definitioner-med-mera.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="se-på-filen-i-webbläsaren.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

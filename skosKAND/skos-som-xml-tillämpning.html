@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Avslutningsvis | Introduktion till SKOS</title>
-  <meta name="description" content="9 Avslutningsvis | Introduktion till SKOS" />
+  <title>2 SKOS som XML-tillämpning | Introduktion till SKOS</title>
+  <meta name="description" content="2 SKOS som XML-tillämpning | Introduktion till SKOS" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Avslutningsvis | Introduktion till SKOS" />
+  <meta property="og:title" content="2 SKOS som XML-tillämpning | Introduktion till SKOS" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Avslutningsvis | Introduktion till SKOS" />
+  <meta name="twitter:title" content="2 SKOS som XML-tillämpning | Introduktion till SKOS" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="se-på-filen-i-webbläsaren.html"/>
-
+<link rel="prev" href="skos-introduktionsövningar.html"/>
+<link rel="next" href="koncept.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -172,38 +172,88 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="avslutningsvis" class="section level1">
-<h1><span class="header-section-number">9</span> Avslutningsvis</h1>
-<p>När du anser dig klar med ditt egna experimenterande kan du också ta en
-titt på <a href="https://mikael61.github.io/skosKAND/musicthesaurus.xml" class="uri">https://mikael61.github.io/skosKAND/musicthesaurus.xml</a> där ovanstående exempel
-är lite utvidgat.</p>
-<p>Några mindre vokabulärer sammanställda i
-övningssammang finns också att studera:</p>
+<div id="skos-som-xml-tillämpning" class="section level1">
+<h1><span class="header-section-number">2</span> SKOS som XML-tillämpning</h1>
+<p>Precis som alla XML-dokument skall en SKOS inledas med en XML-deklaration som talar om vilken version av XML vi har att göra med, och vilken teckenkodning som valts.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a></code></pre></div>
+<p>Spara därefter SKOS-filen någonstans där du hittar den igen. SKOS-filen skall ha filändelsen <code>.xml</code> och dess namn får inte innehålla mellanslag samt endast tecken ur sekvenserna 0-9, a-z och A-Z. Om du arbetar i EditiX eller XMLSpear kommer programmet att spara med UTF-8 som teckenkodning automatiskt.</p>
+<p>Därefter skall SKOSen bäddas in i ett rotelement som utgörs av elementet <code>RDF</code>, eftersom SKOS också är en delmängd av RDF. Rotelementet skall också ha två namnrymdsdeklarationer (nedan illustrerat som <code>xmlns:rdf</code> respektive <code>xmlns:skos</code>) som knyter SKOS-instansen till definitionen av både RDF och SKOS. I det fortsatta, när det talas om element och attribut, talas det om dem utan att inkludera namnrymdsprefixet.</p>
+<p>Nedan följer ett kodavsnitt med XML-deklaration och ett rotelement med namnrymdsdeklarationerna RDF och SKOS.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">&lt;rdf:RDF</span> </a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"><span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">  </a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="kw">&lt;/rdf:RDF&gt;</span></a></code></pre></div>
+<div id="xsl--och-dtd-filer" class="section level2">
+<h2><span class="header-section-number">2.1</span> XSL- och DTD-filer</h2>
+<p>För att genomföra uppgiften behöver vi länka till externa filer.</p>
+<p>Vi ska först länka till en stilmall i form av en av två XSL-filer (eXtensible Stylesheet Language) som ger vokabulären en presentation - det vill säga transformerar SKOS-filen till XHTML. Dessa finns finns <a href="https://github.com/Mikael61/Mikael61.github.io">upplagda på Github</a> och kan länkas till direkt.</p>
+<p>Därefter ska vi länka till en DTD-fil (Document Type Definition) som specificerar vilka element och attribut som ska användas i XML-tillämpningen av SKOS. Denna hämtas <a href="https://github.com/Mikael61/Skos">ifrån Github</a> eller via Pingpong-modulen (under Dokument). Spara DTD-filen i samma mapp som den XML-fil som ni arbetar med.</p>
+<div id="hänvisning-till-xsl" class="section level3">
+<h3><span class="header-section-number">2.1.1</span> Hänvisning till XSL</h3>
+<p>Eftersom XSL-filerna finns uppladdade på webben så kan dessa hänvisas till direkt. Filerna ligger i följande sökväg: <code>https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/</code> och heter <code>skos-styleList.xsl</code> respektive <code>skos-styleHie.xsl</code>.</p>
+<p>Länka därför till en av filerna (det går inte att länka till båda samtidigt) genom att lägga till kodraden under XML-deklarationen.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">&lt;rdf:RDF</span> </a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">  </a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="kw">&lt;/rdf:RDF&gt;</span></a></code></pre></div>
+</div>
+<div id="hänvisning-till-dtd" class="section level3">
+<h3><span class="header-section-number">2.1.2</span> Hänvisning till DTD</h3>
+<p>Slutligen infogar du också en länk till en DTD-fil, som du också måste spara i samma lokala mapp som övriga filer. Till skillnad från de flesta andra XML-tillämpningar finns inte SKOS definierat som en DTD- eller ett XML-schema, vilket dock inte betyder att SKOS inte är väldefinierat. <a href="https://www.w3.org/">World Wide Web Consortiums (W3C)</a> rekommendationer och övrig dokumentation skall ses som normativ och det är vanligen dit man vänder sig för att fastställa vad som är korrekt och inkorrekt.</p>
+<p>Länka till DTD-filen genom att lägga till kodraden under hänvisningen till XSL-filen.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="dt">&lt;!DOCTYPE </span>rdf:RDF SYSTEM &quot;skos.dtd&quot;<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">&lt;rdf:RDF</span> </a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">  </a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="kw">&lt;/rdf:RDF&gt;</span></a></code></pre></div>
+</div>
+</div>
+<div id="giltig-skos-och-validering" class="section level2">
+<h2><span class="header-section-number">2.2</span> Giltig SKOS och validering</h2>
+<p>Det är viktigt att komma ihåg att även om det är lite osäkert om man kan tala om giltig och ogiltig SKOS, så kan man i alla fall tala om välformad och icke välformad SKOS. Avsaknaden av en DTD har visat sig vara problematisk i undervisningssammanhang, därför har en sådan konstruerats för den här kursen. Tillägget av en DTD möjliggör att du får utvidgat stöd av EditiX eller XMLSpear när du jobbar med att utveckla din SKOS, så att du får felmeddelanden när du t ex placerar ett <code>skos:broader</code>-element direkt under rotelementet <code>rdf:RDF</code>.</p>
+<p>Validering innebär alltså att man ser till att XML-koden är välformad och giltig.</p>
 <ul>
-<li><a href="https://mikael61.github.io/malinalmstedtjansson.xml">Geografiska indelningar för släkt- och
-hembygdsforskning</a></li>
-<li><a href="https://mikael61.github.io/haidi.xml">Vokabulär för Österrikes
-matkultur</a></li>
-<li><a href="https://mikael61.github.io/partiideologier2.xml">Politiska partier i Sveriges riksdag 2006-2010 och dess
-ideologier</a></li>
+<li><p>Välformighet innebär att filen följer XML-regler, specificerade i t ex en DTD-fil (vad som får och ska anges i tesaurusen).</p></li>
+<li><p>Giltighet innebär att filen följer reglerna för den aktuella XML-tillämpningen, i vårt fall SKOS (hur data anges i tesaurusen).</p></li>
 </ul>
-<p>Samt från den så kallade verkligheten, något lite mer komplext:
-<a href="http://id.loc.gov/authorities/subjects/sh2002000569.html" class="uri">http://id.loc.gov/authorities/subjects/sh2002000569.html</a> och välj
-'Visualization' så ser du en alternativ möjlighet att presentera en
-SKOS-struktur.</p>
-<p><em>Notera att dessa exempel bara belyser vad som gjorts och
-<strong>inte</strong> på något vis skall ses som normerande.</em></p>
-<hr />
-<p>Uppdaterad: 2020-08-24<br />
-Mikael.Gunnarsson at hb.se // reviderad av Bjorn.Ekstrom at hb.se</p>
+<div id="validering-i-oxygen" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Validering i Oxygen</h3>
+<ul>
+<li><code>Ctrl + W</code> för välformighet</li>
+<li><code>Ctrl + V</code> för giltighet
+(<code>Cmd + W/V</code> på Mac)</li>
+</ul>
+</div>
+<div id="validering-i-editix" class="section level3">
+<h3><span class="header-section-number">2.2.2</span> Validering i EditiX</h3>
+<ul>
+<li><code>Ctrl + K</code></li>
+<li>(<code>Cmd + K</code> på Mac)</li>
+</ul>
+</div>
+<div id="validering-i-xmlspear" class="section level3">
+<h3><span class="header-section-number">2.2.3</span> Validering i XMLSpear</h3>
+<p>I XMLSpear valideras koden automatiskt om DTD-validering är förbockat. Detta görs genom att klicka på den gröna bocken och i rutan för DTD i raden ovanför rutan där ni skriver er kod:</p>
+<p><img src="img/xmlspearvalidation.png" /></p>
+<p>Efter att ha länkat till XSL- och DTD-filerna kan du fortsätta till nästa del i uppgiften.</p>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="se-på-filen-i-webbläsaren.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="skos-introduktionsövningar.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="koncept.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

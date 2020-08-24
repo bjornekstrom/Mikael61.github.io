@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Avslutningsvis | Introduktion till SKOS</title>
-  <meta name="description" content="9 Avslutningsvis | Introduktion till SKOS" />
+  <title>4 Konceptens föredragna namn och synonymer | Introduktion till SKOS</title>
+  <meta name="description" content="4 Konceptens föredragna namn och synonymer | Introduktion till SKOS" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Avslutningsvis | Introduktion till SKOS" />
+  <meta property="og:title" content="4 Konceptens föredragna namn och synonymer | Introduktion till SKOS" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Avslutningsvis | Introduktion till SKOS" />
+  <meta name="twitter:title" content="4 Konceptens föredragna namn och synonymer | Introduktion till SKOS" />
   
   
   
@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="se-på-filen-i-webbläsaren.html"/>
-
+<link rel="prev" href="koncept.html"/>
+<link rel="next" href="semantiska-relationer.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -172,38 +172,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="avslutningsvis" class="section level1">
-<h1><span class="header-section-number">9</span> Avslutningsvis</h1>
-<p>När du anser dig klar med ditt egna experimenterande kan du också ta en
-titt på <a href="https://mikael61.github.io/skosKAND/musicthesaurus.xml" class="uri">https://mikael61.github.io/skosKAND/musicthesaurus.xml</a> där ovanstående exempel
-är lite utvidgat.</p>
-<p>Några mindre vokabulärer sammanställda i
-övningssammang finns också att studera:</p>
-<ul>
-<li><a href="https://mikael61.github.io/malinalmstedtjansson.xml">Geografiska indelningar för släkt- och
-hembygdsforskning</a></li>
-<li><a href="https://mikael61.github.io/haidi.xml">Vokabulär för Österrikes
-matkultur</a></li>
-<li><a href="https://mikael61.github.io/partiideologier2.xml">Politiska partier i Sveriges riksdag 2006-2010 och dess
-ideologier</a></li>
-</ul>
-<p>Samt från den så kallade verkligheten, något lite mer komplext:
-<a href="http://id.loc.gov/authorities/subjects/sh2002000569.html" class="uri">http://id.loc.gov/authorities/subjects/sh2002000569.html</a> och välj
-'Visualization' så ser du en alternativ möjlighet att presentera en
-SKOS-struktur.</p>
-<p><em>Notera att dessa exempel bara belyser vad som gjorts och
-<strong>inte</strong> på något vis skall ses som normerande.</em></p>
-<hr />
-<p>Uppdaterad: 2020-08-24<br />
-Mikael.Gunnarsson at hb.se // reviderad av Bjorn.Ekstrom at hb.se</p>
+<div id="konceptens-föredragna-namn-och-synonymer" class="section level1">
+<h1><span class="header-section-number">4</span> Konceptens föredragna namn och synonymer</h1>
+<p>Fortsättningsvis ska vi nu utveckla dessa koncept genom att
+definiera till exempel olika namn för vart och ett av dem, och
+semantiska relationer mellan dem.</p>
+<p>I det här exemplet kan vi börja med
+att definiera föredragna termer (<code>prefLabel</code>) för dessa koncept. Ett
+koncept kan endast ha en föredragen term för ett givet språk. Finns det
+fler namn för konceptet i form av synonymer eller nära synonymer måste
+de vara alternativa namn (<code>altLabel</code>).</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="dt">&lt;!DOCTYPE </span>rdf:RDF SYSTEM &quot;skos.dtd&quot;<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="kw">&lt;rdf:RDF</span> </a>
+<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"> </a>
+<a class="sourceLine" id="cb6-8" data-line-number="8">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">    <span class="kw">&lt;skos:prefLabel&gt;</span>Stränginstrument<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">    <span class="kw">&lt;/skos:Concept&gt;</span> </a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#gitarrer&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13">    <span class="kw">&lt;skos:prefLabel&gt;</span>Gitarrer<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb6-14" data-line-number="14">        <span class="kw">&lt;skos:altLabel&gt;</span>Guror<span class="kw">&lt;/skos:altLabel&gt;</span></a>
+<a class="sourceLine" id="cb6-15" data-line-number="15">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb6-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb6-17" data-line-number="17">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#nyckelharpor&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-18" data-line-number="18">    <span class="kw">&lt;skos:prefLabel&gt;</span>Nyckelharpor<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb6-19" data-line-number="19">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb6-20" data-line-number="20">    </a>
+<a class="sourceLine" id="cb6-21" data-line-number="21">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#rockmusik&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb6-22" data-line-number="22">    <span class="kw">&lt;skos:prefLabel&gt;</span>Rockmusik<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb6-23" data-line-number="23">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb6-24" data-line-number="24"></a>
+<a class="sourceLine" id="cb6-25" data-line-number="25"><span class="kw">&lt;/rdf:RDF&gt;</span></a></code></pre></div>
+<p>Lägg därför till <code>prefLabel</code> och <code>altLabel</code>-element enligt ovan och fortsätt sedan till nästa del i uppgiften.</p>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="se-på-filen-i-webbläsaren.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="koncept.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="semantiska-relationer.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

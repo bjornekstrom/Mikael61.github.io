@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rdf:RDF SYSTEM "skos.dtd">
+<?xml-stylesheet type="text/xsl" href="https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl"?>
+<rdf:RDF 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    
+    <skos:ConceptScheme rdf:about="Myscheme">
+        <dc:title>Tesaurus för musikbibliotek</dc:title>
+        <dc:description>Exempelvokabulär för musikgenrer och stränginstrument.</dc:description>
+        <dc:creator>Björn Ekström</dc:creator>
+    </skos:ConceptScheme>
+    
+    <skos:Concept rdf:about="#stranginstrument">
+        <skos:prefLabel>Stränginstrument</skos:prefLabel>
+        <skos:narrower rdf:resource="#gitarrer"/>
+        <skos:narrower rdf:resource="#nyckelharpor"/>
+        <skos:definition rdf:resource="https://www.ne.se/uppslagsverk/encyklopedi/l%C3%A5ng/str%C3%A4nginstrument"/>
+        <skos:scopeNote>Avser verk som relaterar till stränginstrument. Används om inget nedanstående koncept passar.</skos:scopeNote>
+    </skos:Concept> 
+    
+    <skos:Concept rdf:about="#gitarrer">
+        <skos:prefLabel>Gitarrer</skos:prefLabel>
+        <skos:altLabel>Guror</skos:altLabel>
+        <skos:broader rdf:resource="#stranginstrument"/>
+        <skos:related rdf:resource="#rockmusik"/>
+        <skos:related rdf:resource="#folkmusik"/>
+        <skos:example rdf:resource="http://runeberg.org/dragharm/dragharm.html"/>
+        <skos:scopeNote>Avser verk som relaterar till gitarrer.</skos:scopeNote>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#nyckelharpor">
+        <skos:prefLabel>Nyckelharpor</skos:prefLabel>
+        <skos:broader rdf:resource="#stranginstrument"/>
+        <skos:related rdf:resource="#folkmusik"/>
+        <skos:scopeNote>Avser verk som relaterar till nyckelharpor.</skos:scopeNote>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#popmusik">
+        <skos:prefLabel>Populärmusik</skos:prefLabel>
+        <skos:narrower rdf:resource="#rockmusik"/>
+        <skos:scopeNote>Avser verk som relaterar till popkmusik. Används om inget nedanstående koncept passar.</skos:scopeNote>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#rockmusik">
+        <skos:prefLabel>Rockmusik</skos:prefLabel>
+        <skos:broader rdf:resource="#popmusik"/>
+        <skos:related rdf:resource="#gitarrer"/>
+        <skos:definition>"[S]amlande genrebenämning på musikstilar som vuxit fram ur rock’n’roll sedan mitten av 1950-talet." Källa: https://www.ne.se/uppslagsverk/encyklopedi/l%C3%A5ng/rock</skos:definition>
+        <skos:example rdf:resource="https://www.youtube.com/watch?v=7oUWoj6KXpM"/>
+        <skos:scopeNote>Avser verk som relaterar till rockmusik.</skos:scopeNote>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#folkmusik">
+        <skos:prefLabel>Folkmusik</skos:prefLabel>
+        <skos:related rdf:resource="#nyckelharpor"/>
+        <skos:related rdf:resource="#gitarrer"/>
+        <skos:definition>"[M]usik med rötter i det gamla bondesamhället som blandats med städernas populär- och konstmusik." Källa: https://www-ne-se.lib.costello.pub.hb.se/uppslagsverk/encyklopedi/l%C3%A5ng/folkmusik</skos:definition>
+        <skos:example rdf:resource="https://www.youtube.com/watch?v=k9O9_P7G4vw"/>
+        <skos:scopeNote>Avser verk som relaterar till folkmusik.</skos:scopeNote>
+    </skos:Concept>
+    
+</rdf:RDF>

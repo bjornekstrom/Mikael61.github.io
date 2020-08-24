@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Semantiska relationer | Introduktion till SKOS</title>
-  <meta name="description" content="5 Semantiska relationer | Introduktion till SKOS">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="5 Semantiska relationer | Introduktion till SKOS" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Semantiska relationer | Introduktion till SKOS" />
   <meta property="og:type" content="book" />
@@ -22,19 +21,19 @@
   
   
 
-<meta name="author" content="Mikael Gunnarsson">
-<meta name="author" content="Maria Idebrant">
-<meta name="author" content="Björn Ekström">
+<meta name="author" content="Mikael Gunnarsson" />
+<meta name="author" content="Maria Idebrant" />
+<meta name="author" content="Björn Ekström" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="konceptens-foredragna-namn-och-synonymer.html">
-<link rel="next" href="definitioner-med-mera.html">
+<link rel="prev" href="konceptens-föredragna-namn-och-synonymer.html"/>
+<link rel="next" href="definitioner-med-mera.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -42,6 +41,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -54,10 +56,9 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -67,13 +68,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
   { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -129,27 +128,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="skos-introduktionsovningar.html"><a href="skos-introduktionsovningar.html"><i class="fa fa-check"></i><b>1</b> SKOS - Introduktionsövningar</a></li>
-<li class="chapter" data-level="2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html"><i class="fa fa-check"></i><b>2</b> SKOS som XML-tillämpning</a><ul>
-<li class="chapter" data-level="2.1" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#xsl--och-dtd-filer"><i class="fa fa-check"></i><b>2.1</b> XSL- och DTD-filer</a></li>
-<li class="chapter" data-level="2.2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#hanvisning-till-xsl"><i class="fa fa-check"></i><b>2.2</b> Hänvisning till XSL</a></li>
-<li class="chapter" data-level="2.3" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#hanvisning-till-dtd"><i class="fa fa-check"></i><b>2.3</b> Hänvisning till DTD</a></li>
-<li class="chapter" data-level="2.4" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#giltig-skos"><i class="fa fa-check"></i><b>2.4</b> Giltig SKOS?</a></li>
+<li class="chapter" data-level="1" data-path="skos-introduktionsövningar.html"><a href="skos-introduktionsövningar.html"><i class="fa fa-check"></i><b>1</b> SKOS - Introduktionsövningar</a></li>
+<li class="chapter" data-level="2" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html"><i class="fa fa-check"></i><b>2</b> SKOS som XML-tillämpning</a><ul>
+<li class="chapter" data-level="2.1" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#xsl--och-dtd-filer"><i class="fa fa-check"></i><b>2.1</b> XSL- och DTD-filer</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#hänvisning-till-xsl"><i class="fa fa-check"></i><b>2.1.1</b> Hänvisning till XSL</a></li>
+<li class="chapter" data-level="2.1.2" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#hänvisning-till-dtd"><i class="fa fa-check"></i><b>2.1.2</b> Hänvisning till DTD</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#giltig-skos-och-validering"><i class="fa fa-check"></i><b>2.2</b> Giltig SKOS och validering</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#validering-i-oxygen"><i class="fa fa-check"></i><b>2.2.1</b> Validering i Oxygen</a></li>
+<li class="chapter" data-level="2.2.2" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#validering-i-editix"><i class="fa fa-check"></i><b>2.2.2</b> Validering i EditiX</a></li>
+<li class="chapter" data-level="2.2.3" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#validering-i-xmlspear"><i class="fa fa-check"></i><b>2.2.3</b> Validering i XMLSpear</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="koncept.html"><a href="koncept.html"><i class="fa fa-check"></i><b>3</b> Koncept</a></li>
-<li class="chapter" data-level="4" data-path="konceptens-foredragna-namn-och-synonymer.html"><a href="konceptens-foredragna-namn-och-synonymer.html"><i class="fa fa-check"></i><b>4</b> Konceptens föredragna namn och synonymer</a></li>
+<li class="chapter" data-level="4" data-path="konceptens-föredragna-namn-och-synonymer.html"><a href="konceptens-föredragna-namn-och-synonymer.html"><i class="fa fa-check"></i><b>4</b> Konceptens föredragna namn och synonymer</a></li>
 <li class="chapter" data-level="5" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html"><i class="fa fa-check"></i><b>5</b> Semantiska relationer</a><ul>
-<li class="chapter" data-level="5.1" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#semantiska-relationer-i-skos"><i class="fa fa-check"></i><b>5.1</b> Semantiska relationer i SKOS</a></li>
-<li class="chapter" data-level="5.2" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#fortsatt-anvanda-relationerna"><i class="fa fa-check"></i><b>5.2</b> Fortsätt använda relationerna</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#mer-om-associativa-relationer-related"><i class="fa fa-check"></i><b>5.2.1</b> Mer om associativa relationer (<code>related</code>)</a></li>
-</ul></li>
+<li class="chapter" data-level="5.1" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#bredare-relation-broader"><i class="fa fa-check"></i><b>5.1</b> Bredare relation: <code>broader</code></a></li>
+<li class="chapter" data-level="5.2" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#snävare-relation-narrower"><i class="fa fa-check"></i><b>5.2</b> Snävare relation: <code>narrower</code></a></li>
+<li class="chapter" data-level="5.3" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#associativa-relationer-related"><i class="fa fa-check"></i><b>5.3</b> Associativa relationer: <code>related</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="definitioner-med-mera.html"><a href="definitioner-med-mera.html"><i class="fa fa-check"></i><b>6</b> Definitioner med mera</a></li>
-<li class="chapter" data-level="7" data-path="beskriv-din-vokabular.html"><a href="beskriv-din-vokabular.html"><i class="fa fa-check"></i><b>7</b> Beskriv din vokabulär</a></li>
-<li class="chapter" data-level="8" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html"><i class="fa fa-check"></i><b>8</b> Se på filen i webbläsaren</a><ul>
-<li class="chapter" data-level="8.1" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html#visualisera-i-alfabetisk-listform"><i class="fa fa-check"></i><b>8.1</b> Visualisera i alfabetisk listform</a></li>
-<li class="chapter" data-level="8.2" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html#visualisera-i-hierarkisk-tradform"><i class="fa fa-check"></i><b>8.2</b> Visualisera i hierarkisk trädform</a></li>
-<li class="chapter" data-level="8.3" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html#anvand-bada-stilmallarna"><i class="fa fa-check"></i><b>8.3</b> Använd båda stilmallarna</a></li>
+<li class="chapter" data-level="7" data-path="beskriv-din-vokabulär.html"><a href="beskriv-din-vokabulär.html"><i class="fa fa-check"></i><b>7</b> Beskriv din vokabulär</a></li>
+<li class="chapter" data-level="8" data-path="se-på-filen-i-webbläsaren.html"><a href="se-på-filen-i-webbläsaren.html"><i class="fa fa-check"></i><b>8</b> Se på filen i webbläsaren</a><ul>
+<li class="chapter" data-level="8.1" data-path="se-på-filen-i-webbläsaren.html"><a href="se-på-filen-i-webbläsaren.html#visualisera-i-alfabetisk-listform"><i class="fa fa-check"></i><b>8.1</b> Visualisera i alfabetisk listform</a></li>
+<li class="chapter" data-level="8.2" data-path="se-på-filen-i-webbläsaren.html"><a href="se-på-filen-i-webbläsaren.html#visualisera-i-hierarkisk-trädform"><i class="fa fa-check"></i><b>8.2</b> Visualisera i hierarkisk trädform</a></li>
+<li class="chapter" data-level="8.3" data-path="se-på-filen-i-webbläsaren.html"><a href="se-på-filen-i-webbläsaren.html#använd-båda-stilmallarna"><i class="fa fa-check"></i><b>8.3</b> Använd båda stilmallarna</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="avslutningsvis.html"><a href="avslutningsvis.html"><i class="fa fa-check"></i><b>9</b> Avslutningsvis</a></li>
 </ul>
@@ -171,57 +174,111 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="semantiska-relationer" class="section level1">
 <h1><span class="header-section-number">5</span> Semantiska relationer</h1>
-<p>Hund är nu en underart till varg och således är det koncept som vi givit identiteten wolves ett bredare (<code>broader</code>) koncept än dogs, vilket skall deklareras. Observera att det inte av detta följer att canids är ett bredare koncept än dogs, eftersom relationen broader inte är transitiv. (I egentlig mening är förstås canids ett bredare begrepp än dogs, men restriktionen här gäller de slutsatser som kan dras inom ramen för SKOS). Det här innebär dock inte att man för varje koncept skall deklarera som <code>broader</code> alla koncept som är överordnade.</p>
-<p>Jämför t ex följande extrakt ur SAB-systemet, det svenska klassifikationsschemat för bibliotek</p>
-<pre><code> Pr Transportmedel och kommunikationer 
- -- Prab Motorfordon 
- -- -- Prabad Karosseri</code></pre>
-<p>där Karosseri snarast är att betrakta som en meronym till Motorfordon medan Motorfordon är ett exempel på Transportmedel. Att se Transportmedel och kommunikationer som ett mer generiskt begrepp än Karosseri blir semantiskt märkligt. I själva verket är det inte heller ett begrepp utan ett exempel på vad som brukar kallas <a href="http://www.jamescrobertson.com/infosci/pre-post.html">prekoordinering</a>.</p>
-<div id="semantiska-relationer-i-skos" class="section level2">
-<h2><span class="header-section-number">5.1</span> Semantiska relationer i SKOS</h2>
-<p>Vi återgår till koden, där <code>broader</code>-element lagts till för konceptet <em>Hundar</em>.</p>
-<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span>
-<span class="dt">&lt;!DOCTYPE </span>rdf:RDF SYSTEM &quot;skos.dtd&quot;<span class="dt">&gt;</span>
-<span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; 
-    href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span>
-<span class="kw">&lt;rdf:RDF</span> 
-<span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span>
-<span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="kw">&gt;</span>
-  
-<span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#dogs&quot;</span><span class="kw">&gt;</span>
-  <span class="kw">&lt;skos:prefLabel&gt;</span>Hundar
-  <span class="kw">&lt;/skos:prefLabel&gt;</span>
-  <span class="kw">&lt;skos:altLabel&gt;</span>Vovvar
-  <span class="kw">&lt;/skos:altLabel&gt;</span>
-  <span class="kw">&lt;skos:altLabel&gt;</span>Jyckar
-  <span class="kw">&lt;/skos:altLabel&gt;</span>
-  <span class="kw">&lt;skos:altLabel&gt;</span>Byrackor
-  <span class="kw">&lt;/skos:altLabel&gt;</span>
-  <span class="kw">&lt;skos:broader</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#wolves&quot;</span><span class="kw">/&gt;</span>
-<span class="kw">&lt;/skos:Concept&gt;</span>
-
-<span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#foxes&quot;</span><span class="kw">&gt;</span>
-<span class="kw">&lt;/skos:Concept&gt;</span>
-
-<span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#wolves&quot;</span><span class="kw">&gt;</span>
-<span class="kw">&lt;/skos:Concept&gt;</span>
-
-<span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#canids&quot;</span><span class="kw">&gt;</span>
-<span class="kw">&lt;/skos:Concept&gt;</span>
-  
-<span class="kw">&lt;/rdf:RDF&gt;</span></code></pre>
-<p>Elementet <code>broader</code> har här noterats som ett så kallat tomt element. Vi länkar också elementet (och därmed konceptet) till det mer generella konceptet wolves. Det är här vi använder den unika identiteten från <code>about</code>-attributet, och inte något av det överordnade konceptets definierade namn (<code>prefLabel</code>). Observera <code>#</code> som genomgående föregår id:t. Notera att <code>&lt;skos:broader rdf:resource=&quot;#canids&quot;/&gt;</code> vore felaktigt i enlighet med vad som sagts ovan. Observera också att presentationen med hjälp av XSL inte kommer att fungera om du glömmer tecknet <code>#</code>.</p>
+<p>Både gitarrer och nyckelharpor är typer av stränginstrument. Därför ska vi deklarera att det föreligger semantiska, hierarkiska relationer mellan dessa koncept. Vi börjar med att konstatera att konceptet <em>Stränginstrument</em> ska ha en bredare (<code>broader</code>) relation till både <em>Gitarrer</em> och <em>Nyckelharpor</em>.</p>
+<div id="bredare-relation-broader" class="section level2">
+<h2><span class="header-section-number">5.1</span> Bredare relation: <code>broader</code></h2>
+<p>Vi återgår till koden, där <code>broader</code>-element lagts till för koncepten <em>Gitarrer</em> och <em>Nyckelharpor</em>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="dt">&lt;!DOCTYPE </span>rdf:RDF SYSTEM &quot;skos.dtd&quot;<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="kw">&lt;rdf:RDF</span> </a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"><span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"> </a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">    <span class="kw">&lt;skos:prefLabel&gt;</span>Stränginstrument<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb7-10" data-line-number="10">    <span class="kw">&lt;/skos:Concept&gt;</span> </a>
+<a class="sourceLine" id="cb7-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb7-12" data-line-number="12">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#gitarrer&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-13" data-line-number="13">    <span class="kw">&lt;skos:prefLabel&gt;</span>Gitarrer<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb7-14" data-line-number="14">        <span class="kw">&lt;skos:altLabel&gt;</span>Guror<span class="kw">&lt;/skos:altLabel&gt;</span></a>
+<a class="sourceLine" id="cb7-15" data-line-number="15">    <span class="kw">&lt;skos:broader</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb7-16" data-line-number="16">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb7-17" data-line-number="17"></a>
+<a class="sourceLine" id="cb7-18" data-line-number="18">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#nyckelharpor&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-19" data-line-number="19">    <span class="kw">&lt;skos:prefLabel&gt;</span>Nyckelharpor<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb7-20" data-line-number="20">    <span class="kw">&lt;skos:broader</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb7-21" data-line-number="21">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb7-22" data-line-number="22">    </a>
+<a class="sourceLine" id="cb7-23" data-line-number="23">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#rockmusik&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb7-24" data-line-number="24">    <span class="kw">&lt;skos:prefLabel&gt;</span>Rockmusik<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb7-25" data-line-number="25">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb7-26" data-line-number="26"></a>
+<a class="sourceLine" id="cb7-27" data-line-number="27"><span class="kw">&lt;/rdf:RDF&gt;</span></a></code></pre></div>
+<p>Elementet <code>broader</code> har här noterats som ett så kallat tomt element. Vi länkar härmed elementen (och därmed konceptet) till det mer generella konceptet <em>#stranginstrument</em>. Det är här vi använder den unika identiteten från <code>about</code>-attributet, och inte något av det överordnade konceptets definierade namn (<code>prefLabel</code>). Observera att presentationen med hjälp av XSL inte kommer att fungera om du glömmer tecknet <code>#</code>.</p>
 </div>
-<div id="fortsatt-anvanda-relationerna" class="section level2">
-<h2><span class="header-section-number">5.2</span> Fortsätt använda relationerna</h2>
-<p>Lägg till ett <code>broader</code>-element enligt ovan och hänvisa med motsvarande <code>narrower</code> till det element som avses ha en semantisk koppling.</p>
-<p>Samma princip som <code>broader</code> följer alltså elementet <code>narrower</code>, men också elementet <code>related</code>. Fortsätt nu med att bygga ut din vokabulär med instanser av alla dessa tre element för detta och övriga koncept (där det är tillämpligt).</p>
-<div id="mer-om-associativa-relationer-related" class="section level3">
-<h3><span class="header-section-number">5.2.1</span> Mer om associativa relationer (<code>related</code>)</h3>
-<p>Observera att related är en symmetrisk relation, så att om <code>A related B</code>, även <code>B related A</code> gäller. Det är nödvändigt att deklarera relationen för båda koncepten.</p>
+<div id="snävare-relation-narrower" class="section level2">
+<h2><span class="header-section-number">5.2</span> Snävare relation: <code>narrower</code></h2>
+<p>När vi lägger till en bredare relation till ett eller flera koncept så behöver vi också lägga till snävare relationer till motsvarande koncept. Detta följer alltså logiken att <em>om A är <code>broader</code> B så är B <code>narrower</code> A</em>.</p>
+<p>Lägg därför till ett motsvarande <code>narrower</code> till de element som avses ha en semantisk koppling, i det här fallet ska <em>stränginstrument</em> ha en <code>narrower</code>-relation till både <em>gitarrer</em> och <em>nyckelharpor</em>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="dt">&lt;!DOCTYPE </span>rdf:RDF SYSTEM &quot;skos.dtd&quot;<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="kw">&lt;rdf:RDF</span> </a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"> </a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9">    <span class="kw">&lt;skos:prefLabel&gt;</span>Stränginstrument<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10">    <span class="kw">&lt;skos:narrower</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#gitarrer&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11">    <span class="kw">&lt;skos:narrower</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#nyckelharpor&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12">    <span class="kw">&lt;/skos:Concept&gt;</span> </a>
+<a class="sourceLine" id="cb8-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb8-14" data-line-number="14">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#gitarrer&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-15" data-line-number="15">    <span class="kw">&lt;skos:prefLabel&gt;</span>Gitarrer<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb8-16" data-line-number="16">        <span class="kw">&lt;skos:altLabel&gt;</span>Guror<span class="kw">&lt;/skos:altLabel&gt;</span></a>
+<a class="sourceLine" id="cb8-17" data-line-number="17">    <span class="kw">&lt;skos:broader</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-18" data-line-number="18">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb8-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb8-20" data-line-number="20">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#nyckelharpor&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-21" data-line-number="21">    <span class="kw">&lt;skos:prefLabel&gt;</span>Nyckelharpor<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb8-22" data-line-number="22">    <span class="kw">&lt;skos:broader</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb8-23" data-line-number="23">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb8-24" data-line-number="24">    </a>
+<a class="sourceLine" id="cb8-25" data-line-number="25">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#rockmusik&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb8-26" data-line-number="26">    <span class="kw">&lt;skos:prefLabel&gt;</span>Rockmusik<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb8-27" data-line-number="27">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb8-28" data-line-number="28"></a>
+<a class="sourceLine" id="cb8-29" data-line-number="29"><span class="kw">&lt;/rdf:RDF&gt;</span></a></code></pre></div>
+<p>Samma princip som <code>broader</code> följer alltså elementet <code>narrower</code>, men också elementet <code>related</code>, vilket tas upp i nästa avsnitt.</p>
+</div>
+<div id="associativa-relationer-related" class="section level2">
+<h2><span class="header-section-number">5.3</span> Associativa relationer: <code>related</code></h2>
+<p>Konceptet <em>Rockmusik</em> då? Det har en semantisk, associativ - men inte hierarkisk - relation till både gitarrer eftersom dessa är instrument som används i rockmusik. Därför ska vi ange dessa associativa relationer koncepten emellan genom elementet <code>related</code>.</p>
+<p>Observera att related är en symmetrisk relation, så i likhet med de semantiska relationerna är det så att om <code>A related B</code>, även <code>B related A</code> gäller. Det är därför nödvändigt att deklarera relationen för båda koncepten.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">&lt;?xml</span> version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="dt">&lt;!DOCTYPE </span>rdf:RDF SYSTEM &quot;skos.dtd&quot;<span class="dt">&gt;</span></a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4"><span class="kw">&lt;rdf:RDF</span> </a>
+<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="ot">  xmlns:rdf=</span><span class="st">&quot;http://www.w3.org/1999/02/22-rdf-syntax-ns#&quot;</span></a>
+<a class="sourceLine" id="cb9-6" data-line-number="6"><span class="ot">  xmlns:skos=</span><span class="st">&quot;http://www.w3.org/2004/02/skos/core#&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"> </a>
+<a class="sourceLine" id="cb9-8" data-line-number="8">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9">    <span class="kw">&lt;skos:prefLabel&gt;</span>Stränginstrument<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb9-10" data-line-number="10">    <span class="kw">&lt;skos:narrower</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#gitarrer&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb9-11" data-line-number="11">    <span class="kw">&lt;skos:narrower</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#nyckelharpor&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb9-12" data-line-number="12">    <span class="kw">&lt;/skos:Concept&gt;</span> </a>
+<a class="sourceLine" id="cb9-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb9-14" data-line-number="14">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#gitarrer&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-15" data-line-number="15">    <span class="kw">&lt;skos:prefLabel&gt;</span>Gitarrer<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb9-16" data-line-number="16">        <span class="kw">&lt;skos:altLabel&gt;</span>Guror<span class="kw">&lt;/skos:altLabel&gt;</span></a>
+<a class="sourceLine" id="cb9-17" data-line-number="17">    <span class="kw">&lt;skos:broader</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb9-18" data-line-number="18">    <span class="kw">&lt;skos:related</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#rockmusik&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb9-19" data-line-number="19">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb9-20" data-line-number="20"></a>
+<a class="sourceLine" id="cb9-21" data-line-number="21">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#nyckelharpor&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-22" data-line-number="22">    <span class="kw">&lt;skos:prefLabel&gt;</span>Nyckelharpor<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb9-23" data-line-number="23">    <span class="kw">&lt;skos:broader</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#stranginstrument&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb9-24" data-line-number="24">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb9-25" data-line-number="25">    </a>
+<a class="sourceLine" id="cb9-26" data-line-number="26">    <span class="kw">&lt;skos:Concept</span><span class="ot"> rdf:about=</span><span class="st">&quot;#rockmusik&quot;</span><span class="kw">&gt;</span></a>
+<a class="sourceLine" id="cb9-27" data-line-number="27">    <span class="kw">&lt;skos:prefLabel&gt;</span>Rockmusik<span class="kw">&lt;/skos:prefLabel&gt;</span></a>
+<a class="sourceLine" id="cb9-28" data-line-number="28">    <span class="kw">&lt;skos:related</span><span class="ot"> rdf:resource=</span><span class="st">&quot;#gitarrer&quot;</span><span class="kw">/&gt;</span></a>
+<a class="sourceLine" id="cb9-29" data-line-number="29">    <span class="kw">&lt;/skos:Concept&gt;</span></a>
+<a class="sourceLine" id="cb9-30" data-line-number="30"></a>
+<a class="sourceLine" id="cb9-31" data-line-number="31"><span class="kw">&lt;/rdf:RDF&gt;</span></a></code></pre></div>
 <p>Relationen <code>related</code> är oförenlig med <code>broader</code> och <code>narrower</code>. <code>A related B</code> och <code>A broader B</code> är alltså fel. Precis som det är nödvändigt att deklarera relationen <code>related</code> för båda koncepten i en association av den typen, så är det också nödvändigt att deklarera <code>A narrower B</code> om man har deklarerat <code>B broader A</code>.</p>
 <p>Beakta gärna vad som sägs i <a href="http://www.getty.edu/research/publications/electronic_publications/intro_controlled_vocab/relationships.html">Harpring (2010, kap.3)</a> om semantiska relationer, och särskilt avsnittet om associativa relationer (det vill säga <code>related</code>).</p>
-</div>
 </div>
 </div>
             </section>
@@ -229,17 +286,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="konceptens-foredragna-namn-och-synonymer.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="konceptens-föredragna-namn-och-synonymer.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="definitioner-med-mera.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

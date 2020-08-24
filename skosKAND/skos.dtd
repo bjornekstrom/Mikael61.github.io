@@ -1,0 +1,43 @@
+<!-- DTD created at Fri Sep 24 13:32:03 CEST 2010 with EditiX. Please insert an encoding attribute header for converting any DTD  -->
+<!-- mikael.gunnarsson@hb.se first attempt-->
+
+<!ELEMENT rdf:RDF (skos:ConceptScheme?,skos:Concept*)>
+<!ATTLIST rdf:RDF xmlns:dc CDATA #IMPLIED
+				xmlns:skos CDATA #IMPLIED
+				xmlns:rdf CDATA #IMPLIED>
+
+<!ELEMENT skos:Concept (skos:prefLabel+, (skos:broader | skos:narrower | skos:broaderTransitive | skos:narrowerTransitive | skos:related | skos:definition | skos:scopeNote | skos:example
+ | skos:altLabel | skos:hiddenLabel)*)>
+<!ATTLIST skos:Concept rdf:about CDATA #REQUIRED>
+
+<!ELEMENT skos:broader EMPTY>
+<!ATTLIST skos:broader rdf:resource CDATA #REQUIRED>
+<!ELEMENT skos:narrower EMPTY>
+<!ATTLIST skos:narrower rdf:resource CDATA #REQUIRED>
+<!ELEMENT skos:narrowerTransitive EMPTY>
+<!ATTLIST skos:narrowerTransitive rdf:resource CDATA #REQUIRED>
+<!ELEMENT skos:broaderTransitive EMPTY>
+<!ATTLIST skos:broaderTransitive rdf:resource CDATA #REQUIRED>
+<!ELEMENT skos:related EMPTY>
+<!ATTLIST skos:related rdf:resource CDATA #REQUIRED>
+<!ELEMENT skos:definition (#PCDATA)>
+<!ATTLIST skos:definition rdf:resource CDATA #IMPLIED>
+<!ELEMENT skos:scopeNote (#PCDATA)>
+<!ELEMENT skos:example (#PCDATA)>
+<!ATTLIST skos:example rdf:resource CDATA #IMPLIED>
+<!ELEMENT skos:prefLabel (#PCDATA)>
+<!ATTLIST skos:prefLabel xml:lang CDATA #IMPLIED>
+<!ELEMENT skos:altLabel (#PCDATA)>
+<!ATTLIST skos:altLabel xml:lang CDATA #IMPLIED>
+<!ELEMENT skos:hiddenLabel (#PCDATA)>
+<!ATTLIST skos:hiddenLabel xml:lang CDATA #IMPLIED>
+
+<!ELEMENT skos:ConceptScheme (dc:creator | dc:title | dc:description)*>
+<!ATTLIST skos:ConceptScheme rdf:about CDATA #REQUIRED>
+
+<!ELEMENT dc:creator (#PCDATA)>
+<!ELEMENT dc:title (#PCDATA)>
+<!ELEMENT dc:description (#PCDATA)>
+
+
+

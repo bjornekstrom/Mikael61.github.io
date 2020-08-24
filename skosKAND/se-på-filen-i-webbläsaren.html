@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>8 Se på filen i webbläsaren | Introduktion till SKOS</title>
-  <meta name="description" content="8 Se på filen i webbläsaren | Introduktion till SKOS">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="8 Se på filen i webbläsaren | Introduktion till SKOS" />
+  <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
   <meta property="og:title" content="8 Se på filen i webbläsaren | Introduktion till SKOS" />
   <meta property="og:type" content="book" />
@@ -22,19 +21,19 @@
   
   
 
-<meta name="author" content="Mikael Gunnarsson">
-<meta name="author" content="Maria Idebrant">
-<meta name="author" content="Björn Ekström">
+<meta name="author" content="Mikael Gunnarsson" />
+<meta name="author" content="Maria Idebrant" />
+<meta name="author" content="Björn Ekström" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="beskriv-din-vokabular.html">
-<link rel="next" href="avslutningsvis.html">
+<link rel="prev" href="beskriv-din-vokabulär.html"/>
+<link rel="next" href="avslutningsvis.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -42,6 +41,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -54,10 +56,9 @@
 <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
 a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -67,13 +68,11 @@ code.sourceCode { white-space: pre-wrap; }
 a.sourceLine { text-indent: -1em; padding-left: 1em; }
 }
 pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
+  { position: relative; left: -4em; }
 pre.numberSource a.sourceLine::before
   { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -129,27 +128,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="skos-introduktionsovningar.html"><a href="skos-introduktionsovningar.html"><i class="fa fa-check"></i><b>1</b> SKOS - Introduktionsövningar</a></li>
-<li class="chapter" data-level="2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html"><i class="fa fa-check"></i><b>2</b> SKOS som XML-tillämpning</a><ul>
-<li class="chapter" data-level="2.1" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#xsl--och-dtd-filer"><i class="fa fa-check"></i><b>2.1</b> XSL- och DTD-filer</a></li>
-<li class="chapter" data-level="2.2" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#hanvisning-till-xsl"><i class="fa fa-check"></i><b>2.2</b> Hänvisning till XSL</a></li>
-<li class="chapter" data-level="2.3" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#hanvisning-till-dtd"><i class="fa fa-check"></i><b>2.3</b> Hänvisning till DTD</a></li>
-<li class="chapter" data-level="2.4" data-path="skos-som-xml-tillampning.html"><a href="skos-som-xml-tillampning.html#giltig-skos"><i class="fa fa-check"></i><b>2.4</b> Giltig SKOS?</a></li>
+<li class="chapter" data-level="1" data-path="skos-introduktionsövningar.html"><a href="skos-introduktionsövningar.html"><i class="fa fa-check"></i><b>1</b> SKOS - Introduktionsövningar</a></li>
+<li class="chapter" data-level="2" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html"><i class="fa fa-check"></i><b>2</b> SKOS som XML-tillämpning</a><ul>
+<li class="chapter" data-level="2.1" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#xsl--och-dtd-filer"><i class="fa fa-check"></i><b>2.1</b> XSL- och DTD-filer</a><ul>
+<li class="chapter" data-level="2.1.1" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#hänvisning-till-xsl"><i class="fa fa-check"></i><b>2.1.1</b> Hänvisning till XSL</a></li>
+<li class="chapter" data-level="2.1.2" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#hänvisning-till-dtd"><i class="fa fa-check"></i><b>2.1.2</b> Hänvisning till DTD</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#giltig-skos-och-validering"><i class="fa fa-check"></i><b>2.2</b> Giltig SKOS och validering</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#validering-i-oxygen"><i class="fa fa-check"></i><b>2.2.1</b> Validering i Oxygen</a></li>
+<li class="chapter" data-level="2.2.2" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#validering-i-editix"><i class="fa fa-check"></i><b>2.2.2</b> Validering i EditiX</a></li>
+<li class="chapter" data-level="2.2.3" data-path="skos-som-xml-tillämpning.html"><a href="skos-som-xml-tillämpning.html#validering-i-xmlspear"><i class="fa fa-check"></i><b>2.2.3</b> Validering i XMLSpear</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="koncept.html"><a href="koncept.html"><i class="fa fa-check"></i><b>3</b> Koncept</a></li>
-<li class="chapter" data-level="4" data-path="konceptens-foredragna-namn-och-synonymer.html"><a href="konceptens-foredragna-namn-och-synonymer.html"><i class="fa fa-check"></i><b>4</b> Konceptens föredragna namn och synonymer</a></li>
+<li class="chapter" data-level="4" data-path="konceptens-föredragna-namn-och-synonymer.html"><a href="konceptens-föredragna-namn-och-synonymer.html"><i class="fa fa-check"></i><b>4</b> Konceptens föredragna namn och synonymer</a></li>
 <li class="chapter" data-level="5" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html"><i class="fa fa-check"></i><b>5</b> Semantiska relationer</a><ul>
-<li class="chapter" data-level="5.1" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#semantiska-relationer-i-skos"><i class="fa fa-check"></i><b>5.1</b> Semantiska relationer i SKOS</a></li>
-<li class="chapter" data-level="5.2" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#fortsatt-anvanda-relationerna"><i class="fa fa-check"></i><b>5.2</b> Fortsätt använda relationerna</a><ul>
-<li class="chapter" data-level="5.2.1" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#mer-om-associativa-relationer-related"><i class="fa fa-check"></i><b>5.2.1</b> Mer om associativa relationer (<code>related</code>)</a></li>
-</ul></li>
+<li class="chapter" data-level="5.1" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#bredare-relation-broader"><i class="fa fa-check"></i><b>5.1</b> Bredare relation: <code>broader</code></a></li>
+<li class="chapter" data-level="5.2" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#snävare-relation-narrower"><i class="fa fa-check"></i><b>5.2</b> Snävare relation: <code>narrower</code></a></li>
+<li class="chapter" data-level="5.3" data-path="semantiska-relationer.html"><a href="semantiska-relationer.html#associativa-relationer-related"><i class="fa fa-check"></i><b>5.3</b> Associativa relationer: <code>related</code></a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="definitioner-med-mera.html"><a href="definitioner-med-mera.html"><i class="fa fa-check"></i><b>6</b> Definitioner med mera</a></li>
-<li class="chapter" data-level="7" data-path="beskriv-din-vokabular.html"><a href="beskriv-din-vokabular.html"><i class="fa fa-check"></i><b>7</b> Beskriv din vokabulär</a></li>
-<li class="chapter" data-level="8" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html"><i class="fa fa-check"></i><b>8</b> Se på filen i webbläsaren</a><ul>
-<li class="chapter" data-level="8.1" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html#visualisera-i-alfabetisk-listform"><i class="fa fa-check"></i><b>8.1</b> Visualisera i alfabetisk listform</a></li>
-<li class="chapter" data-level="8.2" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html#visualisera-i-hierarkisk-tradform"><i class="fa fa-check"></i><b>8.2</b> Visualisera i hierarkisk trädform</a></li>
-<li class="chapter" data-level="8.3" data-path="se-pa-filen-i-webblasaren.html"><a href="se-pa-filen-i-webblasaren.html#anvand-bada-stilmallarna"><i class="fa fa-check"></i><b>8.3</b> Använd båda stilmallarna</a></li>
+<li class="chapter" data-level="7" data-path="beskriv-din-vokabulär.html"><a href="beskriv-din-vokabulär.html"><i class="fa fa-check"></i><b>7</b> Beskriv din vokabulär</a></li>
+<li class="chapter" data-level="8" data-path="se-på-filen-i-webbläsaren.html"><a href="se-på-filen-i-webbläsaren.html"><i class="fa fa-check"></i><b>8</b> Se på filen i webbläsaren</a><ul>
+<li class="chapter" data-level="8.1" data-path="se-på-filen-i-webbläsaren.html"><a href="se-på-filen-i-webbläsaren.html#visualisera-i-alfabetisk-listform"><i class="fa fa-check"></i><b>8.1</b> Visualisera i alfabetisk listform</a></li>
+<li class="chapter" data-level="8.2" data-path="se-på-filen-i-webbläsaren.html"><a href="se-på-filen-i-webbläsaren.html#visualisera-i-hierarkisk-trädform"><i class="fa fa-check"></i><b>8.2</b> Visualisera i hierarkisk trädform</a></li>
+<li class="chapter" data-level="8.3" data-path="se-på-filen-i-webbläsaren.html"><a href="se-på-filen-i-webbläsaren.html#använd-båda-stilmallarna"><i class="fa fa-check"></i><b>8.3</b> Använd båda stilmallarna</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="avslutningsvis.html"><a href="avslutningsvis.html"><i class="fa fa-check"></i><b>9</b> Avslutningsvis</a></li>
 </ul>
@@ -169,27 +172,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="se-pa-filen-i-webblasaren" class="section level1">
+<div id="se-på-filen-i-webbläsaren" class="section level1">
 <h1><span class="header-section-number">8</span> Se på filen i webbläsaren</h1>
-<p>När du lagt till namn samt semantiska relationer mellan övriga koncept kan du öppna filen i webbläsaren (Firefox) - men glöm inte att spara filen först. Vi ska hänvisa till två stilmallar för att titta på filen på olika sätt, <code>skos-styleList.xsl</code> och <code>skos-styleHie.xsl</code>. Stilmallarna finns <a href="https://github.com/Mikael61/Mikael61.github.io">upplagda på Github</a>.</p>
+<p>När du lagt till namn samt semantiska relationer mellan övriga koncept kan du öppna filen i webbläsaren (Firefox) - men glöm inte att spara filen först. Vi ska hänvisa till två stilmallar för att titta på filen på olika sätt, <code>skos-styleList.xsl</code> och <code>skos-styleHie.xsl</code>. Stilmallarna finns <a href="https://github.com/Mikael61/Mikael61.github.io">upplagda på Github</a> och kan länka till direkt.</p>
 <div id="visualisera-i-alfabetisk-listform" class="section level2">
 <h2><span class="header-section-number">8.1</span> Visualisera i alfabetisk listform</h2>
-<p>Hänvisa till XSL-stilmallen <code>skos-styleList.xsl</code> genom att lägga till följande efter XML-deklarationen men innan rotelementet:</p>
-<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></code></pre>
+<p>Hänvisa till XSL-stilmallen <code>skos-styleList.xsl</code> genom att lägga till följande efter XML-deklarationen men innan rotelementet (om det inte redan finns i din kod):</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></a></code></pre></div>
 <p>Öppna sedan din XML-fil i webbläsaren Firefox. Om detta gjorts så bör du kunna se en lista där alla namn (både föredragna och alternativa) listas i alfabetisk ordning - motsvarande bilden nedan.</p>
 <p><img src="img/skos-styleList.png" /></p>
 <p>Den XSL som ges till dessa övningar ger bara ett exempel på hur en SKOS kan transformeras. Flera SKOS-element, som dock inte behöver användas, har till exempel ingen transformation alls och kommer inte att ges någon presentation alls i webbläsaren.</p>
 </div>
-<div id="visualisera-i-hierarkisk-tradform" class="section level2">
+<div id="visualisera-i-hierarkisk-trädform" class="section level2">
 <h2><span class="header-section-number">8.2</span> Visualisera i hierarkisk trädform</h2>
 <p>Det finns i Github-repositoriet ytterligare en XSL som med utgångspunkt från innehållet i varje koncepts <code>prefLabel</code> och konceptens hierarkiska relationer åskådliggör din vokabulär i trädform. Byt därför ut</p>
-<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleList.xsl&quot;<span class="kw">?&gt;</span></a></code></pre></div>
 <p>mot</p>
-<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleHie.xsl&quot;<span class="kw">?&gt;</span></code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode xml"><code class="sourceCode xml"><a class="sourceLine" id="cb15-1" data-line-number="1"><span class="kw">&lt;?xml-stylesheet</span> type=&quot;text/xsl&quot; href=&quot;https://raw.githubusercontent.com/Mikael61/Mikael61.github.io/master/skos-styleHie.xsl&quot;<span class="kw">?&gt;</span></a></code></pre></div>
 <p>i din XML fil. Spara och ladda om filen i Firefox. På det här viset visualiseras tesaurusen i trädform likt nedan:</p>
 <p><img src="img/skos-styleHie.png" /></p>
 </div>
-<div id="anvand-bada-stilmallarna" class="section level2">
+<div id="använd-båda-stilmallarna" class="section level2">
 <h2><span class="header-section-number">8.3</span> Använd båda stilmallarna</h2>
 <p>Du använder med fördel stilmallarna för att kontrollera så att du får
 det resultat du förväntar dig. Det måste dock sägas att för
@@ -207,17 +210,19 @@ SKOS-reglerna, var uppmärksam på eventuella röda felmeddelanden.</p>
           </div>
         </div>
       </div>
-<a href="beskriv-din-vokabular.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="beskriv-din-vokabulär.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="avslutningsvis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({

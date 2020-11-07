@@ -47,7 +47,7 @@
         <skos:prefLabel>Rockmusik</skos:prefLabel>
         <skos:broader rdf:resource="#popmusik"/>
         <skos:related rdf:resource="#gitarrer"/>
-        <skos:definition>"[S]amlande genrebenämning på musikstilar som vuxit fram ur rock’n’roll sedan mitten av 1950-talet." Källa: https://www.ne.se/uppslagsverk/encyklopedi/l%C3%A5ng/rock</skos:definition>
+        <skos:definition>&#8220; [S]amlande genrebenämning på musikstilar som vuxit fram ur rock’n’roll sedan mitten av 1950-talet.&#8220;  Källa: https://www.ne.se/uppslagsverk/encyklopedi/l%C3%A5ng/rock</skos:definition>
         <skos:example rdf:resource="https://www.youtube.com/watch?v=7oUWoj6KXpM"/>
         <skos:scopeNote>Avser verk som relaterar till rockmusik.</skos:scopeNote>
     </skos:Concept>
@@ -56,7 +56,7 @@
         <skos:prefLabel>Folkmusik</skos:prefLabel>
         <skos:related rdf:resource="#nyckelharpor"/>
         <skos:related rdf:resource="#gitarrer"/>
-        <skos:definition>"[M]usik med rötter i det gamla bondesamhället som blandats med städernas populär- och konstmusik." Källa: https://www-ne-se.lib.costello.pub.hb.se/uppslagsverk/encyklopedi/l%C3%A5ng/folkmusik</skos:definition>
+        <skos:definition>&#8220;[M]usik med rötter i det gamla bondesamhället som blandats med städernas populär- och konstmusik.&#8220;  Källa: https://www-ne-se.lib.costello.pub.hb.se/uppslagsverk/encyklopedi/l%C3%A5ng/folkmusik</skos:definition>
         <skos:example rdf:resource="https://www.youtube.com/watch?v=k9O9_P7G4vw"/>
         <skos:scopeNote>Avser verk som relaterar till folkmusik.</skos:scopeNote>
     </skos:Concept>
